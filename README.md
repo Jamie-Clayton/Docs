@@ -10,7 +10,9 @@ Information to make software engineers valued as pets rather than treated like c
 
 ### DevOps
 
-[Ssh](devops/ssh.md)
+| Topic                  | Description              |
+|------------------------|--------------------------|
+| [Ssh ](devops/ssh.md ) | Configure SSH on Windows |
 
 ### Soft Skills
 
