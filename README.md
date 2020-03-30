@@ -7,7 +7,7 @@ Information to make software engineers valued as pets rather than treated like c
 
 ## Built With
 
-GitHub Pages will run (Jekyll)[https://jekyllrb.com/]
+GitHub Pages will run [Jekyll](https://jekyllrb.com/)
 
 ## Contributing
 
@@ -19,6 +19,6 @@ Jamie Clayton - Initial work
 
 ## License
 
-This project is licensed under the Creative Commons License - see the (LICENSE)[./LICENSE.md] file for details
+This project is licensed under the Creative Commons License - see the [LICENSE](./LICENSE.md) file for details
 
 ## Acknowledgments
