@@ -26,15 +26,15 @@ Encourage others to hone communication skills within the industry.
 
 ### Document objectives
 
-_1. Amalgamate sources of information in references section.
-_2. Provide a measure of success for each document.
-__2.1. Determine the read/execution time for each document.
-__2.2. Determine the time saved or value for each document.
-__2.3. Encourage feedback/PR's to improve the document.
-_3. Include any formula's, cost benefit analysis involved with calculating success.
-_4. Provide a mechanism to include others metrics into the document.
-_5. Acknowledge authors contributions to the document.
-_6. Include License references for reuse.
+1. Amalgamate sources of information in references section.
+2. Provide a measure of success for each document.
+    1. Determine the read/execution time for each document.
+    2. Determine the time saved or value for each document.
+    3. Encourage feedback/PR's to improve the document.
+3. Include any formula's, cost benefit analysis involved with calculating success.
+4. Provide a mechanism to include others metrics into the document.
+5. Acknowledge authors contributions to the document.
+6. Include License references for reuse.
 
 ## Built With
 
