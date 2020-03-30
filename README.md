@@ -8,9 +8,13 @@ Information to make software engineers valued as pets rather than treated like c
 
 ## Core Topics
 
-* DevOps
-* Soft Skills
-  * Diagramming
+### DevOps
+
+[Ssh](devops/ssh.md)
+
+### Soft Skills
+
+#### Diagramming
   
 ## Built With
 
