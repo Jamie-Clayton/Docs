@@ -1,10 +1,17 @@
-# Software Engineers - Getting started guides
+# Software Engineers Lean documents
 
 ## Overview
 
-Notes and instructions to help fast track software development. 
+Notes and instructions to help fast track software development.
+Bringing the concept of daily small improvements to documentation, based on real world problems.
 Information to make software engineers valued as pets rather than treated like cattle.
 
+## Core Topics
+
+* DevOps
+* Soft Skills
+  * Diagramming
+  
 ## Built With
 
 GitHub Pages will run [Jekyll](https://jekyllrb.com/)
