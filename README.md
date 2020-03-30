@@ -1,37 +1,24 @@
-## Welcome to GitHub Pages
+# Software Engineers - Getting started guides
 
-You can use the [editor on GitHub](https://github.com/JenasysDesign/Docs/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## Overview
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Notes and instructions to help fast track software development. 
+Information to make software engineers valued as pets rather than treated like cattle.
 
-### Markdown
+## Built With
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+GitHub Pages will run (Jekyll)[https://jekyllrb.com/]
 
-```markdown
-Syntax highlighted code block
+## Contributing
 
-# Header 1
-## Header 2
-### Header 3
+Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
 
-- Bulleted
-- List
+## Authors
 
-1. Numbered
-2. List
+Jamie Clayton - Initial work
 
-**Bold** and _Italic_ and `Code` text
+## License
 
-[Link](url) and ![Image](src)
-```
+This project is licensed under the Creative Commons License - see the (LICENSE)[./LICENSE.md] file for details
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/JenasysDesign/Docs/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## Acknowledgments
