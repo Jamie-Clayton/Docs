@@ -12,7 +12,7 @@ Information to make software engineers valued as pets rather than treated like c
 | Topic                  | Description              |
 |------------------------|--------------------------|
 | [Ssh](devops/ssh.md) | Configure SSH on Windows |
-| [Terraform](devops/Terraform.md) | Configure Terraform (infrastructure as code) on Windows |
+| [Terraform](devops/terraform.md) | Configure Terraform (infrastructure as code) on Windows |
 
 ## Migration Topics
 
