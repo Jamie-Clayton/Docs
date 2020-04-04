@@ -11,8 +11,14 @@ Information to make software engineers valued as pets rather than treated like c
 
 | Topic                  | Description              |
 |------------------------|--------------------------|
-| [Ssh ](devops/ssh.md ) | Configure SSH on Windows |
-| [Terraform ](devops/Terraform.md ) | Configure Terraform (infrastructure as code) on Windows |
+| [Ssh](devops/ssh.md) | Configure SSH on Windows |
+| [Terraform](devops/Terraform.md) | Configure Terraform (infrastructure as code) on Windows |
+
+## Migration Topics
+
+| Topic                  | Description              |
+|------------------------|--------------------------|
+| [Migrating from AngularJS 1.5 to Angular 9+](migration/RetiringAngularJs.md) | The cost to retire the technical debt in the first generation Single Page Applications |
 
 ## Soft Skill Topics
 
