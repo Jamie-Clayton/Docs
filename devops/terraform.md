@@ -48,5 +48,3 @@ choco upgrade awscli
 [Chocolatey](https://chocolatey.org)
 
 [Terraform](https://chocolatey.org)
-
-## Acknowledgements
