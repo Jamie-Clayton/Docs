@@ -4,7 +4,7 @@
 ## Overview
 
 Notes and instructions to help fast track software development.
-Bringing the concept of daily small improvements to documentation, based on real world problems.
+Bringing the concept of daily small improvements to documentation, based on real-world problems.
 Information to make software engineers valued as pets rather than treated like cattle.
 
 ## DevOps Topics
