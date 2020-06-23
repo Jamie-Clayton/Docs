@@ -45,6 +45,9 @@ Set-Service -Name ssh-agent -StartupType Manual
 # Set the service to automatic start
 Set-Service -Name ssh-agent -StartupType Automatic
 
+# Start the service
+Start-Service ssh-agent
+
 # View the ssh components installed in windows.
 explorer C:\Windows\System32\OpenSSH\
 ```
@@ -75,8 +78,13 @@ VsCode ~\.ssh\me-github.pub
 # As a workaround to unblock you, could you create/install a dummy sshd service like this:
 sc.exe create sshd binPath=C:\Windows\System32\OpenSSH\ssh.exe
 
+# Run the SSH-Agent (or locate OpenSSH Authentication Agent in Services MMC)
+Start-Service ssh-agent
+
 # Add ssh private key to acceptable keys
-ssh-add ~\.ssh\me-github
+cd ~/.ssh
+ls  
+ssh-add \me-github
 
 # Confirm the key was added
 ssh-add -L
