@@ -99,6 +99,9 @@ New-NetFirewallRule -Name sshd -DisplayName 'OpenSSH SSH Server' -Enabled True -
 git fetch origin
 git pull origin
 git push origin
+
+# VSCode may not correctly prompt for SSH password credential.
+git config --global credential.helper wincred
 ```
 
 ## References
@@ -116,3 +119,5 @@ git push origin
 [ssh-add on Windows workaround](https://github.com/PowerShell/Win32-OpenSSH/issues/1234)
 
 [Troubleshooting Open SSH connections](https://winscp.net/eng/docs/guide_windows_openssh_server)
+
+[Git Credential caching](https://stackoverflow.com/a/58107764/342719)
