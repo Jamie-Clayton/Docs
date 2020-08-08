@@ -89,6 +89,12 @@ ssh-add \me-github
 # Confirm the key was added
 ssh-add -L
 
+# Test github connection.
+ssh -vT git@github.com
+
+# Enable the firewall access
+New-NetFirewallRule -Name sshd -DisplayName 'OpenSSH SSH Server' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22 -Program "C:\System32\OpenSSH\sshd.exe"
+
 # Test the Git fetch/pull/push commands to confirm the key has been correctly registered.
 git fetch origin
 git pull origin
@@ -108,3 +114,5 @@ git push origin
 [OpenSSH on Windows 1709 walk through](https://devblogs.microsoft.com/powershell/using-the-openssh-beta-in-windows-10-fall-creators-update-and-windows-server-1709/)
 
 [ssh-add on Windows workaround](https://github.com/PowerShell/Win32-OpenSSH/issues/1234)
+
+[Troubleshooting Open SSH connections](https://winscp.net/eng/docs/guide_windows_openssh_server)
