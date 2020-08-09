@@ -21,6 +21,7 @@ Information to make software engineers valued as pets rather than treated like c
 | [Developer Tools](devops/powershell/Install%20Personal%20Tools.ps1) | Configure Development tool on Windows |
 | [Cloud - Azure Tools](devops/powershell/Install%20Azure%20Tools.ps1) | Configure Azure tools on Windows |
 | [Cloud - Infrastructure As Code Tools](devops/powershell/Install%20Terraform.ps1) | Configure HashiCorp tools for infrastructure |
+| [Infrastructure - Console Load Balancer](devops/powershell/Install%20Consul%20Load%20Balancer.ps1) | Configure HashiCorp tools for load balancing |
 
 ## Migration Topics
 
