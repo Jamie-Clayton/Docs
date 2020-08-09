@@ -13,7 +13,14 @@ Information to make software engineers valued as pets rather than treated like c
 |------------------------|--------------------------|
 | [Ssh](devops/ssh.md) | Configure SSH on Windows |
 | [Terraform](devops/terraform.md) | Configure Terraform (infrastructure as code) on Windows |
-| [Developer Environment](devops/Powershell/Install Personal Tools.ps1) | Configure Development environment on Windows |
+
+## Powershell Scripts
+
+| Topic                  | Description              |
+|------------------------|--------------------------|
+| [Developer Tools](devops/powershell/Install%20Personal%20Tools.ps1) | Configure Development tool on Windows |
+| [Cloud - Azure Tools](devops/powershell/Install%20Azure%20Tools.ps1) | Configure Azure tools on Windows |
+| [Cloud - Infrastructure As Code Tools](devops/powershell/Install%20Terraform.ps1) | Configure HashiCorp tools for infrastructure |
 
 ## Migration Topics
 

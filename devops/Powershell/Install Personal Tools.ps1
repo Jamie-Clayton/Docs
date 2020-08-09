@@ -42,6 +42,7 @@ choco install GitVersion.Portable -y
 
 # Cloud tooling
 choco install Terraform -y
+choco install packer -y
 choco install octopustools -y
 choco install typescript -y
 choco install nodejs.install -y
