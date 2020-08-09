@@ -42,8 +42,6 @@ choco install GitVersion.Portable -y
 
 # Cloud tooling
 choco install Terraform -y
-choco install azure-cli -y
-choco install awscli -y
 choco install octopustools -y
 choco install typescript -y
 choco install nodejs.install -y
@@ -57,6 +55,25 @@ choco install minikube -y
 
 choco install visualstudio2019professional -y
 choco install brave -y 
+
+# Cloud - Amazon Web Services
+choco install awscli -y
+
+# Cloud - Microsoft Azure
+# Az Cli Docs - https://docs.microsoft.com/en-us/powershell/azure/
+# Az Powershell Docs - https://docs.microsoft.com/en-us/cli/azure/
+# Difference between Azure Powershell and Azure CLI - https://millerb.co.uk/2019/12/07/Az-CLI-vs-Az-PowerShell.html
+choco install azure-cli -y
+
+# Install Azure Powershell (different from "Az cli") - https://millerb.co.uk/2019/12/07/Az-CLI-vs-Az-PowerShell.html
+Set-ExecutionPolicy Bypass -Scope Process -Force
+Import-Module PowershellGet
+if ($PSVersionTable.PSEdition -eq 'Desktop' -and (Get-Module -Name AzureRM -ListAvailable)) {
+    Write-Warning -Message ('Az module not installed. Having both the AzureRM and ' +
+      'Az modules installed at the same time is not supported.')
+} else {
+    Install-Module -Name Az -AllowClobber -Scope CurrentUser
+}
 
 # ** Reboot powershell as administrator
 # ** Confirm installation versions are appropriate/current
