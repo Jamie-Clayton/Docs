@@ -1,6 +1,7 @@
 # Automation with Powershell
 
 ## Workflow
+
 Enable long running tasks to execute and pause and restart so you don't have to start again.
 
 * Tasks for running on multiple devices
@@ -8,6 +9,9 @@ Enable long running tasks to execute and pause and restart so you don't have to 
 * Tasks on a large scale, in high availability environments requiring throttling and connection pooling.
 
 ```powershell
+# Requires Powershell (Framework not Core) Ctrl + Shift + F8
+# Try tyriar.shell-launcher addin for enabling multiple powershell clients in Visual Code.
+
 Workflow MySmartFlow
 {
     Write-Output -InputObject "Welcome.."
@@ -20,12 +24,12 @@ Workflow MySmartFlow
 
 }
 
-MySmartFlow -AsJob -JobName SmartFlow -PSPersiste $true
+MySmartFlow -AsJob -JobName SmartFlow -PSPersist $true
 
 Suspend-Job SmartFlow
 Get-Job SmartFlow
 Resume-Job SmartFlow
-Recieve-Job SmartFlow -Keep
+Receive-Job SmartFlow -Keep
 Remove-Job SmartFlow
 ```
 
