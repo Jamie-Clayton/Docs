@@ -69,7 +69,11 @@ Get-Service | gm
 
 Often the default information shown in the powershell terminal does not show all information that is available, so you may need to work
 
-TBA...
+```Powershell
+Get-TimeZone | Get-Member
+Get-ChildItem -Path ~/Downloads/ -File | Where-Object {$_.Length -GE 1000000} | Sort-Object -Property Length -Desc
+Get-ChildItem -Path ~/Downloads/ -File | Sort-Object -Property Length
+```
 
 ## View Powershell command history files
 
@@ -85,3 +89,7 @@ TBA...
 [Object members](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-member?view=powershell-7)
 
 [Visual Code for Editing Powershell scripts](https://code.visualstudio.com/docs/languages/powershell)
+
+[Whats New In Powershell 7](https://docs.microsoft.com/en-us/powershell/scripting/whats-new/what-s-new-in-powershell-70?view=powershell-6#running-powershell-7)
+
+[Powershell Remoting over SSH](https://docs.microsoft.com/en-us/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-7)
