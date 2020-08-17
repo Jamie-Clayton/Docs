@@ -26,6 +26,11 @@ Find-Script *Windows*
 # Install Tools to enable powershell module managment
 Install-Module PowerShellGet
 
+# Temporary changes to file paths to execute command lines.
+Push-Location c:\Users\Jamie\Documents\repo1\
+    GitVersion.exe
+Pop-Location
+
 ```
 
 ## Reviewing Command History
