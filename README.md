@@ -13,6 +13,8 @@ Information to make software engineers valued as pets rather than treated like c
 |------------------------|--------------------------|
 | [Ssh](devops/ssh.md) | Configure SSH on Windows |
 | [Terraform](devops/terraform.md) | Configure Terraform (infrastructure as code) on Windows |
+| [Automation with Powershell](devops/Automation.md) | Long running resilient powershell scripts (Workflows) |
+| [Desired State Configuration](devops/DesiredStateConfiguration.md) | Long running resilient powershell scripts (Workflows) |
 
 ## Powershell Scripts
 
