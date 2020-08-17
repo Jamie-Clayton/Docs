@@ -20,7 +20,6 @@ cd C:\Users\Jamie\Repos\VIPRepo
 
 # Determine the changes between two commits (Git Version tags help find the SHA references)
 git diff --stat 846044a18dd27dd4af0bc63c8360398e8403d4d4 116da05ecc711dc1612a5b57a4d453d4161d0e77
-
 ```
 
 ## Remove Team City Build tags
