@@ -102,7 +102,7 @@ Get-ChildItem -Path ~/Downloads/ -File | Sort-Object -Property Length
 
 ## Performance tuning cmdlets
 
-Monitoring the performance of your 
+Monitoring the performance of your powershell commandlets and modules.
 
 ```Powershell
 Measure-Command {

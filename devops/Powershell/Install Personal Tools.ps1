@@ -76,6 +76,11 @@ if ($PSVersionTable.PSEdition -eq 'Desktop' -and (Get-Module -Name AzureRM -List
     Install-Module -Name Az -AllowClobber -Scope CurrentUser
 }
 
+# Setup Octopus Deploy CLI tab complete in powershell
+# Get-ExecutionPolicy -List
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
+octo install-autocomplete --shell powershell
+
 # ** Reboot powershell as administrator
 # ** Confirm installation versions are appropriate/current
 choco -v
