@@ -2,6 +2,8 @@
 
 Visual Code is the prefered script authoring environment, replacing Powershell ISE as a cross platform editor. See [Setting up Visual Code](https://code.visualstudio.com/docs/languages/powershell)
 
+String Interpolation options - See [Strings in Powershell scripts](https://devblogs.microsoft.com/powershell/variable-expansion-in-strings-and-here-strings/)
+
 ## Display current Edition
 
 ```PowerShell
@@ -123,6 +125,10 @@ Measure-Command {
 * Should filter data prior to returning the values to the client.
 * Requires the users to be members of the Server "Administrators" built in Group on the remote server (Domain controller).
 * Can Import-Modues from a session - 'Implicit Remoting'.
+* Connected to computers which are not members of your domain (kerberous security is used in domain), requires use of SSL.
+* By default, the WinRM firewall exception for public profiles limits access to remote computers within the same local subnet.
+
+[Install Windows Remote Management on a Server, including SSL](Powershell/Install-Server-1-WinRm.ps1)
 
 ```Powershell
 # Hyper V networking will have a public network adaptor that causes warnings with PS Remoting
@@ -148,7 +154,7 @@ Session Example
 [string]$name = "icecreamerydc01"
 $s = New-PSSession -ComputerName $name -Crediential (Get-Credential)
 Get-PSSession
-Invoke-Command -Session $ {
+Invoke-Command -Session $s {
     # Do Stuff here
 }
 $s | Remove-PSsession

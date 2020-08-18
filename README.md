@@ -22,6 +22,7 @@ Information to make software engineers valued as pets rather than treated like c
 | Topic                  | Description              |
 |------------------------|--------------------------|
 | [Developer Tools](devops/Powershell/Install%20Personal%20Tools.ps1) | Configure Development tool on Windows |
+| [Install WinRM SSL](devops/Powershell/Install-Server-1-WinRm.ps1) | Configure Powershell remoting on a Server (Remote Managemnet) |
 | [Cloud - Azure Tools](devops/Powershell/Install%20Azure%20Tools.ps1) | Configure Azure tools on Windows |
 | [Cloud - Infrastructure As Code Tools](devops/Powershell/Install%20Terraform.ps1) | Configure HashiCorp tools for infrastructure |
 | [Infrastructure - Console Load Balancer](devops/Powershell/Install%20Consul%20Load%20Balancer.ps1) | Configure HashiCorp tools for load balancing |
