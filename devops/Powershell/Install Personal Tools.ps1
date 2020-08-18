@@ -1,11 +1,12 @@
 # Jamie Claytons personal toolset
 
 # 1. Chocolately
-# 2. Various Powershell package providers
+# 2. Various PowerShell package providers
 # 3. Software tools (many)
 # 4. Verify the versions currently loaded.
 
-Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+# Install Chocolatey with PowerShell
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
 choco install powershell -y
 choco install powershell-core -y
@@ -62,11 +63,11 @@ choco install awscli -y
 
 # Cloud - Microsoft Azure
 # Az Cli Docs - https://docs.microsoft.com/en-us/powershell/azure/
-# Az Powershell Docs - https://docs.microsoft.com/en-us/cli/azure/
-# Difference between Azure Powershell and Azure CLI - https://millerb.co.uk/2019/12/07/Az-CLI-vs-Az-PowerShell.html
+# Az PowerShell Docs - https://docs.microsoft.com/en-us/cli/azure/
+# Difference between Azure PowerShell and Azure CLI - https://millerb.co.uk/2019/12/07/Az-CLI-vs-Az-PowerShell.html
 choco install azure-cli -y
 
-# Install Azure Powershell (different from "Az cli") - https://millerb.co.uk/2019/12/07/Az-CLI-vs-Az-PowerShell.html
+# Install Azure PowerShell (different from "Az cli") - https://millerb.co.uk/2019/12/07/Az-CLI-vs-Az-PowerShell.html
 Set-ExecutionPolicy Bypass -Scope Process -Force
 Import-Module PowershellGet
 if ($PSVersionTable.PSEdition -eq 'Desktop' -and (Get-Module -Name AzureRM -ListAvailable)) {

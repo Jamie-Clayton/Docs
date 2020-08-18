@@ -2,7 +2,7 @@
 
 The following guide provides a range of examples for dealing with Service Fabric based containers (which can be docker images).
 
-## Service Fabric Application Rollback - Powershell Script
+## Service Fabric Application Rollback - PowerShell Script
 
 ```powershell
 # Manually rollback a broken application upgrade.

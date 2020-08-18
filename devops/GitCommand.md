@@ -26,7 +26,7 @@ git diff --stat 846044a18dd27dd4af0bc63c8360398e8403d4d4 116da05ecc711dc1612a5b5
 
 Team City build server has a build number that is often a date in reverse yyyy.mm.dd which ends up polluting a Git repository with too many tags. This style is prior to GitVersion which uses sematic versioning and branching to provide more complex build/versioning lineage.
 
-```Powershell
+```PowerShell
 # List all the remotes
 git remote -v
 

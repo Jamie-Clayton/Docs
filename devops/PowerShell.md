@@ -1,8 +1,8 @@
 # Helpfull PowerShell Commands
 
-Visual Code is the prefered script authoring environment, replacing Powershell ISE as a cross platform editor. See [Setting up Visual Code](https://code.visualstudio.com/docs/languages/powershell)
+Visual Code is the prefered script authoring environment, replacing PowerShell ISE as a cross platform editor. See [Setting up Visual Code](https://code.visualstudio.com/docs/languages/powershell)
 
-String Interpolation options - See [Strings in Powershell scripts](https://devblogs.microsoft.com/powershell/variable-expansion-in-strings-and-here-strings/)
+String Interpolation options - See [Strings in PowerShell scripts](https://devblogs.microsoft.com/powershell/variable-expansion-in-strings-and-here-strings/)
 
 ## Display current Edition
 
@@ -12,7 +12,7 @@ $PSVersionTable
 # Review the current register powershell module registries.
 Get-PSRepository
 
-# Set the Powershell Gallery to a trusted source.
+# Set the PowerShell Gallery to a trusted source.
 Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
 Get-PSRepository
 
@@ -44,11 +44,11 @@ c:\
 Explorer %APPDATA%\Microsoft\Windows\PowerShell\PSReadLine\
 ```
 
-## Finding and Using Powershell modules
+## Finding and Using PowerShell modules
 
 There are many communities outside of Microsoft that also provide powershell modules.
 
-```Powershell
+```PowerShell
 # Use wildcards to find modules
 Find-Module *DSC* | Sort-Object Name  
 ```
@@ -57,7 +57,7 @@ Find-Module *DSC* | Sort-Object Name
 
 Requesting data from Web services will often be returned as JSON, so being able to convert that data structure back into a object for powershell to use is a common scenario.
 
-```Powershell
+```PowerShell
 # List all the ConvertFrom Modules
 Get-Command -Verb ConvertFrom
 
@@ -71,7 +71,7 @@ $j.Count
 
 Display the powershell output in an appropropriate format.
 
-```Powershell
+```PowerShell
 # List all the formating options
 Get-Command -Verb Format -Module Microsoft.PowerShell.Utility
 
@@ -96,7 +96,7 @@ Get-Service | gm
 
 Often the default information shown in the powershell terminal does not show all information that is available, so you may need to work
 
-```Powershell
+```PowerShell
 Get-TimeZone | Get-Member
 Get-ChildItem -Path ~/Downloads/ -File | Where-Object {$_.Length -GE 1000000} | Sort-Object -Property Length -Desc
 Get-ChildItem -Path ~/Downloads/ -File | Sort-Object -Property Length
@@ -106,13 +106,13 @@ Get-ChildItem -Path ~/Downloads/ -File | Sort-Object -Property Length
 
 Monitoring the performance of your powershell commandlets and modules.
 
-```Powershell
+```PowerShell
 Measure-Command {
     # Do something here.
 }
 ```
 
-## Remote Management with Powershell
+## Remote Management with PowerShell
 
 * WinRM is the Microsoft Implementation of Remote Management.
 * WS-Man uses HTTP and HTTPS.
@@ -121,16 +121,16 @@ Measure-Command {
 * WinRM HTTPS port 5986 (when used)
 * Production should use HTTPS (or IPSec)
 * Windows Server 2012 + above WinRM is ENABLED by default.
-* Must be enabled on Client OS via elevated Powershell
+* Must be enabled on Client OS via elevated PowerShell
 * Should filter data prior to returning the values to the client.
 * Requires the users to be members of the Server "Administrators" built in Group on the remote server (Domain controller).
 * Can Import-Modues from a session - 'Implicit Remoting'.
 * Connected to computers which are not members of your domain (kerberous security is used in domain), requires use of SSL.
 * By default, the WinRM firewall exception for public profiles limits access to remote computers within the same local subnet.
 
-[Install Windows Remote Management on a Server, including SSL](Powershell/Install-Server-1-WinRm.ps1)
+[Install Windows Remote Management on a Server, including SSL](PowerShell/Install-Server-1-WinRm.ps1)
 
-```Powershell
+```PowerShell
 # Hyper V networking will have a public network adaptor that causes warnings with PS Remoting
 Enable-PsRemoting -SkipNetworkProfileCheck
 Get-PSSessionConfiguration
@@ -150,7 +150,7 @@ Invoke-Command -ComputerName $name -ScriptBlock {Get-EventLog -logname security 
 
 Session Example
 
-```Powershell
+```PowerShell
 [string]$name = "icecreamerydc01"
 $s = New-PSSession -ComputerName $name -Crediential (Get-Credential)
 Get-PSSession
@@ -176,7 +176,7 @@ Get-Module
 Get-Command -Module ActiveDirectory
 ```
 
-## View Powershell command history files
+## View PowerShell command history files
 
 ```PowerShell
 # Open Windows Explorer to view files
@@ -195,12 +195,12 @@ Test-NetConnection -ComputerName strokefoundation.org.au -DiagnoseRouting -Infor
 
 [Object members](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-member?view=powershell-7)
 
-[Visual Code for Editing Powershell scripts](https://code.visualstudio.com/docs/languages/powershell)
+[Visual Code for Editing PowerShell scripts](https://code.visualstudio.com/docs/languages/powershell)
 
 [Getting Ready for DevOps with PowerShell and VS Code with John Savill](https://youtu.be/yavDKHV-OOI)
 
-[Whats New In Powershell 7](https://docs.microsoft.com/en-us/powershell/scripting/whats-new/what-s-new-in-powershell-70?view=powershell-6#running-powershell-7)
+[Whats New In PowerShell 7](https://docs.microsoft.com/en-us/powershell/scripting/whats-new/what-s-new-in-powershell-70?view=powershell-6#running-powershell-7)
 
-[Powershell Remoting over SSH](https://docs.microsoft.com/en-us/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-7)
+[PowerShell Remoting over SSH](https://docs.microsoft.com/en-us/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-7)
 
 [PowerShell Master Class - PowerShell Remoting with John Savill](https://youtu.be/PMRkM9jlMMw)

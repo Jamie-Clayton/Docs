@@ -1,4 +1,4 @@
-# Desired State Configuration using Powershell Core
+# Desired State Configuration using PowerShell Core
 
 Apply settings to an operating system without defining how those values are actually configured.  Enables the creation of Servers as "Cattle", not "Pets" and ensures that manual changes to the server do not cause "drift". It provides a compliance and automated repair back to a known good state.
 
@@ -9,7 +9,7 @@ Apply settings to an operating system without defining how those values are actu
 * Enables a vanila Server with configuration after creation.
 * Its declarative you don't need imperitive calls like 'If (-Not (Get-WindowsFeature "Web Server").Installed){Add-WindowsFeature Web-Server}
 
-```Powershell
+```PowerShell
 # Install IIS role
 WindowsFeature IIS
 {
@@ -73,7 +73,7 @@ More Detailed walk through for onpremise example - [Github - JohnTheBrit](https:
 
 ## File Example
 
-```Powershell
+```PowerShell
 File CriticalFileExample
 {
     Ensure = "Present"
@@ -98,7 +98,7 @@ File CriticalFileExample
 
 [DSC examples](https://github.com/johnthebrit/PowerShellMC/blob/master/Assets/SavillTechWebNoKey.ps1)
 
-[Create HyperV with Powershell](https://www.danielengberg.com/create-hyper-v-vm-powershell/)
+[Create HyperV with PowerShell](https://www.danielengberg.com/create-hyper-v-vm-powershell/)
 
 [Create a VHD with DSC](https://docs.microsoft.com/en-us/powershell/scripting/dsc/tutorials/bootstrapdsc?view=powershell-7)
 

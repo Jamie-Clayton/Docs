@@ -112,7 +112,7 @@ git config --global credential.helper wincred
 
 [Microsoft OpenSSH overview](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_overview)
 
-[Powershell OpenSSH Wiki](https://github.com/powershell/Win32-OpenSSH/wiki)
+[PowerShell OpenSSH Wiki](https://github.com/powershell/Win32-OpenSSH/wiki)
 
 [OpenSSH on Windows 1709 walk through](https://devblogs.microsoft.com/powershell/using-the-openssh-beta-in-windows-10-fall-creators-update-and-windows-server-1709/)
 

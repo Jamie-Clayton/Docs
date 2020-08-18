@@ -1,4 +1,4 @@
-# Requires Powershell (Framework not Core) Ctrl + Shift + F8
+# Requires PowerShell (Framework not Core) Ctrl + Shift + F8
 # Try tyriar.shell-launcher addin for enabling multiple 
 
 Workflow MySmartFlow

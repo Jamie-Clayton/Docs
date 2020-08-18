@@ -1,4 +1,4 @@
-# Automation with Powershell
+# Automation with PowerShell
 
 ## Workflow
 
@@ -9,7 +9,7 @@ Enable long running tasks to execute and pause and restart so you don't have to 
 * Tasks on a large scale, in high availability environments requiring throttling and connection pooling.
 
 ```powershell
-# Requires Powershell (Framework not Core) Ctrl + Shift + F8
+# Requires PowerShell (Framework not Core) Ctrl + Shift + F8
 # Try tyriar.shell-launcher addin for enabling multiple powershell clients in Visual Code.
 
 Workflow MySmartFlow
@@ -47,8 +47,8 @@ Remove-Job SmartFlow
 
 [PowerShell Master Class - Automation with John Savill](https://www.youtube.com/watch?v=n2dlNA3Z-mc)
 
-[Powershell Master Class - Git Repo](https://github.com/johnthebrit/PowerShellMC)
+[PowerShell Master Class - Git Repo](https://github.com/johnthebrit/PowerShellMC)
 
-[Getting Started with Windows Powershell Workflows](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134242(v=ws.11)?redirectedfrom=MSDN)
+[Getting Started with Windows PowerShell Workflows](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134242(v=ws.11)?redirectedfrom=MSDN)
 
 [Workflows - Everything you need to know](http://powershelldistrict.com/powershell-workflows/)

@@ -15,5 +15,5 @@ New-SelfSignedCertificate -DnsName $hostName -CertStoreLocation Cert:\LocalMachi
 # 4. Register WinRM to use the self signed cert.
 WinRM create winrm/config/Listener?Address=*+Transport=HTTPS '@{Hostname="<YOUR_DNS_NAME>"; CertificateThumbprint="<COPIED_CERTIFICATE_THUMBPRINT>"}'
 
- # POST: Confirm the server is configured for Powershell remoting.
+ # POST: Confirm the server is configured for PowerShell remoting.
 WinRM e winrm/config/listener
