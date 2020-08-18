@@ -41,6 +41,7 @@ choco install netfx-4.8-devpack -y
 choco install dotnetcore-sdk -y
 choco install Git -y 
 choco install GitVersion.Portable -y
+choco install microsoft-windows-terminal -y
 
 # Cloud tooling
 choco install Terraform -y
@@ -97,4 +98,5 @@ npm -v
 # Install Angular.io (SPA Preference)
 npm install -g @angular/cli
 
-choco upgrade all
+# Force all the installed components to be updated in one go.
+choco upgrade all -Force

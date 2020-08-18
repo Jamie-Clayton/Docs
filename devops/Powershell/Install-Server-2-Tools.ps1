@@ -4,7 +4,6 @@
 [string]$name = "icecreamerysvr01.dessert"
 $sessionOptions = New-PSSessionOption -SkipCACheck  # Self Signed Certs will not have an appropriate root cert authority.
 $s = New-PSSession -ComputerName $name -Credential (Get-Credential) -UseSSL -SessionOption $sessionOptions
-$s
 
 # Invoke commands on the remote session
 Invoke-Command -Session $s {
@@ -20,6 +19,7 @@ Invoke-Command -Session $s {
     choco install dotnetcore-sdk -y
     choco install Git -y 
     choco install GitVersion.Portable -y
+    choco install microsoft-windows-terminal -y
 
     choco upgrade all
 
