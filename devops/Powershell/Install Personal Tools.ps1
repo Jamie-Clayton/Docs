@@ -24,6 +24,7 @@ Install-PackageProvider PowerShellGet -Force
 
 # Install various Chocolately software packages.
 choco install vscode -y
+choco install vscode-powershell
 choco install vscode-prettier -y
 choco install vscode-vsliveshare -y
 choco install vscode-gitignore -y
@@ -95,3 +96,5 @@ npm -v
 
 # Install Angular.io (SPA Preference)
 npm install -g @angular/cli
+
+choco upgrade all
