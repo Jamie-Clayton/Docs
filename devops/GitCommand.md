@@ -50,4 +50,11 @@ git config --global -i
 
 git config --global user.email "jamie@jenasys.com"
 git config --global user.name "Jamie Clayton"
+
+# Record and replay conflict resolutions, so you don't do the same thing multiple times (Large rebases or merges of code can be very time consuming without this option)
+git config --global rerere.enabled true
+
+# View all the recorded conflict resolutions.
+git rerere status
+
 ```
