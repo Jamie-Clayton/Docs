@@ -1,6 +1,8 @@
 
 # Software Engineers Lean Documents
 
+[View as HTML](https://jamie-clayton.github.io/Docs/)
+
 ## Overview
 
 Notes and instructions to help fast track software development.
@@ -30,11 +32,12 @@ Information to make software engineers valued as pets rather than treated like c
 | [Cloud - Infrastructure As Code Tools](devops/PowerShell/Install%20Terraform.ps1) | Configure HashiCorp tools for infrastructure |
 | [Infrastructure - Console Load Balancer](devops/PowerShell/Install%20Consul%20Load%20Balancer.ps1) | Configure HashiCorp tools for load balancing |
 
-## Migration Topics
+## Code Topics
 
 | Topic                  | Description              |
 |------------------------|--------------------------|
-| [Migrating from AngularJS 1.5 to Angular 9+](migration/RetiringAngularJs.md) | The cost to retire the technical debt in the first generation Single Page Applications |
+| [Definition - "Production Ready"](code/ProductionReady.md) | A simple guide to build a production ready guideline for software |
+| [Migrating from AngularJS 1.5 to Angular 9+](code/RetiringAngularJs.md) | The cost to retire the technical debt in the first generation Single Page Applications |
 
 ## Soft Skill Topics
 
