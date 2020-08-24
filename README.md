@@ -78,3 +78,5 @@ Please read [Contributing.md](Contributing.md) for details on our code of conduc
 This project is licensed under the Creative Commons License - see the [LICENSE](./LICENSE.md) file for details
 
 ## Acknowledgments
+
+[PurpleBooth - Contributing document template](https://github.com/PurpleBooth)
