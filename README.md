@@ -67,11 +67,11 @@ GitHub Pages will run [Jekyll](https://jekyllrb.com/)
 
 ## Contributing
 
-Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [Contributing.md](Contributing.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
-## Authors
+## Thanks to the Authors and contributors
 
-Jamie Clayton - Initial work
+[![contributors](https://contributors-img.web.app/image?repo=Jamie-Clayton/Docs)](https://github.com/Jamie-Clayton/Docs/graphs/contributors)
 
 ## License
 
