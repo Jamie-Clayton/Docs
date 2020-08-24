@@ -42,6 +42,7 @@ choco install dotnetcore-sdk -y
 choco install Git -y 
 choco install GitVersion.Portable -y
 choco install microsoft-windows-terminal -y
+choco install typescript -y
 
 # Cloud tooling
 choco install Terraform -y
@@ -49,6 +50,7 @@ choco install packer -y
 choco install octopustools -y
 choco install typescript -y
 choco install nodejs.install -y
+choco install python2 -y
 
 # Container tooling
 choco install docker-cli -y
@@ -94,6 +96,10 @@ az -v
 aws --v
 node -v
 npm -v
+
+# Configure NPM on Windows (python build components)
+npm install --global --production windows-build-tools
+npm install --global node-gyp
 
 # Install Angular.io (SPA Preference)
 npm install -g @angular/cli
