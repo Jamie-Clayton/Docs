@@ -1,4 +1,5 @@
-﻿# Install Chocolatey first
+﻿# Open powershell as administrator
+# Install Chocolatey first
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
 # Install Terraform editing software
@@ -20,7 +21,7 @@ az -v
 aws --v
 
 # Navigated to Terraform folders
-$terraformPath = "~\Documents\Terraform\"
+$terraformPath = "~\OneDrive\Documents\Terraform\"
 New-Item -Path $terraformPath -Type Directory
 Push-Location $terraformPath
 

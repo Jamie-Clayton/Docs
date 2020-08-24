@@ -17,3 +17,6 @@ WinRM create winrm/config/Listener?Address=*+Transport=HTTPS '@{Hostname="<YOUR_
 
  # POST: Confirm the server is configured for PowerShell remoting.
 WinRM e winrm/config/listener
+
+# TroubleShooting reference (Self Signed SSL certificates and WinRM)
+# http://vcloud-lab.com/entries/powershell/powershell-remoting-over-https-using-self-signed-ssl-certificate
