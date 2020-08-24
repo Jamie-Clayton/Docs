@@ -148,7 +148,7 @@ Invoke-Command -ComputerName $name -ScriptBlock {Get-EventLog -logname security 
 # Example Get-Process | Stop-Process
 ```
 
-Session Example
+### Session Example
 
 ```PowerShell
 [string]$name = "icecreamerydc01"
@@ -167,7 +167,7 @@ Invoke-Command -Session $s -ScriptBlock {$env:computername}
 # Great for installing a new certificates to all the servers.
 ```
 
-Import Remote MIodule example
+### Import Remote Module example
 
 ```PowerShell
 $s = New-PSSession -ComputerName "icecreamerysrv01"
@@ -187,6 +187,23 @@ Get-Command -Module ActiveDirectory
 
 ```PowerShell
 Test-NetConnection -ComputerName strokefoundation.org.au -DiagnoseRouting -InformationLevel Detailed
+
+# Resolve net bios name
+nbtstat -A 10.0.0.1
+
+# Active network connections
+Netstat
+
+# Show the current network connections
+Ipconfig
+
+# Determine the IP address of a domain name
+nslookup jenasysdesign.com.au
+
+# Powershell cmdlet, similar to nslookup
+Resolve-DnsName google.com.au
+
+Tracert google.com.au
 ```
 
 ## References
