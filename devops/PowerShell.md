@@ -206,6 +206,10 @@ Resolve-DnsName google.com.au
 Tracert google.com.au
 ```
 
+## Certificates
+
+[Powershell Certificate commandlets](Powershell/Certificates.ps1)
+
 ## References
 
 [Format Ouput](https://docs.microsoft.com/en-us/powershell/scripting/samples/using-format-commands-to-change-output-view?view=powershell-7)
