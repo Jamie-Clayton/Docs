@@ -102,6 +102,19 @@ git push origin
 
 # VSCode may not correctly prompt for SSH password credential.
 git config --global credential.helper wincred
+
+# You may need to create a config file for Visual Code git commands
+cd ~/.ssh
+echo config
+
+VsCode config
+
+# Add the following to the config file to ensure git uses your SSH key.
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile "C:\Users\username\.ssh\yourPrivateKey"
+
 ```
 
 ## References
