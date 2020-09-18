@@ -8,14 +8,14 @@
 * Message based via Queues.
 * Eventual data consistency.
 
-The pattern was originally described by [Greg Young](https://twitter.com/gregyoung) in 2011, but promoted by [Martin Folwer](https://martinfowler.com/bliki/CQRS.html) via his pattern and practices books. Its used in combination with [Domain Driven Design](https://en.wikipedia.org/wiki/Domain-driven_design) and [Message Events](https://martinfowler.com/eaaDev/EventNarrative.html) programming. The query side of the equation is designed for speed and often includes readonly sources or memory/cached versions of data that eventually become consistent. The Actor Model, defined in 1973 by Karl Hewitt, was added as the complimentary architecture for CQRS by [Vaughn Vernon](https://vaughnvernon.co/).
+The pattern was originally described by [Greg Young](https://twitter.com/gregyoung) in 2011, but promoted by [Martin Folwer](https://martinfowler.com/bliki/CQRS.html) via his pattern and practices books. Its used in combination with [Domain Driven Design](https://en.wikipedia.org/wiki/Domain-driven_design) and [Event](https://martinfowler.com/eaaDev/EventNarrative.html) programming. The query side of the equation is designed for speed and often includes readonly sources or memory/cached versions of data that eventually become consistent. The Actor Model, defined in 1973 by Karl Hewitt, was added as the complimentary architecture by [Vaughn Vernon](https://vaughnvernon.co/).
 
 **Messages** sent to queues are asynchronous, providing very fast processing of data changes.
 
 * **Pro-Active** software architecture requires actively monitoring data state.
 * **Reactive** software architecture, subscribes to state changes via Message events. Desirable feature.
 
-## Not core features if CQRS
+## Not core features of CQRS
 
 1. **Resiliency** - implementation strategy to resolve.
 2. **Elastic** scaling up and down to meet demand is also part of the implementation strategy.

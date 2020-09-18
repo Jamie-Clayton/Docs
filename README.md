@@ -36,6 +36,7 @@ Information to make software engineers valued as pets rather than treated like c
 
 | Topic                  | Description              |
 |------------------------|--------------------------|
+| [Command Query Request Segregation - CQRS](code/CQRS.md) | A overview of the evolution of software architecture from simple Create, Read, Update and Delete models (CRUD). |
 | [Definition - "Production Ready"](code/ProductionReady.md) | A simple guide to build a production ready guideline for software |
 | [Migrating from AngularJS 1.5 to Angular 9+](code/RetiringAngularJs.md) | The cost to retire the technical debt in the first generation Single Page Applications |
 
