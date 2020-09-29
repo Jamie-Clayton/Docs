@@ -1,6 +1,6 @@
 # Protect your Intellectual property
 
-As a software engineer you will be generating and adapting code continuously. You should be constantly aware of the implications of the different license mechanism and it's their commercial implications.
+As a software engineer you will be generating and adapting code continuously. You should be constantly aware of the implications of the different license mechanism and the commercial implications.
 
 ## References
 

@@ -24,7 +24,7 @@ Information to make software engineers valued as pets rather than treated like c
 | Topic                  | Description              |
 |------------------------|--------------------------|
 | [Developer Tools](devops/Powershell/Install-Personal-Tools.ps1) | Configure Development tool on Windows |
-| [Install Server - WinRM SSL](devops/Powershell/Install-Server-1-WinRm.ps1) | Configure PowerShell remoting on a Server (Remote Managemnet) |
+| [Install Server - WinRM SSL](devops/Powershell/Install-Server-1-WinRm.ps1) | Configure PowerShell remoting on a Server (Remote Management) |
 | [Install Server - Tools](devops/Powershell/Install-Server-2-Tools.ps1) | Configure basic tools for a GUI server |
 | [Install Terraform](devops/Powershell/Install%20Terraform.ps1) | Install Terraform and associated tools |
 | [Get Large Files](devops/Powershell/Get-LargeFiles.ps1) | Find large files in a directory |
