@@ -61,6 +61,7 @@ choco install minikube -y
 
 choco install visualstudio2019professional -y
 choco install brave -y 
+choco install googlechrome -y
 
 # Cloud - Amazon Web Services
 choco install awscli -y

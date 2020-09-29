@@ -23,7 +23,7 @@ Information to make software engineers valued as pets rather than treated like c
 
 | Topic                  | Description              |
 |------------------------|--------------------------|
-| [Developer Tools](devops/PowerShell/Install%20Personal%20Tools.ps1) | Configure Development tool on Windows |
+| [Developer Tools](devops/PowerShell/Install-Personal-Tools.ps1) | Configure Development tool on Windows |
 | [Install Server - WinRM SSL](devops/PowerShell/Install-Server-1-WinRm.ps1) | Configure PowerShell remoting on a Server (Remote Managemnet) |
 | [Install Server - Tools](devops/PowerShell/Install-Server-2-Tools.ps1) | Configure basic tools for a GUI server |
 | [Install Terraform](devops/PowerShell/Install%20Terraform.ps1) | Install Terraform and associated tools |
@@ -36,6 +36,7 @@ Information to make software engineers valued as pets rather than treated like c
 
 | Topic                  | Description              |
 |------------------------|--------------------------|
+| [Licensing your work](code/Licensing.md) | The licensing options available to software developers |
 | [Command Query Request Segregation - CQRS](code/CQRS.md) | A overview of the evolution of software architecture from simple Create, Read, Update and Delete models (CRUD). |
 | [Definition - "Production Ready"](code/ProductionReady.md) | A simple guide to build a production ready guideline for software |
 | [Migrating from AngularJS 1.5 to Angular 9+](code/RetiringAngularJs.md) | The cost to retire the technical debt in the first generation Single Page Applications |
