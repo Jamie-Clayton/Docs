@@ -43,7 +43,11 @@ Information to make software engineers valued as pets rather than treated like c
 
 ## Soft Skill Topics
 
-Will include a section on Diagramming for software engineers, to help whiteboard your technical ideas
+Skills need to help provide a valuable service to you customers and maintain a positive working environment.
+
+| Topic                  | Description              |
+|------------------------|--------------------------|
+| [Mental - Resilience](SoftSkills/Resilience.md) | The capacity to recover quickly from difficulties |
 
 ## Roadmap
 
