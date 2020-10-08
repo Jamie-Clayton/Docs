@@ -51,6 +51,7 @@ choco install octopustools -y
 choco install typescript -y
 choco install nodejs.install -y
 choco install python2 -y
+choco install python3 -y 
 
 # Container tooling
 choco install docker-cli -y
@@ -60,8 +61,12 @@ choco install kubernetes-helm -y
 choco install minikube -y
 
 choco install visualstudio2019professional -y
+
+# Browsers and book readers
 choco install brave -y 
 choco install googlechrome -y
+choco install kindle
+# TODO: Kobo desktop
 
 # Cloud - Amazon Web Services
 choco install awscli -y
