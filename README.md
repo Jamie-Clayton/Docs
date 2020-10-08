@@ -48,6 +48,7 @@ Skills need to help provide a valuable service to you customers and maintain a p
 | Topic                  | Description              |
 |------------------------|--------------------------|
 | [Mental - Resilience](SoftSkills/Resilience.md) | The capacity to recover quickly from difficulties |
+| [Mental - Mindsets](SoftSkills/Mindsets.md) | The qualities that high performing people have |
 
 ## Roadmap
 
