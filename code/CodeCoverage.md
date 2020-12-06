@@ -14,7 +14,6 @@ https://blog.ndepend.com/guide-code-coverage-tools/
 ## Technical Debt Calculations
 
 > Using NDepend, code rules can be written through C# LINQ queries. Applied on a code base a rule yields issues. A > dedicated debt API is proposed to estimate both the technical-debt and the annual-interest of the issue through > formulas written in C#. Both the technical-debt and annual-interest of an issue are measured in man-time.
-> 
 > The technical-debt is the estimated man-time that would take to fix the issue.
 > The annual-interest is the estimated man-time consumed per year if the issue is left unfixed. This provides an > estimate of the business impact of the issue.
 > For example:

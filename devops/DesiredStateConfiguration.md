@@ -6,8 +6,8 @@ Apply settings to an operating system without defining how those values are actu
 * How to configure each role and feature.
 * What applications to install.
 * Any files required for the server.
-* Enables a vanila Server with configuration after creation.
-* Its declarative you don't need imperitive calls like 'If (-Not (Get-WindowsFeature "Web Server").Installed){Add-WindowsFeature Web-Server}
+* Enables a vanilla Server with configuration after creation.
+* Its declarative you don't need imperative calls like 'If (-Not (Get-WindowsFeature "Web Server").Installed){Add-WindowsFeature Web-Server}
 
 ```PowerShell
 # Install IIS role
@@ -89,7 +89,7 @@ File CriticalFileExample
 
 * Azure VM's can use DSC
 * OnPremise VM's can be configured during provisioning
-* VM Extenstions trigger PowerShell
+* VM Extensions trigger PowerShell
 * Azure Automation includes a Pull server feature.
 
 ## References

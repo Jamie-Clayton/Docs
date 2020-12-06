@@ -5,12 +5,12 @@
 Enable long running tasks to execute and pause and restart so you don't have to start again.
 
 * Tasks for running on multiple devices
-* Asynchronous, restartable, parallelizable or interruptible.
+* Asynchronous, restartable, parallelize or interruptive.
 * Tasks on a large scale, in high availability environments requiring throttling and connection pooling.
 
 ```powershell
 # Requires PowerShell (Framework not Core) Ctrl + Shift + F8
-# Try tyriar.shell-launcher addin for enabling multiple powershell clients in Visual Code.
+# Try tyriar.shell-launcher add-in for enabling multiple powershell clients in Visual Code.
 
 Workflow MySmartFlow
 {

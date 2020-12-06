@@ -10,7 +10,7 @@ Please note we have a code of conduct, please follow it in all your interactions
 1. Please ensure you have run an appropriate Linter against the markdown or script file.
 2. Update the README.md with a reference to the document and is basic purpose.
 3. Please run a spelling checker over (UK English is preferred).
-4. Pull requests will be accepted/approved when a) the script has been independantly tested/run; b) reference documentation has been reviewed, so we do not accidently plagurise or trigger copywrite concerns.
+4. Pull requests will be accepted/approved when a) the script has been independently tested/run; b) reference documentation has been reviewed, so we do not accidentally plagiarize or trigger copywriting concerns.
 
 ## Code of Conduct
 
