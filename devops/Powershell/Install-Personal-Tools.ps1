@@ -50,7 +50,6 @@ choco install packer -y
 choco install octopustools -y
 choco install typescript -y
 choco install nodejs.install -y
-choco install python2 -y
 choco install python3 -y 
 
 # Container tooling
@@ -61,6 +60,7 @@ choco install kubernetes-helm -y
 choco install minikube -y
 
 choco install visualstudio2019professional -y
+choco install dotpeek -y
 
 # Browsers and book readers
 choco install brave -y 
