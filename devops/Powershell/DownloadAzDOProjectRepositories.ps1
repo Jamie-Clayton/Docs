@@ -4,6 +4,7 @@
 #   choco install powershell -y
 #   choco install powershell-core -y 
 #   choco install Git -y 
+#   choco install azure-cli -y
 
 Clear-Host
 
