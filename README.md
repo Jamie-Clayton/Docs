@@ -29,6 +29,7 @@ Information to make software engineers valued as pets rather than treated like c
 | [Install Terraform](devops/Powershell/Install%20Terraform.ps1) | Install Terraform and associated tools |
 | [Get Large Files](devops/Powershell/Get-LargeFiles.ps1) | Find large files in a directory |
 | [Cloud - Azure Tools](devops/Powershell/Install%20Azure%20Tools.ps1) | Configure Azure tools on Windows |
+| [Cloud - Azure Git Repositories](devops/Powershell/DownloadAzDOProjectRepositories.ps1) | Download all the git repositories for an organisation and project |
 | [Cloud - Infrastructure As Code Tools](devops/Powershell/Install%20Terraform.ps1) | Configure HashiCorp tools for infrastructure |
 | [Infrastructure - Console Load Balancer](devops/Powershell/Install%20Consul%20Load%20Balancer.ps1) | Configure HashiCorp tools for load balancing |
 
