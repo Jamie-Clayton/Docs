@@ -58,3 +58,11 @@ git config --global rerere.enabled true
 git rerere status
 
 ```
+
+## Display change history for a folder
+
+Display the last 10 changes for a folder. This can be helpful when cleaning up repositories.
+
+```Powershell
+git log -n 10 --pretty=medium -- code/*
+```
