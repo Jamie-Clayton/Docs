@@ -66,3 +66,37 @@ Display the last 10 changes for a folder. This can be helpful when cleaning up r
 ```Powershell
 git log -n 10 --pretty=medium -- code/*
 ```
+
+## Changing Git Commit authors
+
+Allows you to quickly edit all the authors name and email addresses for a series of git commits.
+
+```Powershell
+git rebase -i <SHA-to-begin-from>
+git commit --amend --author "Jamie Clayton <jamie@jenasys.com>" --no-edit && \
+git rebase --continue
+```
+
+## Git history Re-writing python script
+
+Install the Scoop package manager for windows so python plugins are registered correctly in the windows environment.
+
+```Powershell
+Set-ExecutionPolicy RemoteSigned -scope CurrentUser
+iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
+Scoop install git-filter-repo 
+cd scoop\apps\git-filter-repo\2.29.0\
+code git-filter-repo
+
+# Review the Shebang entry to confirm the your windows cli will execute python3 
+
+#!/usr/bin/env python
+#!/usr/bin/env python3
+
+```
+
+Install and use the python based [git filter repository](https://github.com/newren/git-filter-repo) script.
+
+```Powershell
+git-filter-repo --email-callback "return email.replace(b'jclayton@icecreamery.wrong', b'jamie@icecreamery.right')" --force
+```
