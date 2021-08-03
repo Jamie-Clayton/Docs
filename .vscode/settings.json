@@ -2,8 +2,26 @@
     "cSpell.words": [
         "Cyclomatic",
         "Microservices",
+        "nukeeper",
         "rabbitmq",
         "webapi",
         "xunit"
-    ]
+    ],
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#614f53",
+        "activityBar.activeBorder": "#0c1808",
+        "activityBar.background": "#614f53",
+        "activityBar.foreground": "#e7e7e7",
+        "activityBar.inactiveForeground": "#e7e7e799",
+        "activityBarBadge.background": "#0c1808",
+        "activityBarBadge.foreground": "#e7e7e7",
+        "statusBar.background": "#45383b",
+        "statusBar.foreground": "#e7e7e7",
+        "statusBarItem.hoverBackground": "#614f53",
+        "titleBar.activeBackground": "#45383b",
+        "titleBar.activeForeground": "#e7e7e7",
+        "titleBar.inactiveBackground": "#45383b99",
+        "titleBar.inactiveForeground": "#e7e7e799"
+    },
+    "peacock.color": "#45383B"
 }
