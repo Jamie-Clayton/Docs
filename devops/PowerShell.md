@@ -205,7 +205,7 @@ Resolve-DnsName google.com.au
 
 Tracert google.com.au
 
-# Powershell Connection check is available (Internet/Virtual Private Network/DisasterRecovery/DNS Blocking/Walled Gardens)
+# Powershell Connection check is available (similar to PING command) (Internet/Virtual Private Network/DisasterRecovery/DNS Blocking/Walled Gardens)
 Test-Connection jenasysdesign.com.au
 ```
 
