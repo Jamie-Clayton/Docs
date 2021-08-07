@@ -204,6 +204,9 @@ nslookup jenasysdesign.com.au
 Resolve-DnsName google.com.au
 
 Tracert google.com.au
+
+# Powershell Connection check is available (Internet/Virtual Private Network/DisasterRecovery/DNS Blocking/Walled Gardens)
+Test-Connection jenasysdesign.com.au
 ```
 
 ## Certificates
