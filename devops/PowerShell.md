@@ -209,6 +209,31 @@ Tracert google.com.au
 Test-Connection jenasysdesign.com.au
 ```
 
+## Windows Services
+
+```PowerShell
+# List all services
+Get-Service
+
+# List services starting with Xbox
+Get-Service -Name "Xbox*"
+
+# List services with multiple criteria
+Get-Service -Include @('Jenasys*', 'Icecreamery*') | Sort-Object status
+Get-Service -Include @('Jenasys*', 'Icecreamery*') | Where-Object {$_.Status -eq "Running"}
+Get-Service -Include @('Jenasys*', 'Icecreamery*') | Where-Object {$_.Status -ne "Running"}
+Get-Service -Include @('Jenasys*', 'Icecreamery*', 'Promo*') | Where-Object {$_.Status -eq "Stopped"}
+
+# List processes that may cause software deployment failures on servers
+Get-Process -Include @('Code', 'Note*','Chrome*')
+
+# Stop specific services
+Stop-Service -Name Promo.GeoCache*
+
+# Alternative to the Stop-Service is the more violent (uses the kill processID approach to end the software)
+Stop-Process -Name Promo.GeoCache* -Force
+```
+
 ## Certificates
 
 [Powershell Certificate commandlets](Powershell/Certificates.ps1)
@@ -228,3 +253,9 @@ Test-Connection jenasysdesign.com.au
 [PowerShell Remoting over SSH](https://docs.microsoft.com/en-us/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-7)
 
 [PowerShell Master Class - PowerShell Remoting with John Savill](https://youtu.be/PMRkM9jlMMw)
+
+[Windows Service - List](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-service?view=powershell-7.1)
+
+[Windows Service - Stop](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/stop-service?view=powershell-7.1)
+
+[Windows Process - Stop](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/stop-process?view=powershell-7.1)
