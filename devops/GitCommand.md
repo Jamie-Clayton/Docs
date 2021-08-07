@@ -48,8 +48,14 @@ Setup personal user credentials for all repositories. You can override these in 
 ```PowerShell
 git config --global -i
 
+# Setup for all repositories (These are defaults unless you have a setting in a local repository)
 git config --global user.email "jamie@jenasys.com"
 git config --global user.name "Jamie Clayton"
+
+# Setup for an individual repository (see /.git/config file to confirm the settings)
+# cd C:\Users\$ENV:USERNAME\source\repos\very-important-repo\
+git config user.email "jamie@jenasys.com"
+git config user.name "Jamie Clayton"
 
 # Record and replay conflict resolutions, so you don't do the same thing multiple times (Large rebases or merges of code can be very time consuming without this option)
 git config --global rerere.enabled true
