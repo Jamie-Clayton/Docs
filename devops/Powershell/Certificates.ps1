@@ -3,6 +3,9 @@
 # Example - List all cerficates by Subject name with the Thumbprint (best way to find a single cert)
 ls .\\CurrentUser\My | Sort-Object Subject 
 
+# Example - List all the certificates for the machine (Web Server)
+ls .\\LocalMachine\My | Sort-Object Subject 
+
 # Thumbprint                                Subject                                                     
 # ----------                                -------                                                                            
 # 50FC4BC349C44428AD161AE12DF4CA5E475BBAE5  CN=Jamie Stuffing Around
