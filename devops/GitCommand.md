@@ -106,3 +106,25 @@ Install and use the python based [git filter repository](https://github.com/newr
 ```Powershell
 git-filter-repo --email-callback "return email.replace(b'jclayton@icecreamery.wrong', b'jamie@icecreamery.right')" --force
 ```
+
+## Move a git repository
+
+Fast Track the migration of git repositories to new locations.
+
+```Powershell
+git clone --mirror <url to ORI repo> temp-dir
+
+# Confirm tags and branches have been copied
+git tag
+git branch -a
+
+# Remove the existing origin reference
+git remote rm origin
+
+# Add a reference to the new repository URL
+git remote add origin <url to NEW repo>
+
+# Publish to the new location
+git push origin --all
+git push --tags
+```
