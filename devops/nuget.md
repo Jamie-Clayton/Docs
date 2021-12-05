@@ -20,8 +20,8 @@ nukeeper global -h
 nukeeper inspect --exclude Fody
 nukeeper inspect --include Analyzers
 
-nukeeper inspect --useprerelease Always --logfile c:\Temp\nukeeper.log --include ERM.
-nukeeper inspect --useprerelease Always --logfile c:\Temp\nukeeper.log --include ERM. --change Major --source https://pkgs.dev.azure.com/icecreamery/Flavours/_packaging/Flavours-Applications/nuget/v3/index.json
+nukeeper inspect --useprerelease Always --logfile c:\Temp\nukeeper.log --include IceCream.
+nukeeper inspect --useprerelease Always --logfile c:\Temp\nukeeper.log --include IceCream. --change Major --source https://pkgs.dev.azure.com/icecreamery/Flavours/_packaging/Flavours-Applications/nuget/v3/index.json
 
 # Reboot your Powershell console after setting the token.
 [System.Environment]::SetEnvironmentVariable('Nukeeper_azure_devops_token', $PersonalAccessToken,[System.EnvironmentVariableTarget]::Machine)
@@ -45,5 +45,22 @@ nuget sources add -name Flavours -source https://pkgs.dev.azure.com/icecreamery/
 
 # Use the update operation when you update the PAT token.
 # nuget sources add -name Flavours -source https://pkgs.dev.azure.com/icecreamery/_packaging/Flavours/nuget/v3/index.json -username AzDO -password $PersonalAccessToken
+
+# Create a PAT with the appropriate read artifacts permissions
+#Start-Process https://dev.azure.com/icecreamery/_usersSettings/tokens
+
+# Set up the environment variable for the AZ CLI 
+$env:AZURE_DEVOPS_EXT_PAT = 'DO-NOT-SAVE-THIS-TO-CODE-REPOSITORY'
+
+# Use the PAT for this script
+$PersonalAccessToken = 'DO-NOT-SAVE-THIS-TO-CODE-REPOSITORY'
+
+# Retrieve a list the repository URL's and create all the pull requests - minor nuget changes.
+$repos = az repos list --org https://dev.azure.com/icecreamery/ --project Flavours | ConvertFrom-Json | Select-Object webURL
+
+# Assumption: Git Flow branching strategy
+foreach ($repo in $repos) {  
+    C:\Users\jclayton\source\nukeeper\NuKeeper\bin\Debug\net5.0\nukeeper.exe repo $repo.webURL $PersonalAccessToken --change minor --verbosity detailed --branchnametemplate "feature/{Default}" --consolidate --maxpackageupdates 10 --targetBranch "develop"
+}
 
 ```
