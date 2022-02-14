@@ -1,9 +1,8 @@
 # Create a PAT with the appropriate read permissions
 #Start-Process https://dev.azure.com/icecreamery/_usersSettings/tokens
 
-# Set up the environment variable for the AZ CLI 
+# Set up the environment variable for the AZ CLI (Windows environments) 
 $env:AZURE_DEVOPS_EXT_PAT = 'DO-NOT-SAVE-THIS-TO-CODE-REPOSITORY'
-$PersonalAccessToken = 'DO-NOT-SAVE-THIS-TO-CODE-REPOSITORY'
 
 # List active PR's
 $AzDoOrganisation = 'icecreamery'
