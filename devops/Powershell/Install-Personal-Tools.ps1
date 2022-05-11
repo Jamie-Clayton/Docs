@@ -59,12 +59,13 @@ choco install kubernetes-cli -y
 choco install kubernetes-helm -y
 choco install minikube -y
 
-choco install visualstudio2019professional -y
-choco install dotpeek -y
+choco install visualstudio2022professional -y
+#choco install dotpeek -y
 
 # Browsers and book readers
 choco install brave -y 
 choco install googlechrome -y
+choco install microsoft-edge -y
 choco install kindle
 # TODO: Kobo desktop
 
