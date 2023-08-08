@@ -1,10 +1,16 @@
 # Download all the git source code repositories from an Azure Dev Ops Organisation and Project to a single directory.
 
 # 1. Pre Requisites (uncomment as needed)
-#   choco install powershell -y
-#   choco install powershell-core -y 
-#   choco install Git -y 
-#   choco install azure-cli -y
+#  choco install powershell -y
+#  choco install powershell-core -y 
+#  choco install Git -y 
+#  choco install azure-cli -y
+
+#  Alternate package installation for Windows 11
+#  winget install -e --id Microsoft.PowerShell
+#  winget install -e --id Microsoft.WindowsTerminal
+#  winget install -e --id Git.Git
+#  winget install -e --id Microsoft.AzureCLI
 
 Clear-Host
 
