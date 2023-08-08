@@ -17,46 +17,47 @@ $destination = '~\source\repos'
 
 # Download and install Azure CLI (Windows 11)
 # PS> winget install -e --id Microsoft.AzureCLI
+#Start-Process "https://learn.microsoft.com/en-us/azure/devops/cli/log-in-via-pat?view=azure-devops&tabs=windows#userprompt"
+# set environment variable for mixed AD authentication process.
+#$env:AZURE_DEVOPS_EXT_PAT = 'xxxxxxxxx'
+
 # 4. Get the list of repositories from Az CLI
 az login --allow-no-subscriptions
 az devops configure --defaults organization=$AzRepoUrl project=$AzProject
 $repolist = az repos list
-$repoObjects = $repolist | ConvertFrom-Json
+$repoObjects = $repolist `
+    | ConvertFrom-Json `
+    | Sort-Object -Property @{expression={$_.name}} `
+    | Where-Object { $_.isDisabled -eq $false }
 Write-Host "Repositories will be created in: " $destination
 
 # 5. Setup local repositories for each remote project repo.
 foreach ($repo in $repoObjects) {
-    Write-Host $repo.name: $repo.remoteUrl -ForegroundColor Green
-    $repoPath = [System.IO.Path]::Combine($destination, $repo.name)
-    
-    # Ensure the git command run against the correct directory.
-    Write-Host "Changing location to: " $repoPath -ForegroundColor DarkGray
-    Push-Location $repoPath
-
-    if (Test-Path -Path $repoPath)
-    {
-        git fetch --prune --prune-tags --all 
-    }
-    else
-    {
-        New-Item -Path $repoPath -ItemType "directory"
-        git clone --branch main $repo.remoteUrl $repoPath
-    }
-
-    # 6. Review all the remote repository branches.
-    $remoteBranches = git remote show origin
-    Write-Host $remoteBranches -ForegroundColor Blue
-    $allBranches = git branch -r
-    foreach($branch in $allBranches) {
-        Write-Host $branch -ForegroundColor Yellow
-        # TODO: More advanced stuff.
-
-    }
+    if (!$repo.name.ToLower().Contains("obsolete")){
+        Write-Host $repo.name: $repo.remoteUrl -ForegroundColor DarkGray
+        $repoPath = [System.IO.Path]::Combine($destination, $repo.name)
         
-    Pop-Location
-    Get-Location
-    Write-Host "..."
-    Write-Host ""
+        # Ensure the git command run against the correct directory.
+        Write-Host "Changing location to: " $repoPath -ForegroundColor DarkGray
+        
+        if (Test-Path -Path $repoPath)
+        {
+            Push-Location $repoPath
+            $remoteBranches = git remote show origin
+            Write-Host $remoteBranches -ForegroundColor Blue
+            git fetch --prune --prune-tags --all 
+        }
+        else
+        {
+            New-Item -Path $repoPath -ItemType "directory"
+            Push-Location $repoPath
+            git clone --branch main $repo.remoteUrl $repoPath
+            Write-Host "Clonned " $repo.remoteUrl " main branch"-ForegroundColor DarkGreen
+        }
+            
+        Pop-Location
+        Write-Host "..."
+        Write-Host ""
+    }
 }
-
-# TODO: Consider creating creating VSCode workspaces.
+Write-Host "Cloned" $repoObjects.Length "from" $AzRepoUrl$AzProject -ForegroundColor Green
