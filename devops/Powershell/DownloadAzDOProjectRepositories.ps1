@@ -15,6 +15,8 @@ $AzProject = 'Flavours'
 # 3. Set the destination folder
 $destination = '~\source\repos'
 
+# Download and install Azure CLI (Windows 11)
+# PS> winget install -e --id Microsoft.AzureCLI
 # 4. Get the list of repositories from Az CLI
 az login --allow-no-subscriptions
 az devops configure --defaults organization=$AzRepoUrl project=$AzProject
