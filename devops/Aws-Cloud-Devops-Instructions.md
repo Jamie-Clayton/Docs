@@ -157,7 +157,7 @@ sam local start-api
 #sam local start-api --debug-port 5858
 
 # Run Lambda by iteself
-sam local start-lambda --debug-port 5858
+sam local start-lambda
 #sam local start-lambda --debug-port 5858
 #Ctrl+C to stop the local service.
 
