@@ -3,7 +3,7 @@
 
 The following scripts create a code repository folder that followed devops principles to create the cloud infrastructure need to deploy a software application.
 
-Javascript build tools like [webpack](https://webpack.js.org/guides/getting-started/) (popular and complicated) or [esbuild](https://esbuild.github.io/getting-started/#install-esbuild) (new and very faster) must be chosen.
+You can choose between [webpack](https://webpack.js.org/guides/getting-started/) (popular and complicated) or [esbuild](https://esbuild.github.io/getting-started/#install-esbuild) (new and very faster) for packaging typescript cloud objects.
 
 Software testing should use [Gherkin syntax](https://cucumber.io/docs/gherkin/reference/) to encourage **Behaviour-Driven Development** (BDD) and enable reporting of test results in a human readable format.
 
