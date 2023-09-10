@@ -18,7 +18,7 @@ Information to make software engineers valued as pets rather than treated like c
 | [Automation with PowerShell](devops/Automation.md) | Long running resilient powershell scripts (Workflows) |
 | [Desired State Configuration](devops/DesiredStateConfiguration.md) | Long running resilient powershell scripts (Workflows) |
 | [Git Commands](devops/GitCommand.md) | Various Git commands for software engineers |
-| [Aws Cloud Devop](devops/Aws-Cloud-Devops-Instructions) | Configuring AWS cloud environment for software engineers |
+| [Aws Cloud Devop](devops/Aws-Cloud-Devops-Instructions.md) | Configuring AWS cloud environment for software engineers |
 
 ## PowerShell Scripts
 
