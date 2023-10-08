@@ -13,6 +13,7 @@ Information to make software engineers valued as pets rather than treated like c
 
 | Topic                  | Description              |
 |------------------------|--------------------------|
+| [Continuos Architecture](devops/ContinuosArchitecture.md) | An operating model for architecture that moves away from design and implement approach (waterfall) to a continuous evolution via modern DevOps CICD using data driven architectural decisions and lean canvas concepts. |
 | [Ssh](devops/ssh.md) | Configure SSH on Windows |
 | [Terraform](devops/terraform.md) | Configure Terraform (infrastructure as code) on Windows |
 | [Automation with PowerShell](devops/Automation.md) | Long running resilient powershell scripts (Workflows) |
