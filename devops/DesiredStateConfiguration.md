@@ -34,7 +34,7 @@ Find-Module -tag dscresourcekit | Install-Module
 
 ## Desire State Process
 
-1. *Author* the desired state and generate a *.mof file which is the DMTF standard. See [Standards Documents](https://www.dmtf.org/standards/published_documents)
+1. *Author* the desired state and generate a \*.mof file which is the DMTF standard. See [Standards Documents](https://www.dmtf.org/standards/published_documents)
 2. *Stage* the desired state configuration for pull or push publishing.
 3. *Apply* the configuration to the infrastructure/server. Idempotent, so anyone manually changing settings will have those reverted.
 
@@ -94,12 +94,8 @@ File CriticalFileExample
 
 ## References
 
-[PowerShell Master Class - Desired State Configuration with John Savill](https://youtu.be/D-jmIk4xaWw)
-
-[DSC examples](https://github.com/johnthebrit/PowerShellMC/blob/master/Assets/SavillTechWebNoKey.ps1)
-
-[Create HyperV with PowerShell](https://www.danielengberg.com/create-hyper-v-vm-powershell/)
-
-[Create a VHD with DSC](https://docs.microsoft.com/en-us/powershell/scripting/dsc/tutorials/bootstrapdsc?view=powershell-7)
-
-[DSC for Linux](https://github.com/microsoft/PowerShell-DSC-for-Linux)
+* [PowerShell Master Class - Desired State Configuration with John Savill](https://youtu.be/D-jmIk4xaWw)
+* [DSC examples](https://github.com/johnthebrit/PowerShellMC/blob/master/Assets/SavillTechWebNoKey.ps1)
+* [Create HyperV with PowerShell](https://www.danielengberg.com/create-hyper-v-vm-powershell/)
+* [Create a VHD with DSC](https://docs.microsoft.com/en-us/powershell/scripting/dsc/tutorials/bootstrapdsc?view=powershell-7)
+* [DSC for Linux](https://github.com/microsoft/PowerShell-DSC-for-Linux)

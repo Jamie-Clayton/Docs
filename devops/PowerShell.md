@@ -238,24 +238,43 @@ Stop-Process -Name Promo.GeoCache* -Force
 
 [Powershell Certificate commandlets](Powershell/Certificates.ps1)
 
+## Json Web Tokens
+
+In the following example, replace `YOUR_PATH_TO_PEM` with the file path where your private key is stored. Replace `YOUR_CLIENT_ID` with the ID of your app. Make sure to enclose the values for `YOUR_PATH_TO_PEM` in double quotes.
+
+```powershell
+$client_id = YOUR_CLIENT_ID
+
+$private_key_path = "YOUR_PATH_TO_PEM"
+
+$header = [Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes((ConvertTo-Json -InputObject @{
+  alg = "RS256"
+  typ = "JWT"
+}))).TrimEnd('=').Replace('+', '-').Replace('/', '_');
+
+$payload = [Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes((ConvertTo-Json -InputObject @{
+  iat = [System.DateTimeOffset]::UtcNow.AddSeconds(-10).ToUnixTimeSeconds()
+  exp = [System.DateTimeOffset]::UtcNow.AddMinutes(10).ToUnixTimeSeconds()
+    iss = $client_id
+}))).TrimEnd('=').Replace('+', '-').Replace('/', '_');
+
+$rsa = [System.Security.Cryptography.RSA]::Create()
+$rsa.ImportFromPem((Get-Content $private_key_path -Raw))
+
+$signature = [Convert]::ToBase64String($rsa.SignData([System.Text.Encoding]::UTF8.GetBytes("$header.$payload"), [System.Security.Cryptography.HashAlgorithmName]::SHA256, [System.Security.Cryptography.RSASignaturePadding]::Pkcs1)).TrimEnd('=').Replace('+', '-').Replace('/', '_')
+$jwt = "$header.$payload.$signature"
+Write-Host $jwt
+```
+
 ## References
 
-[Format Ouput](https://docs.microsoft.com/en-us/powershell/scripting/samples/using-format-commands-to-change-output-view?view=powershell-7)
-
-[Object members](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-member?view=powershell-7)
-
-[Visual Code for Editing PowerShell scripts](https://code.visualstudio.com/docs/languages/powershell)
-
-[Getting Ready for DevOps with PowerShell and VS Code with John Savill](https://youtu.be/yavDKHV-OOI)
-
-[Whats New In PowerShell 7](https://docs.microsoft.com/en-us/powershell/scripting/whats-new/what-s-new-in-powershell-70?view=powershell-6#running-powershell-7)
-
-[PowerShell Remoting over SSH](https://docs.microsoft.com/en-us/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-7)
-
-[PowerShell Master Class - PowerShell Remoting with John Savill](https://youtu.be/PMRkM9jlMMw)
-
-[Windows Service - List](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-service?view=powershell-7.1)
-
-[Windows Service - Stop](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/stop-service?view=powershell-7.1)
-
-[Windows Process - Stop](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/stop-process?view=powershell-7.1)
+* [Format Ouput](https://docs.microsoft.com/en-us/powershell/scripting/samples/using-format-commands-to-change-output-view?view=powershell-7)
+* [Object members](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-member?view=powershell-7)
+* [Visual Code for Editing PowerShell scripts](https://code.visualstudio.com/docs/languages/powershell)
+* [Getting Ready for DevOps with PowerShell and VS Code with John Savill](https://youtu.be/yavDKHV-OOI)
+* [Whats New In PowerShell 7](https://docs.microsoft.com/en-us/powershell/scripting/whats-new/what-s-new-in-powershell-70?view=powershell-6#running-powershell-7)
+* [PowerShell Remoting over SSH](https://docs.microsoft.com/en-us/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-7)
+* [PowerShell Master Class - PowerShell Remoting with John Savill](https://youtu.be/PMRkM9jlMMw)
+* [Windows Service - List](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-service?view=powershell-7.1)
+* [Windows Service - Stop](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/stop-service?view=powershell-7.1)
+* [Windows Process - Stop](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/stop-process?view=powershell-7.1)

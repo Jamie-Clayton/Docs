@@ -7,7 +7,6 @@
 - Provide a mechanism to report on all the versions of a specific library. E.g. Newtonsoft
 - Identify missing analsyzers in solutions. E.g. SonarCube
 
-
 ```Powershell
 Start-Process https://dev.azure.com/icecreamery/_usersSettings/tokens 
 
@@ -31,7 +30,7 @@ nukeeper inspect --useprerelease Always --logfile c:\Temp\nukeeper.log --include
 
 C:\Users\z\.nuget\packages\nuget.commandline\5.8.0\tools\NuGet.exe
 
-https://dev.azure.com/icecreamery/_usersSettings/tokens
+[Azure Devops Settings](https://dev.azure.com/icecreamery/_usersSettings/tokens)
 
 ```Powershell
 # Create a PAT with the appropriate read artifacts permissions
