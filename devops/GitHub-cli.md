@@ -29,9 +29,10 @@ Automating GitHub links to Jira systems. Migrating git storage from other provid
 - [Create Autolinks](./Powershell/GitHub-cli-Create-Autolinks.ps1)
 
 Automate managing and monitoring your GitHub teams.
+
 - [Audit Team](./Powershell/GitHub-cli-Audit-Team.ps1)
 
 ## References
 
-- [How to use the GitHub CLI app on Windows and WSL | Windows Central](https://www.windowscentral.com/how-use-github-cli-app-windows-and-wsl)
+- [GitHub CLI app on Windows and WSL](https://www.windowscentral.com/how-use-github-cli-app-windows-and-wsl)
 - [REST API endpoints for repository autolinks - GitHub Docs](https://docs.github.com/en/rest/repos/autolinks?apiVersion=2022-11-28)
