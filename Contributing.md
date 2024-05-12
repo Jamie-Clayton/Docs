@@ -7,10 +7,14 @@ Please note we have a code of conduct, please follow it in all your interactions
 
 ## Pull Request Process
 
-1. Please ensure you have run an appropriate Linter against the markdown or script file.
-2. Update the README.md with a reference to the document and is basic purpose.
-3. Please run a spelling checker over (UK English is preferred).
-4. Pull requests will be accepted/approved when a) the script has been independently tested/run; b) reference documentation has been reviewed, so we do not accidentally plagiarize or trigger copywriting concerns.
+1. Please ensure you have run an appropriate Linter against the markdown or script file
+2. Update the README.md with a reference to the document and is basic purpose
+3. Please run a spelling checker over (UK English is preferred)
+4. Please provide git commit message content that follows [convertional commits](https://www.conventionalcommits.org/en/v1.0.0/#summary), where possible
+5. Pull requests will be accepted/approved when
+
+    - a) the script has been independently tested/run;
+    - b) reference documentation has been reviewed, so we do not accidentally plagiarize or trigger copywriting concerns.
 
 ## Code of Conduct
 
@@ -28,21 +32,21 @@ orientation.
 Examples of behavior that contributes to creating a positive environment
 include:
 
-* Using welcoming and inclusive language
-* Being respectful of differing viewpoints and experiences
-* Gracefully accepting constructive criticism
-* Focusing on what is best for the community
-* Showing empathy towards other community members
+- Using welcoming and inclusive language
+- Being respectful of differing viewpoints and experiences
+- Gracefully accepting constructive criticism
+- Focusing on what is best for the community
+- Showing empathy towards other community members
 
 Examples of unacceptable behavior by participants include:
 
-* The use of sexualized language or imagery and unwelcome sexual attention or
+- The use of sexualized language or imagery and unwelcome sexual attention or
 advances
-* Trolling, insulting/derogatory comments, and personal or political attacks
-* Public or private harassment
-* Publishing others' private information, such as a physical or electronic
+- Trolling, insulting/derogatory comments, and personal or political attacks
+- Public or private harassment
+- Publishing others' private information, such as a physical or electronic
   address, without explicit permission
-* Other conduct which could reasonably be considered inappropriate in a
+- Other conduct which could reasonably be considered inappropriate in a
   professional setting
 
 ### Our Responsibilities
