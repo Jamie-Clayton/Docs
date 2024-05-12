@@ -29,6 +29,7 @@ Information to make software engineers valued as pets rather than treated like c
 | [Install Server - WinRM SSL](devops/Powershell/Install-Server-1-WinRm.ps1) | Configure PowerShell remoting on a Server (Remote Management) |
 | [Install Server - Tools](devops/Powershell/Install-Server-2-Tools.ps1) | Configure basic tools for a GUI server |
 | [Install Terraform](devops/Powershell/Install%20Terraform.ps1) | Install Terraform and associated tools |
+| [Git Hub CLI](devops/GitHub-cli.md) | Automate common tasks in GitHub with the CLI |
 | [Get Large Files](devops/Powershell/Get-LargeFiles.ps1) | Find large files in a directory |
 | [Cloud - Azure Tools](devops/Powershell/Install%20Azure%20Tools.ps1) | Configure Azure tools on Windows |
 | [Cloud - Azure Git Repositories](devops/Powershell/DownloadAzDOProjectRepositories.ps1) | Download all the git repositories for an organisation and project |
