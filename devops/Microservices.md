@@ -13,10 +13,13 @@ dotnet add package System.Data.SqlClient --version 4.8.2
 
 Test-NetConnection -ComputerName RABBITMQServerName -Port 5672
 ```
+![Microservice Architecture - .net](/.eraser/6kUEFQFheT5cFfg5JyRB___M7HUYofgzENvEiuTW19wQsQiDfM2___---figure---8CgCgbVNT67pfJB-HwU1r---figure---thwgJSGh_qN0jFQFwCiG8w.png "Microservice Architecture - .net")
+
 ## References
-- [﻿Health Monitoring](https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/monitor-app-health) 
+- [﻿Health Monitoring](https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/monitor-app-health)  
 - [﻿Health Check walk through](https://www.hanselman.com/blog/how-to-set-up-aspnet-core-22-health-checks-with-beatpulses-aspnetcorediagnosticshealthchecks) 
-![Microservice Architecture - .net](/.eraser/6kUEFQFheT5cFfg5JyRB___M7HUYofgzENvEiuTW19wQsQiDfM2___---figure---jNSz7WP9a5r2VTY0ZChsG---figure---thwgJSGh_qN0jFQFwCiG8w.png "Microservice Architecture - .net")
+
+
 
 
 
@@ -24,7 +27,7 @@ Test-NetConnection -ComputerName RABBITMQServerName -Port 5672
 <!-- eraser-additional-content -->
 ## Diagrams
 <!-- eraser-additional-files -->
-<a href="/devops/Microservices-.NET Microservice Architecture-1.eraserdiagram" data-element-id="J_oCPCXo0dDfSEIT7rfio"><img src="/.eraser/6kUEFQFheT5cFfg5JyRB___M7HUYofgzENvEiuTW19wQsQiDfM2___---diagram----9aab31d8344ba410ed4c2e3063e7f083--NET-Microservice-Architecture.png" alt="" data-element-id="J_oCPCXo0dDfSEIT7rfio" /></a>
+<a href="/devops/Microservices-Scalable Microservices - DotNet-1.eraserdiagram" data-element-id="J_oCPCXo0dDfSEIT7rfio"><img src="/.eraser/6kUEFQFheT5cFfg5JyRB___M7HUYofgzENvEiuTW19wQsQiDfM2___---diagram----d11cc52afa9fa877215b58b3447a03c0-Scalable-Microservices---DotNet.png" alt="" data-element-id="J_oCPCXo0dDfSEIT7rfio" /></a>
 <!-- end-eraser-additional-files -->
 <!-- end-eraser-additional-content -->
 <!--- Eraser file: https://app.eraser.io/workspace/6kUEFQFheT5cFfg5JyRB --->
