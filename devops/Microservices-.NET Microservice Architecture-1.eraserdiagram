@@ -1,37 +1,61 @@
 cloud-architecture-diagram
 
-title .NET Microservice Architecture
+title Scalable Microservices - DotNet
+
+// UX Layer - handles user interaction
+UX Layer [color: lightblue] {
+  Web App [icon: browser] // entry point for UX Layer
+  Business Intelligence [icon: chart-line]
+}
 
 // API Layer - handles incoming requests and routes them to appropriate services
-API Layer [color: lightblue] {
-  WebAPI [icon: globe] // entry point for API Layer
+API Layer [color: 118ab2] {
+  Rest [icon: globe] // entry point for API Layer
+  Open API Docs [icon: book]
   Health Checks [icon: heart]
 }
 
 // Data Storage - manages data persistence
 Data Storage [color: lightgrey] {
-  SQL Database [icon: database]
+  SQL [icon: database]
+  SAAS [icon: cloud]
+  File Storage [icon: file-text]
+  Queue [icon: server]
 }
 
-// Messaging System - handles asynchronous communication between services
-Messaging System [color: lightgreen] {
-  NServiceBus [icon: message-square]
-  RabbitMQ Server [icon: server]
+Event Sourcing [color: orange] {
+
+// Event Sourcing Producer - handles asynchronous communication between services
+Producer [color: lightgreen] {
+  Publish Events [icon: mail]
+  Send Commands [icon: send]
 }
 
-// Background Services - handles processing of commands and events
-Background Services [color: lightcoral] {
-  Command Handler [icon: terminal]
-  Event Processor [icon: cpu]
+  // Event Sourcing Consumer Service Endpoint - handles processing of commands and events
+  Consumer Service Endpoint [color: orange] {
+    Command Handler [icon: terminal]
+    Event Handler [icon: cpu]
+    Policies [icon: shield]
+  }
 }
+
+// Connection from UX Layer to API Layer
+Web App > Rest
+Business Intelligence > SQL
 
 // Connection from API Layer to Data Storage
-API Layer > Data Storage
+Rest > SQL
+Rest > File Storage
+Rest > Producer
+Rest > SAAS
 
-// Connection from API Layer to Messaging System
-API Layer > Messaging System
+// Connection from Messaging System to Event Sourcing Consumer Service Endpoint
+// Messaging System children: NServiceBus, Queue
+Producer > Queue
 
-// Connection from Messaging System to Background Services
-// Messaging System children: NServiceBus, RabbitMQ Server
-Messaging System > Background Services
-
+// Connection from Event Sourcing Consumer Service Endpoint to Data Storage
+Consumer Service Endpoint > Rest
+Consumer Service Endpoint > Producer
+Queue > Command Handler
+Queue > Event Handler
+Policies > SQL
