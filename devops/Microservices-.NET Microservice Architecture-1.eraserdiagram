@@ -1,0 +1,37 @@
+cloud-architecture-diagram
+
+title .NET Microservice Architecture
+
+// API Layer - handles incoming requests and routes them to appropriate services
+API Layer [color: lightblue] {
+  WebAPI [icon: globe] // entry point for API Layer
+  Health Checks [icon: heart]
+}
+
+// Data Storage - manages data persistence
+Data Storage [color: lightgrey] {
+  SQL Database [icon: database]
+}
+
+// Messaging System - handles asynchronous communication between services
+Messaging System [color: lightgreen] {
+  NServiceBus [icon: message-square]
+  RabbitMQ Server [icon: server]
+}
+
+// Background Services - handles processing of commands and events
+Background Services [color: lightcoral] {
+  Command Handler [icon: terminal]
+  Event Processor [icon: cpu]
+}
+
+// Connection from API Layer to Data Storage
+API Layer > Data Storage
+
+// Connection from API Layer to Messaging System
+API Layer > Messaging System
+
+// Connection from Messaging System to Background Services
+// Messaging System children: NServiceBus, RabbitMQ Server
+Messaging System > Background Services
+
