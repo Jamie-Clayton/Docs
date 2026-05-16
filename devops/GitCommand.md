@@ -1,5 +1,18 @@
 # Git Command Examples Sheet
 
+> **Document Type:** Reference | **Related tutorials:** [Getting Started: Windows DevOps](GettingStarted-WindowsDevOps.md) | **Related how-to:** [GitHub CLI Automation](GitHub-cli.md)
+
+Quick reference for git commands used during software releases, history inspection, and repository maintenance.
+
+## Quick Navigation
+
+| Scenario | Section |
+|----------|---------|
+| Check or install semantic versioning | [Git Version](#git-version) |
+| Inspect changes between commits | [Git Stats](#git-stats) |
+| Remove TeamCity build tags | [Remove TeamCity Tags](#remove-team-city-build-tags) |
+| Set global user credentials | [Global Configuration](#global-configuration) |
+
 Various commands that software engineers may need during software releases or during repository cleanups.
 
 ## Git Version
