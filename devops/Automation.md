@@ -1,5 +1,43 @@
 # Automation with PowerShell
 
+> **Document Type:** Explanation | **Related how-to:** [Desired State Configuration](DesiredStateConfiguration.md) | **Related reference:** [PowerShell Commands](PowerShell.md)
+
+## Overview
+
+PowerShell Workflows enable long-running automation tasks that can be suspended, checkpointed, and resumed — even across machine restarts. This is useful for DevOps operations that span hours or days.
+
+## Why PowerShell Workflows?
+
+Standard PowerShell scripts lose state when interrupted. Workflows solve this by:
+
+- **Checkpointing** — saving progress to disk so the workflow resumes from where it stopped
+- **Parallelism** — running multiple operations simultaneously with `parallel {}` blocks
+- **Persistence** — surviving network interruptions and server restarts
+- **Job-based execution** — running as a background job with `AsJob`
+
+## When to Use Workflows
+
+**Good fit:**
+- Patching hundreds of servers overnight
+- Multi-step deployments that might be interrupted
+- Tasks spanning multiple machines simultaneously
+
+**Not a good fit:**
+- Simple one-off scripts (use regular functions)
+- Interactive scripts requiring user input
+- PowerShell Core environments (Workflows require Windows PowerShell)
+
+> **Important:** PowerShell Workflows require **Windows PowerShell** (not PowerShell Core). Use `powershell.exe`, not `pwsh.exe`.
+
+## Trade-offs
+
+| Aspect | Workflow | Regular Script |
+|--------|----------|---------------|
+| Survives interruptions | Yes | No — lost on interruption |
+| Syntax complexity | Higher | Simple |
+| Runtime requirement | Windows PowerShell only | Cross-platform |
+| Execution overhead | Higher (job overhead) | Lightweight |
+
 ## Workflow
 
 Enable long running tasks to execute and pause and restart so you don't have to start again.

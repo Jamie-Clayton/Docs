@@ -1,5 +1,13 @@
 # Desired State Configuration using PowerShell Core
 
+> **Document Type:** How-to Guide | **Time:** 30 minutes
+> **Prerequisites:** [Getting Started: Windows DevOps](GettingStarted-WindowsDevOps.md) (PowerShell Core installed)
+> **Related:** [PowerShell Reference](PowerShell.md) | [Automation with PowerShell](Automation.md)
+
+## Problem
+
+You need to ensure Windows servers consistently have the same software, services, and configuration without writing fragile imperative scripts that must be run in order.
+
 Apply settings to an operating system without defining how those values are actually configured.  Enables the creation of Servers as "Cattle", not "Pets" and ensures that manual changes to the server do not cause "drift". It provides a compliance and automated repair back to a known good state.
 
 * What roles and features to install.
@@ -99,3 +107,18 @@ File CriticalFileExample
 * [Create HyperV with PowerShell](https://www.danielengberg.com/create-hyper-v-vm-powershell/)
 * [Create a VHD with DSC](https://docs.microsoft.com/en-us/powershell/scripting/dsc/tutorials/bootstrapdsc?view=powershell-7)
 * [DSC for Linux](https://github.com/microsoft/PowerShell-DSC-for-Linux)
+
+## Verify It Worked
+
+```powershell
+# Test the DSC configuration without applying
+Test-DscConfiguration -Detailed
+
+# View current DSC status
+Get-DscConfigurationStatus
+```
+
+## See Also
+
+- [Automation with PowerShell](Automation.md) — long-running script patterns
+- [PowerShell Reference](PowerShell.md) — PowerShell command reference

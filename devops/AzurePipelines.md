@@ -1,5 +1,17 @@
 # Azure Pipelines
 
+> **Document Type:** Reference | **Related tutorials:** [Getting Started: Windows DevOps](GettingStarted-WindowsDevOps.md) | **Related explanation:** [Continuous Architecture](ContinuosArchitecture.md)
+
+YAML patterns and configuration snippets for Azure DevOps pipeline configuration.
+
+## Quick Navigation
+
+| Pattern | Section |
+|---------|---------|
+| Conditional template selection | [Advanced Techniques](#advanced-techniques) |
+| Multi-repository builds | [Advanced Techniques](#advanced-techniques) |
+| Pipeline design principles | [Principles](#principles) |
+
 A short guide to working with Azure pipelines and some in a large business.
 
 ## Principles
