@@ -1,5 +1,20 @@
 # Getting Started: Windows DevOps Development
 
+> **Document Type:** Tutorial | **Time:** 45 minutes | **Level:** Beginner
+> **Prerequisites:** Windows 10 or 11 with admin access, internet connection
+> **You will build:** A complete Windows development environment with Git, PowerShell Core, Azure CLI, Docker, and GitHub CLI
+
+## Success Criteria
+
+You've completed this tutorial when:
+
+- [ ] `pwsh --version` returns 7.x or higher
+- [ ] `git --version` returns a version string
+- [ ] `gh auth status` shows "Logged in to github.com"
+- [ ] `docker --version` returns a version string
+- [ ] `az --version` returns a version string
+- [ ] `dotnet run` in a new project prints "Hello, World!"
+
 This guide walks you through setting up a professional Windows development environment from scratch. By the end, you'll have Git, PowerShell Core, Azure CLI, and Docker running.
 
 **Estimated time:** 45 minutes  
@@ -341,6 +356,7 @@ Now that you have a functional Windows DevOps environment:
 2. **Learn PowerShell** - See [Helpful PowerShell Commands](PowerShell.md)
 3. **Set up your first remote machine** - Use PowerShell Remoting
 4. **Deploy a .NET application** - Create an API and containerize it with Docker
+5. **SSH Configuration** — see [SSH Configuration](ssh.md)
 
 ## References
 

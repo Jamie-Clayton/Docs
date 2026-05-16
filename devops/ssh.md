@@ -1,136 +1,173 @@
-# Windows SSH instructions
+# SSH Configuration on Windows: Step-by-Step Guide
 
-## Create a public/private Key
+> **Document Type:** Tutorial | **Time:** 20 minutes | **Level:** Beginner
+> **Prerequisites:** [Getting Started: Windows DevOps](GettingStarted-WindowsDevOps.md) (PowerShell Core installed)
+> **You will build:** Working SSH key pair, configured SSH agent, and verified connection to GitHub
+
+## Before You Start
+
+- [ ] PowerShell Core (pwsh) installed — [Getting Started Guide](GettingStarted-WindowsDevOps.md)
+- [ ] A GitHub account
+
+## What You'll Learn
+
+- Generate an SSH key pair on Windows
+- Add your key to the SSH agent
+- Configure SSH for GitHub
+- Test your SSH connection
+
+## Step 1: Check if SSH Is Already Installed
 
 ```powershell
-# Navigate to the folder that stores ssh keys (convention)
-cd ~\.ssh\
-
-# Create a new ssh key pair
-ssh-keygen -t rsa -b 4096 -C me@example.com
+ssh -V
 ```
 
-You will be prompted for the name.
+Expected output:
+```
+OpenSSH_8.x, OpenSSL 1.1.x
+```
 
-### Name Options
+If you see a version, SSH is installed. Skip to Step 2.
 
-1. Leave it blank and a c:\users\\%profilename%\id_rsa file with no file extension is created (default SSH private key storage).
-2. Provide a Name with no file extension
-3. Provide a full path.  By convention c:\users\\%profilename%\\.ssh\ should contain all your personal keys. These paths may not be visible in windows explorer (due to the dot at the start of the folder name.
+If not, install OpenSSH via Windows Settings:
+1. Open **Settings** → **Apps** → **Optional Features**
+2. Click **Add a feature**
+3. Search for **OpenSSH Client**
+4. Click **Install**
 
-You will be prompted for a passphrase.
-
-### Passphrase Options
-
-1. Leave it blank, and you will not be prompted for passphrase when using it. BUT anyone can then use the key is compromised.
-2. Provide a passphrase, where normal password.
-
-## Windows Cheat sheet
-
-Ensure that the appropriate open ssh services are running on windows and they are configured for use by Git
+## Step 2: Generate Your SSH Key Pair
 
 ```powershell
-# Get the version of SSH
-ssh -V
+# Generate an Ed25519 key (recommended — smaller and faster than RSA)
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
 
-# Find all the services running
-Get-Service | select -property name,starttype
+When prompted:
+- **File location:** Press Enter to accept the default (`~/.ssh/id_ed25519`)
+- **Passphrase:** Enter a strong passphrase (recommended) or press Enter for none
 
-# Show the ssh-agent status (We need it running if you want to use SSH keys in windows)
-Get-Service ssh-agent
+This creates two files:
+- `~/.ssh/id_ed25519` — your **private key** (never share this)
+- `~/.ssh/id_ed25519.pub` — your **public key** (safe to share)
 
-# Set the service to manual start (or off if you no longer want it running)
-Set-Service -Name ssh-agent -StartupType Manual
+## Step 3: Start the SSH Agent and Add Your Key
 
-# Set the service to automatic start
+```powershell
+# Start the SSH agent service (run as Administrator)
+Start-Service ssh-agent
+
+# Set the service to start automatically
 Set-Service -Name ssh-agent -StartupType Automatic
 
-# Start the service
-Start-Service ssh-agent
-
-# View the ssh components installed in windows.
-explorer C:\Windows\System32\OpenSSH\
+# Add your private key to the agent
+ssh-add ~/.ssh/id_ed25519
 ```
 
-Create SSH keys (Public and Private) for authentication with git
+Enter your passphrase when prompted.
+
+Verify:
+```powershell
+ssh-add -l
+```
+
+Expected output:
+```
+256 SHA256:... your_email@example.com (ED25519)
+```
+
+## Step 4: Add Your Public Key to GitHub
 
 ```powershell
-# Navigate to the folder that stores ssh keys (convention)
-cd ~\.ssh\
-
-# Create a new ssh key pair
-ssh-keygen -t rsa -b 4096 -C "me@example.com"
-
-# Copy your public/private key pair to your password manager/vault (you should maintain security on the private key (no file extension))
-# Name the file appropriately.
-
-# Review the ssh key details needed for your github.com, dev.azure.com, bitbucket.org git accounts.
-VsCode ~\.ssh\id_rsa.pub
-VsCode ~\.ssh\me-github.pub
-
-# Navigate to https://github.com/settings/keys and place the contents of the pub file into github settings for your profile.
-
-# Open Sourcetree -> Tools -> Add sshkey and navigate to your private key (no extension).
-# Confirm a repository that has a ssh url works as expected.
-
-# https://github.com/PowerShell/Win32-OpenSSH/issues/1234
-# Bug in ssh-add on windows that causes ssh-add calls to misbehave.
-# As a workaround to unblock you, could you create/install a dummy sshd service like this:
-sc.exe create sshd binPath=C:\Windows\System32\OpenSSH\ssh.exe
-
-# Run the SSH-Agent (or locate OpenSSH Authentication Agent in Services MMC)
-Start-Service ssh-agent
-
-# Add ssh private key to acceptable keys
-cd ~/.ssh
-ls  
-ssh-add \me-github
-
-# Confirm the key was added
-ssh-add -L
-
-# Test github connection.
-ssh -vT git@github.com
-
-# Enable the firewall access
-New-NetFirewallRule -Name sshd -DisplayName 'OpenSSH SSH Server' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22 -Program "C:\System32\OpenSSH\sshd.exe"
-
-# Test the Git fetch/pull/push commands to confirm the key has been correctly registered.
-git fetch origin
-git pull origin
-git push origin
-
-# VSCode may not correctly prompt for SSH password credential.
-git config --global credential.helper wincred
-
-# You may need to create a config file for Visual Code git commands
-cd ~/.ssh
-echo config
-
-VsCode config
-
-# Add the following to the config file to ensure git uses your SSH key.
-Host github.com
-  HostName github.com
-  User git
-  IdentityFile "C:\Users\username\.ssh\yourPrivateKey"
-
+# Copy your public key to the clipboard
+Get-Content ~/.ssh/id_ed25519.pub | Set-Clipboard
 ```
 
-## References
+Then:
+1. Go to **GitHub.com** → **Settings** → **SSH and GPG keys**
+2. Click **New SSH key**
+3. Paste your public key
+4. Click **Add SSH key**
 
-[GIT with SSH](https://dev.to/bdbch/setting-up-ssh-and-git-on-windows-10-2khk)
+## Step 5: Test the Connection
 
-[Troubleshooting Windows OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/issues/1133)
+```powershell
+ssh -T git@github.com
+```
 
-[Microsoft OpenSSH overview](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_overview)
+Expected output:
+```
+Hi USERNAME! You've successfully authenticated, but GitHub does not provide shell access.
+```
 
-[PowerShell OpenSSH Wiki](https://github.com/powershell/Win32-OpenSSH/wiki)
+## Step 6: Configure SSH for Multiple Accounts (Optional)
 
-[OpenSSH on Windows 1709 walk through](https://devblogs.microsoft.com/powershell/using-the-openssh-beta-in-windows-10-fall-creators-update-and-windows-server-1709/)
+If you use multiple GitHub accounts, create an SSH config file:
 
-[ssh-add on Windows workaround](https://github.com/PowerShell/Win32-OpenSSH/issues/1234)
+```powershell
+# Create config file
+New-Item -Path ~/.ssh/config -ItemType File -Force
+```
 
-[Troubleshooting Open SSH connections](https://winscp.net/eng/docs/guide_windows_openssh_server)
+Edit `~/.ssh/config`:
+```
+# Personal GitHub account
+Host github-personal
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519
 
-[Git Credential caching](https://stackoverflow.com/a/58107764/342719)
+# Work GitHub account
+Host github-work
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519_work
+```
+
+Use with git:
+```powershell
+# Clone using alias
+git clone git@github-work:org/repo.git
+```
+
+## Success Criteria
+
+- [ ] `ssh-add -l` lists your key
+- [ ] `ssh -T git@github.com` greets you by name
+- [ ] `git clone git@github.com:username/repo.git` works without password prompt
+
+## Troubleshooting
+
+### "Permission denied (publickey)"
+
+Your key isn't being offered to the server.
+
+```powershell
+# Check the agent has your key
+ssh-add -l
+
+# If empty, add it
+ssh-add ~/.ssh/id_ed25519
+
+# Test with verbose output to see what's happening
+ssh -vT git@github.com
+```
+
+### "WARNING: UNPROTECTED PRIVATE KEY FILE!"
+
+```powershell
+# Fix permissions on your private key
+icacls "$env:USERPROFILE\.ssh\id_ed25519" /inheritance:r /grant:r "$env:USERNAME:F"
+```
+
+### "Could not open a connection to your authentication agent"
+
+```powershell
+# Start the agent
+Start-Service ssh-agent
+```
+
+## Next Steps
+
+- [GitHub CLI Automation](GitHub-cli.md) — automate GitHub tasks via CLI
+- [PowerShell Reference](PowerShell.md) — PowerShell command reference
+- [Getting Started: Windows DevOps](GettingStarted-WindowsDevOps.md) — full environment setup
