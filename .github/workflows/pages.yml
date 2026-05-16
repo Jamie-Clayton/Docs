@@ -18,18 +18,14 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container:
+      image: jekyll/jekyll:4.3
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.3'
-          bundler-cache: true
-
       - name: Build Jekyll site
-        run: bundle exec jekyll build --destination ./_site
+        run: jekyll build --destination ./_site
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
