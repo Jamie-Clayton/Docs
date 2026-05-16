@@ -32,3 +32,9 @@ packages/
 # Git
 .git/
 .gitignore_global
+
+# Jekyll
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
