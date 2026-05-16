@@ -1,6 +1,49 @@
-theme: jekyll-theme-hacker
+# Jekyll Theme: Chirpy
+theme: jekyll-theme-chirpy
+
+# Site title & metadata
 title: Continuous Improvement for Software Engineers
-description: Instructions, notes and guides to help with continuous software improvement.
+tagline: Instructions, notes and guides to help with continuous software improvement.
+description: A professional documentation site for software engineering best practices, DevOps, and continuous improvement methodologies.
+url: "https://jamie-clayton.github.io/Docs"
+
+# Site language and timezone
+lang: en
+timezone: Australia/Sydney
+
+# Author information
+author:
+  name: Jamie Clayton
+  email: jamie.clayton@jenasysdesign.com.au
+  github: jamie-clayton
+
+# Navigation & sidebar
 show_downloads: false
+
+# SEO & Social Media
+social:
+  links:
+    - https://github.com/jamie-clayton
+
+# Exclude from Jekyll processing
 exclude:
   - docs/superpowers/
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
+
+# Include additional files
+include:
+  - .htaccess
+
+# Pagination
+paginate: 10
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-archives
+  - jekyll-sitemap
+  - jekyll-feed
