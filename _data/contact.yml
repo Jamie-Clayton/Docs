@@ -1,0 +1,7 @@
+- type: github
+  icon: "fab fa-github"
+  url: "https://github.com/jamie-clayton"
+
+- type: email
+  icon: "fas fa-envelope"
+  url: "mailto:jamie.clayton@jenasysdesign.com.au"
