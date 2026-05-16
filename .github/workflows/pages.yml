@@ -28,9 +28,10 @@ jobs:
         run: gem install jekyll-theme-chirpy
 
       - name: Build Jekyll site
-        env:
-          BUNDLE_FROZEN: "true"
-        run: jekyll build --destination ./_site
+        run: |
+          mv Gemfile Gemfile.bak
+          jekyll build --destination ./_site
+          mv Gemfile.bak Gemfile
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
