@@ -1,5 +1,14 @@
 # Continuos Architectures
 
+> **Document Type:** Explanation | **Related explanation:** [Microservices](Microservices.md) | [CQRS](../code/CQRS.md)
+
+## Learning Objectives
+
+After reading this document, you will understand:
+- Why architecture must be continuous rather than a one-time phase
+- How to use data-driven decisions in architecture
+- How to apply lean canvas concepts to architectural decisions
+
 An operating model for architecture that moves away from design and implement approach (waterfall) to a continuous evolution via modern DevOps CICD using data driven architectural decisions and lean canvas concepts.
 
 ## Manifesto

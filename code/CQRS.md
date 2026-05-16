@@ -1,5 +1,15 @@
 # Command Query Responsibility Segregation - CQRS
 
+> **Document Type:** Explanation | **Related how-to:** [Microservices Architecture](../devops/Microservices.md) | **Related reference:** [NServiceBus](https://particular.net/nservicebus)
+
+## Learning Objectives
+
+After reading this document, you will understand:
+- Why CQRS separates reads and writes
+- When to apply CQRS vs. traditional CRUD
+- The trade-offs around eventual consistency
+- Anti-patterns to avoid when implementing CQRS
+
 ![HediMokhtar / CC BY-SA (https://creativecommons.org/licenses/by-sa/4.0)](../assets/CQRS_Principle.png)
 
 ## Core Concept
@@ -34,6 +44,7 @@ public class Order
 ```
 
 This creates tension:
+
 - **Writes** want a normalized schema with referential integrity (slow)
 - **Reads** want a denormalized schema with all data in one place (fast)
 
@@ -41,7 +52,7 @@ CQRS solves this by allowing each to have its own optimized model.
 
 ## Architecture
 
-```
+```plaintext
 ┌─────────────┐
 │   Client    │
 └──────┬──────┘
@@ -56,8 +67,8 @@ CQRS solves this by allowing each to have its own optimized model.
 │ Handler      │    │ (RabbitMQ/     │    │ (Optimized   │
 │              │    │  Kafka)        │    │  for reads)  │
 └──────┬───────┘    └────────┬───────┘    └──────────────┘
-       │                     │                      ▲
-       ▼                     ▼                      │
+       │                     │                     ▲
+       ▼                     ▼                     │
 ┌──────────────┐    ┌────────────────┐             │
 │ Write Model  │    │ Event Handler  │─────────────┘
 │ (Normalized) │    │ (Updates read  │
@@ -70,12 +81,14 @@ CQRS solves this by allowing each to have its own optimized model.
 ### Step 1: Identify Command and Query Models
 
 **Command Model** - Optimized for writes:
+
 - Normalized schema (3NF, BCNF)
 - Enforces business rules and constraints
 - Uses transactions to maintain consistency
 - Example: Insert Order → OrderLines → OrderPayments with foreign keys
 
 **Query Model** - Optimized for reads:
+
 - Denormalized schema (often a flat table or document)
 - Includes all fields needed by UI in one record
 - No joins; reads are fast
@@ -97,8 +110,8 @@ public class CreateOrderCommandHandler
         await _db.SaveChangesAsync();
 
         // Publish event
-        await _eventBus.PublishAsync(new OrderCreatedEvent 
-        { 
+        await _eventBus.PublishAsync(new OrderCreatedEvent
+        {
             OrderId = cmd.OrderId,
             CustomerId = cmd.CustomerId,
             Amount = cmd.Amount,
@@ -127,7 +140,7 @@ public class OrderCreatedEventHandler : IEventHandler<OrderCreatedEvent>
             Status = "Created",
             CreatedAt = @event.CreatedAt
         };
-        
+
         await _queryDb.OrderSummaries.AddAsync(summary);
         await _queryDb.SaveChangesAsync();
     }
@@ -199,6 +212,7 @@ Eventual consistency means reads lag behind writes by seconds or minutes.
 **Problem:** User creates an order, immediately queries for it, gets "not found."
 
 **Solution:** Client-side UI hides the delay:
+
 - Optimistic UI updates (show the order immediately while writing)
 - Polling with backoff (retry if not found)
 - Acknowledgment pattern (server responds with order ID, client queries later)
@@ -206,12 +220,14 @@ Eventual consistency means reads lag behind writes by seconds or minutes.
 ## When to Use CQRS
 
 **Good fit:**
+
 - Complex domain with many business rules (financial systems, insurance)
 - Read and write volumes are vastly different (100K reads, 100 writes/second)
 - Multiple services need to react to state changes
 - You need audit trails and event sourcing
 
 **Not a good fit:**
+
 - Simple CRUD applications
 - Strong consistency requirements (you need immediate reads after writes)
 - Single-service applications (adds complexity without benefit)
@@ -227,18 +243,21 @@ Eventual consistency means reads lag behind writes by seconds or minutes.
 ## Anti-Patterns to Avoid
 
 **Anti-Pattern 1: Synchronous Commands and Queries**
+
 ```csharp
 // DON'T: This defeats the purpose of CQRS
 _queryModel.Update(cmd.Data);  // Synchronous write to read model
 ```
 
 **Anti-Pattern 2: Sharing Command and Query Models**
+
 ```csharp
 // DON'T: CQRS requires separate models
 public class Order { /* 50 fields */ }  // Used for both reads and writes
 ```
 
 **Anti-Pattern 3: Ignoring Eventual Consistency**
+
 ```csharp
 // DON'T: Assume immediate consistency
 await _commandBus.SendAsync(cmd);

@@ -1,5 +1,15 @@
 # Microservices Architecture - .NET/C#
 
+> **Document Type:** Explanation | **Related how-to:** [Azure Pipelines](AzurePipelines.md) | **Related reference:** [Containers and Service Fabric](Containers-ServiceFabric.md)
+
+## Learning Objectives
+
+After reading this document, you will understand:
+- What microservices are and when to use them
+- The key characteristics and trade-offs of microservices
+- How to build a microservice in .NET with health checks
+- Resilience patterns: health checks, circuit breakers, retries
+
 ## What are Microservices?
 
 Microservices is an architectural style where a large application is decomposed into small, independent services that communicate over the network. Each service owns its data, deploys independently, and focuses on a specific business capability.
