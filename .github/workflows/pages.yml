@@ -28,8 +28,9 @@ jobs:
           ruby-version: '3.1'
           bundler-cache: false
 
-      - name: Install Jekyll and Chirpy
-        run: gem install jekyll jekyll-theme-chirpy
+      - name: Install Jekyll and dependencies
+        run: |
+          gem install jekyll jekyll-theme-chirpy jekyll-paginate jekyll-redirect-from jekyll-seo-tag jekyll-archives jekyll-sitemap jekyll-feed
 
       - name: Build Jekyll site
         run: |
