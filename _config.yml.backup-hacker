@@ -1,0 +1,6 @@
+theme: jekyll-theme-hacker
+title: Continuous Improvement for Software Engineers
+description: Instructions, notes and guides to help with continuous software improvement.
+show_downloads: false
+exclude:
+  - docs/superpowers/
