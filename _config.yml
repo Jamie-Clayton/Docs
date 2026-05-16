@@ -59,3 +59,29 @@ plugins:
   - jekyll-archives
   - jekyll-sitemap
   - jekyll-feed
+
+# Collections configuration for Chirpy tabs
+collections:
+  tabs:
+    output: true
+    sort_by: order
+
+# Default settings for specific types
+defaults:
+  # Default settings for tabs
+  - scope:
+      path: ""
+      type: tabs
+    values:
+      layout: page
+      permalink: /:title/
+
+# Archive configuration for categories and tags
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
