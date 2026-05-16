@@ -30,7 +30,7 @@ jobs:
       - name: Build Jekyll site
         run: |
           mv Gemfile Gemfile.bak
-          mkdir -p .jekyll-cache
+          mkdir -p .jekyll-cache _site
           jekyll build --destination ./_site
           mv Gemfile.bak Gemfile
 
