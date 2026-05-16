@@ -39,6 +39,9 @@ include:
 # Pagination
 paginate: 10
 
+# Permalinks: route posts under /posts/ to match Chirpy conventions
+permalink: /posts/:year/:month/:day/:title/
+
 # Plugins
 plugins:
   - jekyll-paginate
