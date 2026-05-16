@@ -32,6 +32,8 @@ jobs:
         run: gem install jekyll jekyll-theme-chirpy
 
       - name: Build Jekyll site
+        env:
+          BUNDLE_IGNORE_GEMFILE: true
         run: jekyll build --destination ./_site
 
       - name: Upload artifact
