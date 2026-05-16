@@ -19,4 +19,6 @@ gem "webrick", "~> 1.7" # Required for Ruby 3.0+
 # Platform-specific gems for Windows
 platforms :mingw, :mswin, :x64_mingw do
   gem "ffi", ">= 1.17"
+  gem "tzinfo", "~> 2.0"
+  gem "tzinfo-data", "~> 1.2024"
 end
