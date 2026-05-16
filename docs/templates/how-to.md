@@ -34,6 +34,12 @@ Expected output:
 [What success looks like]
 ```
 
+## Troubleshooting
+
+### [Error or symptom]
+
+[Cause and fix]
+
 ## See Also
 
 - [Related How-to 1](link)

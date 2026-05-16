@@ -15,6 +15,7 @@ Quick-lookup for [tool] commands, flags, and patterns.
 
 | Command | Description | Example |
 |---------|-------------|---------|
+| `cmd --flag` | What it does | `cmd --flag value` |
 
 ## Common Patterns
 

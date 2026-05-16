@@ -41,6 +41,7 @@ Step-by-step guides for building skills from scratch.
 | [Setting Up AWS DevOps](devops/Aws-Cloud-Devops-Instructions.md) | Configure AWS CLI, SAM, CDK for cloud development | 60 min |
 | [Terraform on Windows](devops/terraform.md) | Install and configure Terraform for infrastructure as code | 30 min |
 | [SSH Configuration](devops/ssh.md) | Set up SSH keys and remote access on Windows | 20 min |
+| [Your First Redis on Docker](devops/Containers-Tutorial.md) | Run Redis in Docker and use RedisInsight GUI | 30 min |
 
 ## 🔧 How-to Guides (Task-Oriented)
 
@@ -49,12 +50,10 @@ Targeted solutions to specific problems.
 | Guide | Problem Solved | Time |
 |-------|---------------|------|
 | [GitHub CLI Automation](devops/GitHub-cli.md) | Automate GitHub tasks from the command line | 15 min |
-| [Git Commands](devops/GitCommand.md) | Handle complex git scenarios: releases, cleanup, history | 10 min |
 | [Azure Pipelines](devops/AzurePipelines.md) | Configure multi-stage CI/CD pipelines | 20 min |
 | [Desired State Configuration](devops/DesiredStateConfiguration.md) | Manage server configuration declaratively | 30 min |
 | [Retiring AngularJS](code/RetiringAngularJs.md) | Migrate from AngularJS 1.x to modern Angular | 60 min |
 | [Code Coverage](code/CodeCoverage.md) | Measure and improve test coverage | 20 min |
-| [Automation with PowerShell](devops/Automation.md) | Build long-running, restartable scripts | 20 min |
 
 ## 📖 Reference (Lookup-Oriented)
 
@@ -94,7 +93,7 @@ Please read [Contributing.md](Contributing.md) for details on our code of conduc
 
 ## License
 
-This project is licensed under the Creative Commons License — see the [LICENSE](./LICENSE.md) file for details.
+This project is licensed under the Creative Commons License — see the [LICENSE](./LICENSE) file for details.
 
 ## Thanks to Contributors
 
