@@ -1,0 +1,34 @@
+# Visual Studio
+.vs/
+.vscode/
+bin/
+obj/
+.ncrunchproject
+.ncrunchsolution
+*.user
+*.suo
+*.sln.docstates
+.test-results/
+*.resharper
+*.resharper.user
+_ReSharper.*/
+.idea/
+*.swp
+*.swo
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+[Bb]uild/
+[Oo]bj/
+[Bb]in/
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+
+# Git
+.git/
+.gitignore_global
