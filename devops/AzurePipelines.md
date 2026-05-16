@@ -12,8 +12,6 @@ YAML patterns and configuration snippets for Azure DevOps pipeline configuration
 | Multi-repository builds | [Advanced Techniques](#advanced-techniques) |
 | Pipeline design principles | [Principles](#principles) |
 
-A short guide to working with Azure pipelines and some in a large business.
-
 ## Principles
 
 * Keep it simple
