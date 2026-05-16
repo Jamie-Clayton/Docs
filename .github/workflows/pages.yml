@@ -28,7 +28,9 @@ jobs:
         run: gem install jekyll-theme-chirpy
 
       - name: Build Jekyll site
-        run: jekyll build --destination ./_site
+        run: |
+          rm -f Gemfile.lock
+          jekyll build --destination ./_site
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
