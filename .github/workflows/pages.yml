@@ -18,21 +18,21 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: jekyll/jekyll:latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install dependencies
-        run: gem install jekyll-theme-chirpy
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+          bundler-cache: false
+
+      - name: Install Jekyll and Chirpy
+        run: gem install jekyll jekyll-theme-chirpy
 
       - name: Build Jekyll site
-        run: |
-          mv Gemfile Gemfile.bak
-          mkdir -p .jekyll-cache _site
-          jekyll build --destination ./_site
-          mv Gemfile.bak Gemfile
+        run: jekyll build --destination ./_site
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
