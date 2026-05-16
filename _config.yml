@@ -1,6 +1,10 @@
 # Jekyll Theme: Chirpy
 theme: jekyll-theme-chirpy
 
+# Avatar & Theme Mode
+avatar: ""
+theme_mode: auto
+
 # Site title & metadata
 title: Continuous Improvement for Software Engineers
 tagline: Instructions, notes and guides to help with continuous software improvement.
