@@ -24,8 +24,10 @@ ssh -V
 
 Expected output:
 ```
-OpenSSH_8.x, OpenSSL 1.1.x
+OpenSSH_9.x (or similar), OpenSSL 3.x
 ```
+
+The exact version will vary — any version shown means SSH is installed.
 
 If you see a version, SSH is installed. Skip to Step 2.
 
@@ -52,12 +54,14 @@ This creates two files:
 
 ## Step 3: Start the SSH Agent and Add Your Key
 
-```powershell
-# Start the SSH agent service (run as Administrator)
-Start-Service ssh-agent
+> **Note:** The following commands require an **Administrator** PowerShell window. Right-click the PowerShell icon and select "Run as Administrator".
 
-# Set the service to start automatically
+```powershell
+# Set the service startup type first (required on fresh Windows — default is Disabled)
 Set-Service -Name ssh-agent -StartupType Automatic
+
+# Then start the service
+Start-Service ssh-agent
 
 # Add your private key to the agent
 ssh-add ~/.ssh/id_ed25519
@@ -72,7 +76,7 @@ ssh-add -l
 
 Expected output:
 ```
-256 SHA256:... your_email@example.com (ED25519)
+256 SHA256:<fingerprint> your_email@example.com (ED25519)
 ```
 
 ## Step 4: Add Your Public Key to GitHub
@@ -104,8 +108,12 @@ Hi USERNAME! You've successfully authenticated, but GitHub does not provide shel
 If you use multiple GitHub accounts, create an SSH config file:
 
 ```powershell
-# Create config file
-New-Item -Path ~/.ssh/config -ItemType File -Force
+# Create config file only if it doesn't already exist
+if (-not (Test-Path ~/.ssh/config)) {
+    New-Item -Path ~/.ssh/config -ItemType File
+}
+# Then open it in VS Code (or any editor)
+code ~/.ssh/config
 ```
 
 Edit `~/.ssh/config`:
@@ -133,7 +141,7 @@ git clone git@github-work:org/repo.git
 
 - [ ] `ssh-add -l` lists your key
 - [ ] `ssh -T git@github.com` greets you by name
-- [ ] `git clone git@github.com:username/repo.git` works without password prompt
+- [ ] `git clone git@github.com:<your-username>/Docs.git` works without password prompt (use any public repo you have access to)
 
 ## Troubleshooting
 

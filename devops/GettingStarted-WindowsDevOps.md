@@ -17,9 +17,6 @@ You've completed this tutorial when:
 
 This guide walks you through setting up a professional Windows development environment from scratch. By the end, you'll have Git, PowerShell Core, Azure CLI, and Docker running.
 
-**Estimated time:** 45 minutes  
-**Prerequisites:** Windows 10 or 11, admin access, internet connection
-
 ## What You'll Learn
 
 - Install essential developer tools using package managers
