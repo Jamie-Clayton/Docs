@@ -1,5 +1,14 @@
 # Production Ready Software
 
+> **Document Type:** Explanation | **Related how-to:** [Code Coverage](CodeCoverage.md) | **Related reference:** [Microservices Architecture](../devops/Microservices.md)
+
+## Learning Objectives
+
+After reading this document, you will understand:
+- What "production ready" means across 8 dimensions
+- How to evaluate whether your system meets production standards
+- Common failure modes for each dimension and how to prevent them
+
 What does 'Production Ready' really mean for a software engineer? This document defines the critical requirements that separate experimental code from software safe to deploy to customers.
 
 A system is **production ready** when it can reliably serve customers 24/7 with minimal manual intervention, recover gracefully from failures, and provide visibility into its health and performance.
@@ -159,3 +168,43 @@ Track production incidents and root-cause them. Did the incident appear in logs?
 - [Production-Ready Microservices by Susan J. Fowler](https://www.oreilly.com/library/view/production-ready-microservices/9781491965962/)
 - [Release It! by Michael Nygard](https://pragprog.com/titles/mnee2/release-it-second-edition/)
 - [The DevOps Handbook](https://itrevolution.com/the-devops-handbook/)
+
+## Production Readiness Checklist
+
+Use this checklist before your first production deployment:
+
+### Stability and Reliability
+- [ ] Error handling is explicit — no silent failures
+- [ ] Critical operations have retry logic with exponential backoff
+- [ ] No single point of failure in the critical path
+- [ ] Configuration changes don't require redeployment
+
+### Scalability and Performance
+- [ ] Response times meet SLA at expected peak load
+- [ ] Database queries are indexed (explain plan reviewed)
+- [ ] Services are stateless (can add instances)
+- [ ] Load testing has validated 2-3x peak load
+
+### Fault Tolerance
+- [ ] Critical data is backed up and recovery is documented
+- [ ] Deployments are zero-downtime (blue-green or canary)
+- [ ] Database migrations are reversible
+- [ ] A runbook exists for common failures
+
+### Monitoring and Observability
+- [ ] Application metrics collected: latency, error rate, throughput
+- [ ] Logs are structured (JSON) and searchable
+- [ ] Distributed tracing connects requests across services
+- [ ] Alerts fire for degradation before outages
+
+### Security
+- [ ] Input is validated at all system boundaries
+- [ ] Secrets are in a vault, not in code
+- [ ] Dependencies have been scanned for vulnerabilities
+- [ ] Authentication and authorization are enforced
+
+## See Also
+
+- [CQRS](CQRS.md) — read/write separation for scalable systems
+- [Microservices](../devops/Microservices.md) — health checks and resilience patterns
+- [Code Coverage](CodeCoverage.md) — measuring test quality
