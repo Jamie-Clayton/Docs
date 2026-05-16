@@ -1,6 +1,25 @@
 
 # AWS Cloud DevOps Instructions
 
+> **Document Type:** Tutorial | **Time:** 60 minutes | **Level:** Intermediate
+> **Prerequisites:** [Getting Started: Windows DevOps](GettingStarted-WindowsDevOps.md), an AWS account with IAM access keys
+> **You will build:** A complete AWS development environment with AWS CLI, SAM CLI, CDK, and a working serverless project scaffold
+
+## Before You Start
+
+- [ ] [Windows DevOps environment](GettingStarted-WindowsDevOps.md) set up (PowerShell Core, Node.js installed)
+- [ ] AWS account with IAM user credentials (Access Key ID + Secret Access Key)
+- [ ] Docker Desktop running
+
+## Success Criteria
+
+You've completed this tutorial when:
+
+- [ ] `aws --version` returns a version string
+- [ ] `aws sts get-caller-identity` returns your AWS account ID (proves credentials work)
+- [ ] `sam --version` returns a version string
+- [ ] `cdk --version` returns a version string
+
 The following scripts create a code repository folder that followed devops principles to create the cloud infrastructure need to deploy a software application.
 
 You can choose between [webpack](https://webpack.js.org/guides/getting-started/) (popular and complicated) or [esbuild](https://esbuild.github.io/getting-started/#install-esbuild) (new and very faster) for packaging typescript cloud objects.
@@ -173,3 +192,9 @@ code ~/AppData/Local/Temp/lambda-response.json
 - [Article: Debugging Nodejs in Visual Code](https://dakshika.medium.com/remote-debug-node-js-application-using-visual-studio-code-dc0fa0b4dec4)
 - [Video: Locally Debug Lambda Functions with the AWS Toolkit for VS Code](https://www.youtube.com/watch?v=FINV-VmCXms)
 - [Article: Understanding Debugger Extensions in Visual Code](https://code.visualstudio.com/api/extension-guides/debugger-extension#anatomy-of-the-package.json-of-a-debugger-extension)
+
+## Next Steps
+
+- [Terraform on Windows](terraform.md) — infrastructure as code for AWS and Azure
+- [GitHub CLI Automation](GitHub-cli.md) — automate repository workflows
+- [Azure Pipelines](AzurePipelines.md) — CI/CD for cloud deployments

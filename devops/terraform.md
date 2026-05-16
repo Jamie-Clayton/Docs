@@ -1,5 +1,25 @@
 # Windows Terraform Instructions
 
+> **Document Type:** Tutorial | **Time:** 30 minutes | **Level:** Beginner
+> **Prerequisites:** Admin PowerShell access, internet connection, [Chocolatey](https://chocolatey.org/) installed
+> **You will build:** A working Terraform environment with Terraform CLI, Azure CLI, and Packer, able to `terraform init` a new project
+
+## Before You Start
+
+- [ ] PowerShell running as Administrator
+- [ ] Internet connection
+- [ ] Chocolatey installed — run `choco -v` to verify (if missing, see [chocolatey.org/install](https://chocolatey.org/install))
+- [ ] An Azure subscription (optional — only needed for cloud resource creation)
+
+## Success Criteria
+
+You've completed this tutorial when:
+
+- [ ] `terraform -v` returns a version string
+- [ ] `packer -v` returns a version string
+- [ ] `az -v` returns a version string
+- [ ] `terraform init` succeeds in a new directory
+
 ## Installing Terraform software on Windows
 
 Install chocolatey powershell package installer. [Chocolatey Package Management](https://chocolatey.org/)
@@ -62,3 +82,9 @@ choco upgrade awscli
 [Chocolatey](https://chocolatey.org)
 
 [Terraform](https://chocolatey.org)
+
+## Next Steps
+
+- [Azure Pipelines](AzurePipelines.md) — automate Terraform in CI/CD
+- [AWS Cloud DevOps](Aws-Cloud-Devops-Instructions.md) — Terraform for AWS environments
+- [Desired State Configuration](DesiredStateConfiguration.md) — Windows-native alternative to Terraform for server config
