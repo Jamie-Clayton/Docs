@@ -1,6 +1,6 @@
 # PowerShell Command Reference
 
-> **Document Type:** Reference | **Related tutorials:** [Getting Started: Windows DevOps](GettingStarted-WindowsDevOps.md) | **Related how-to:** [Automation with PowerShell](Automation.md)
+> **Document Type:** Reference | **Related tutorials:** [Getting Started: Windows DevOps](GettingStarted-WindowsDevOps.md) | **Related how-to:** [Automation](Automation.md)
 
 Quick-lookup for PowerShell commands organized by task category.
 
@@ -13,16 +13,15 @@ Quick-lookup for PowerShell commands organized by task category.
 | Find and install modules | [Finding and Using Modules](#finding-and-using-powershell-modules) |
 | Convert JSON responses | [Converting Output](#converting-output) |
 | Format pipeline output | [Module Output Options](#module-output-options) |
-| Find object properties/methods | [Finding Properties and Methods](#finding-all-the-properties-and-methods-in-an-object) |
-| Filter, sort, display data | [Filtering, Sorting, Showing Output](#filtering-sorting-or-showing-output) |
+| Filter, sort, display | [Filtering, Sorting or Showing Output](#filtering-sorting-or-showing-output) |
 | Measure performance | [Performance Tuning](#performance-tuning-cmdlets) |
 | Remote management | [Remote Management](#remote-management-with-powershell) |
 | Network testing | [Network Testing](#network-testing) |
 | Windows services | [Windows Services](#windows-services) |
 | Certificates | [Certificates](#certificates) |
-| JSON Web Tokens | [JSON Web Tokens](#json-web-tokens) |
+| Json Web Tokens | [Json Web Tokens](#json-web-tokens) |
 
-Visual Code is the prefered script authoring environment, replacing PowerShell ISE as a cross platform editor. See [Setting up Visual Code](https://code.visualstudio.com/docs/languages/powershell)
+Visual Code is the preferred script authoring environment, replacing PowerShell ISE as a cross platform editor. See [Setting up Visual Code](https://code.visualstudio.com/docs/languages/powershell)
 
 String Interpolation options - See [Strings in PowerShell scripts](https://devblogs.microsoft.com/powershell/variable-expansion-in-strings-and-here-strings/)
 

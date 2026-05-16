@@ -1,8 +1,8 @@
 # NPM Cheat Sheet
 
-> **Document Type:** Reference | **Related tutorials:** [AWS Cloud DevOps](Aws-Cloud-Devops-Instructions.md)
+> **Document Type:** Reference | **Related tutorials:** [Getting Started: Windows DevOps](GettingStarted-WindowsDevOps.md)
 
-Quick-lookup for npm commands.
+Quick-lookup for Angular CLI setup via npm.
 
 ## Angular CLI implementation
 

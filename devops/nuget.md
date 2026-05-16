@@ -8,14 +8,14 @@ Quick-lookup for NuGet package management commands in .NET projects.
 
 | Task | Section |
 |------|---------|
-| Automate package upgrades, inspect versions | [Objectives](#objectives) |
+| Automate package upgrades, inspect versions | [Commands](#commands) |
 
-## Objectives
+## Commands
 
 - Automate the generation of pull requests for nuget package upgrades using nukeeper software.
 - Report the volume of projects that will be impacted by a library repository change (AKA roll out impact)
 - Provide a mechanism to report on all the versions of a specific library. E.g. Newtonsoft
-- Identify missing analsyzers in solutions. E.g. SonarCube
+- Identify missing analyzers in solutions. E.g. SonarQube
 
 ```Powershell
 Start-Process https://dev.azure.com/icecreamery/_usersSettings/tokens 
@@ -38,8 +38,6 @@ nukeeper inspect --useprerelease Always --logfile c:\Temp\nukeeper.log --include
 
 ```
 
-C:\Users\z\.nuget\packages\nuget.commandline\5.8.0\tools\NuGet.exe
-
 [Azure Devops Settings](https://dev.azure.com/icecreamery/_usersSettings/tokens)
 
 ```Powershell
@@ -47,7 +45,7 @@ C:\Users\z\.nuget\packages\nuget.commandline\5.8.0\tools\NuGet.exe
 #Start-Process https://dev.azure.com/icecreamery/_usersSettings/tokens
 
 # Update an existing source (which should be configured in nuget.config to enable new engineers to quick reference the nuget package sources needed)
-$PersonalAccessToken = 'cpim3rdmfj6og5t2i6w6gbwqa666tazy537e7jgvg4irpt5xlbja'
+$PersonalAccessToken = 'DO-NOT-SAVE-THIS-TO-CODE-REPOSITORY'
 
 # Use the add when setting up for the first time
 nuget sources add -name Flavours -source https://pkgs.dev.azure.com/icecreamery/_packaging/Flavours/nuget/v3/index.json -username AzDO -password $PersonalAccessToken
