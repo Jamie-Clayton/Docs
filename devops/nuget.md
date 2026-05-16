@@ -18,7 +18,7 @@ Quick-lookup for NuGet package management commands in .NET projects.
 - Identify missing analyzers in solutions. E.g. SonarQube
 
 ```Powershell
-Start-Process https://dev.azure.com/icecreamery/_usersSettings/tokens 
+Start-Process https://dev.azure.com/<your-org>/_usersSettings/tokens 
 
 $PersonalAccessToken = 'DO-NOT-SAVE-THIS-TO-CODE-REPOSITORY'
 
@@ -29,8 +29,8 @@ nukeeper global -h
 nukeeper inspect --exclude Fody
 nukeeper inspect --include Analyzers
 
-nukeeper inspect --useprerelease Always --logfile c:\Temp\nukeeper.log --include IceCream.
-nukeeper inspect --useprerelease Always --logfile c:\Temp\nukeeper.log --include IceCream. --change Major --source https://pkgs.dev.azure.com/icecreamery/Flavours/_packaging/Flavours-Applications/nuget/v3/index.json
+nukeeper inspect --useprerelease Always --logfile c:\Temp\nukeeper.log --include <package-prefix>.
+nukeeper inspect --useprerelease Always --logfile c:\Temp\nukeeper.log --include <package-prefix>. --change Major --source https://pkgs.dev.azure.com/<your-org>/<project>/_packaging/<feed>/nuget/v3/index.json
 
 # Reboot your Powershell console after setting the token.
 [System.Environment]::SetEnvironmentVariable('Nukeeper_azure_devops_token', $PersonalAccessToken,[System.EnvironmentVariableTarget]::Machine)
@@ -38,23 +38,23 @@ nukeeper inspect --useprerelease Always --logfile c:\Temp\nukeeper.log --include
 
 ```
 
-[Azure Devops Settings](https://dev.azure.com/icecreamery/_usersSettings/tokens)
+[Azure Devops Settings](https://dev.azure.com/<your-org>/_usersSettings/tokens)
 
 ```Powershell
 # Create a PAT with the appropriate read artifacts permissions
-#Start-Process https://dev.azure.com/icecreamery/_usersSettings/tokens
+#Start-Process https://dev.azure.com/<your-org>/_usersSettings/tokens
 
 # Update an existing source (which should be configured in nuget.config to enable new engineers to quick reference the nuget package sources needed)
 $PersonalAccessToken = 'DO-NOT-SAVE-THIS-TO-CODE-REPOSITORY'
 
 # Use the add when setting up for the first time
-nuget sources add -name Flavours -source https://pkgs.dev.azure.com/icecreamery/_packaging/Flavours/nuget/v3/index.json -username AzDO -password $PersonalAccessToken
+nuget sources add -name <feed-name> -source https://pkgs.dev.azure.com/<your-org>/_packaging/<feed>/nuget/v3/index.json -username AzDO -password $PersonalAccessToken
 
 # Use the update operation when you update the PAT token.
-# nuget sources add -name Flavours -source https://pkgs.dev.azure.com/icecreamery/_packaging/Flavours/nuget/v3/index.json -username AzDO -password $PersonalAccessToken
+# nuget sources add -name <feed-name> -source https://pkgs.dev.azure.com/<your-org>/_packaging/<feed>/nuget/v3/index.json -username AzDO -password $PersonalAccessToken
 
 # Create a PAT with the appropriate read artifacts permissions
-#Start-Process https://dev.azure.com/icecreamery/_usersSettings/tokens
+#Start-Process https://dev.azure.com/<your-org>/_usersSettings/tokens
 
 # Set up the environment variable for the AZ CLI 
 $env:AZURE_DEVOPS_EXT_PAT = 'DO-NOT-SAVE-THIS-TO-CODE-REPOSITORY'
@@ -63,11 +63,11 @@ $env:AZURE_DEVOPS_EXT_PAT = 'DO-NOT-SAVE-THIS-TO-CODE-REPOSITORY'
 $PersonalAccessToken = 'DO-NOT-SAVE-THIS-TO-CODE-REPOSITORY'
 
 # Retrieve a list the repository URL's and create all the pull requests - minor nuget changes.
-$repos = az repos list --org https://dev.azure.com/icecreamery/ --project Flavours | ConvertFrom-Json | Select-Object webURL
+$repos = az repos list --org https://dev.azure.com/<your-org>/ --project <project> | ConvertFrom-Json | Select-Object webURL
 
 # Assumption: Git Flow branching strategy
 foreach ($repo in $repos) {  
-    C:\Users\jclayton\source\nukeeper\NuKeeper\bin\Debug\net5.0\nukeeper.exe repo $repo.webURL $PersonalAccessToken --change minor --verbosity detailed --branchnametemplate "feature/{Default}" --consolidate --maxpackageupdates 10 --targetBranch "develop"
+    C:\Users\$ENV:USERNAME\source\nukeeper\NuKeeper\bin\Debug\net5.0\nukeeper.exe repo $repo.webURL $PersonalAccessToken --change minor --verbosity detailed --branchnametemplate "feature/{Default}" --consolidate --maxpackageupdates 10 --targetBranch "develop"
 }
 
 ```

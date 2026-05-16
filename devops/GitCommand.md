@@ -62,13 +62,13 @@ Setup personal user credentials for all repositories. You can override these in 
 git config --global -i
 
 # Setup for all repositories (These are defaults unless you have a setting in a local repository)
-git config --global user.email "jamie@jenasys.com"
-git config --global user.name "Jamie Clayton"
+git config --global user.email "your-email@example.com"
+git config --global user.name "Your Name"
 
 # Setup for an individual repository (see /.git/config file to confirm the settings)
 # cd C:\Users\$ENV:USERNAME\source\repos\very-important-repo\
-git config user.email "jamie@jenasys.com"
-git config user.name "Jamie Clayton"
+git config user.email "your-email@example.com"
+git config user.name "Your Name"
 
 # Record and replay conflict resolutions, so you don't do the same thing multiple times (Large rebases or merges of code can be very time consuming without this option)
 git config --global rerere.enabled true
@@ -92,7 +92,7 @@ Allows you to quickly edit all the authors name and email addresses for a series
 
 ```Powershell
 git rebase -i <SHA-to-begin-from>
-git commit --amend --author "Jamie Clayton <jamie@jenasys.com>" --no-edit && \
+git commit --amend --author "Your Name <your-email@example.com>" --no-edit && \
 git rebase --continue
 ```
 
@@ -117,7 +117,7 @@ code git-filter-repo
 Install and use the python based [git filter repository](https://github.com/newren/git-filter-repo) script.
 
 ```Powershell
-git-filter-repo --email-callback "return email.replace(b'jclayton@icecreamery.wrong', b'jamie@icecreamery.right')" --force
+git-filter-repo --email-callback "return email.replace(b'old-email@example.wrong', b'new-email@example.right')" --force
 ```
 
 ## Move a git repository
