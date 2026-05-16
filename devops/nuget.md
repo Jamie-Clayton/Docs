@@ -1,5 +1,15 @@
 # Nuget Package Automation
 
+> **Document Type:** Reference | **Related tutorials:** [Getting Started: Windows DevOps](GettingStarted-WindowsDevOps.md)
+
+Quick-lookup for NuGet package management commands in .NET projects.
+
+## Quick Navigation
+
+| Task | Section |
+|------|---------|
+| Automate package upgrades, inspect versions | [Objectives](#objectives) |
+
 ## Objectives
 
 - Automate the generation of pull requests for nuget package upgrades using nukeeper software.
