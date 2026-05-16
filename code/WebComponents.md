@@ -1,5 +1,8 @@
 # Web Components
 
+> **Document Type:** Explanation
+> **Related how-to:** [Retiring AngularJS](RetiringAngularJs.md)
+
 Web Components should definitely be on your technology radar as software engineers and businesses battle with the quickly evolving Javascript browser landscape and the productivity of software engineers in the web centric world.
 
 * Create components in a framework agnostic way.

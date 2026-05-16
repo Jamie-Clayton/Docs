@@ -1,5 +1,8 @@
 # Software Sustainability
 
+> **Document Type:** Explanation
+> **Related:** [Production Ready Software](code/ProductionReady.md)
+
 ## Eight Principles
 
 1. **Carbon**: Build applications that are carbon efficient.

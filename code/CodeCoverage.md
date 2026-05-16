@@ -1,5 +1,9 @@
 # Code Coverage
 
+> **Document Type:** How-to Guide
+> **Prerequisites:** A .NET project with xUnit or NUnit tests
+> **Related explanation:** [Production Ready Software](ProductionReady.md)
+
 ## Reviews
 
 https://blog.ndepend.com/guide-code-coverage-tools/

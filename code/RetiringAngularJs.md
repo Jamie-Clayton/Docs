@@ -1,5 +1,9 @@
 # Guide for Migrating AngularJS 1.5.1 -to Angular 9
 
+> **Document Type:** How-to Guide
+> **Prerequisites:** An existing AngularJS 1.x application, understanding of Angular
+> **Related explanation:** [Web Components](WebComponents.md)
+
 The following documentation provides the basic steps as well a estimated effort required to migrate an angular JS 1.5.x to a more resent edition of Angular 9+.
 
 ## Managing reference JavaScript libraries

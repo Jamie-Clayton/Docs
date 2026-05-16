@@ -1,5 +1,7 @@
 # Containerization with Microsoft Service Fabric
 
+> **Document Type:** Explanation | **Related how-to:** [Microservices Architecture](Microservices.md)
+
 The following guide provides a range of examples for dealing with Service Fabric based containers (which can be docker images).
 
 ## Service Fabric Application Rollback - PowerShell Script
