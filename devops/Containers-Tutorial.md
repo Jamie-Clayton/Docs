@@ -63,7 +63,7 @@ You should see a single row with status `Up <a few seconds>`.
 
 ## Step 4 — Set and read a key from the CLI
 
-Open an interactive shell inside the running container:
+Open an interactive terminal inside the running container:
 
 ```PowerShell
 docker exec -it dev-redis redis-cli
