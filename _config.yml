@@ -2,8 +2,13 @@
 theme: jekyll-theme-chirpy
 
 # Avatar & Theme Mode
+# Avatar: leave empty for no avatar, or provide a URL/path to an image
+# For GitHub avatar, use: https://github.com/{username}.png
 avatar: ""
-theme_mode: auto
+
+# Theme mode: leave empty to follow system preference (with toggle),
+# or set to 'light' or 'dark' for a fixed theme
+theme_mode: # [light | dark]
 
 # Site title & metadata
 title: Continuous Improvement for Software Engineers
