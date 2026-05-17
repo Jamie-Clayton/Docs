@@ -1,5 +1,5 @@
-# Jekyll Theme: Chirpy
-theme: jekyll-theme-chirpy
+# Jekyll Theme: Chirpy (via jekyll-remote-theme for GitHub Pages compatibility)
+remote_theme: cotes2020/jekyll-theme-chirpy@v7.0.1
 
 # Avatar & Theme Mode
 # Avatar: GitHub avatar URL from API
@@ -46,7 +46,7 @@ paginate: 10
 # Permalinks: route posts under /posts/ to match Chirpy conventions
 permalink: /posts/:year/:month/:day/:title/
 
-# Plugins
+# Plugins (managed by github-pages gem)
 plugins:
   - jekyll-paginate
   - jekyll-redirect-from
@@ -54,6 +54,7 @@ plugins:
   - jekyll-archives
   - jekyll-sitemap
   - jekyll-feed
+  - jekyll-remote-theme
 
 # Collections configuration for Chirpy tabs
 collections:

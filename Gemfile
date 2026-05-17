@@ -2,16 +2,16 @@ source "https://rubygems.org"
 
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem "jekyll", "~> 4.2"
-gem "jekyll-theme-chirpy", "~> 7.0"
+gem "github-pages", "~> 232"
 
 group :jekyll_plugins do
-  gem "jekyll-paginate", "~> 1.1"
-  gem "jekyll-redirect-from", "~> 0.16"
-  gem "jekyll-seo-tag", "~> 2.8"
-  gem "jekyll-archives", "~> 2.2"
-  gem "jekyll-sitemap", "~> 1.4"
-  gem "jekyll-feed", "~> 0.17"
+  gem "jekyll-paginate"
+  gem "jekyll-redirect-from"
+  gem "jekyll-seo-tag"
+  gem "jekyll-archives"
+  gem "jekyll-sitemap"
+  gem "jekyll-feed"
+  gem "jekyll-remote-theme"
 end
 
 gem "webrick", "~> 1.7" # Required for Ruby 3.0+
