@@ -2,7 +2,8 @@ source "https://rubygems.org"
 
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem "github-pages", "~> 232"
+gem "jekyll", "~> 4.2"
+gem "jekyll-theme-chirpy", "~> 7.0"
 
 group :jekyll_plugins do
   gem "jekyll-paginate"
@@ -11,12 +12,10 @@ group :jekyll_plugins do
   gem "jekyll-archives"
   gem "jekyll-sitemap"
   gem "jekyll-feed"
-  gem "jekyll-remote-theme"
 end
 
-gem "webrick", "~> 1.7" # Required for Ruby 3.0+
+gem "webrick", "~> 1.7"
 
-# Platform-specific gems for Windows
 platforms :mingw, :mswin, :x64_mingw do
   gem "ffi", ">= 1.17"
   gem "tzinfo", "~> 2.0"

@@ -1,5 +1,5 @@
-# Jekyll Theme: Chirpy (via jekyll-remote-theme for GitHub Pages compatibility)
-remote_theme: cotes2020/jekyll-theme-chirpy@v7.0.1
+# Jekyll Theme: Chirpy (gem-based)
+theme: jekyll-theme-chirpy
 
 # Avatar & Theme Mode
 # Avatar: GitHub avatar URL from API
@@ -54,7 +54,6 @@ plugins:
   - jekyll-archives
   - jekyll-sitemap
   - jekyll-feed
-  - jekyll-remote-theme
 
 # Collections configuration for Chirpy tabs
 collections:
