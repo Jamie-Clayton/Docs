@@ -29,11 +29,6 @@ author:
 # Navigation & sidebar
 show_downloads: false
 
-# SEO & Social Media
-social:
-  links:
-    - https://github.com/jamie-clayton
-
 # Exclude from Jekyll processing
 exclude:
   - docs/superpowers/
