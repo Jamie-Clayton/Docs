@@ -66,6 +66,14 @@ collections:
 
 # Default settings for specific types
 defaults:
+  # Default settings for posts — applies Chirpy's post layout to everything in _posts/
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: false
+      toc: true
   # Default settings for tabs
   - scope:
       path: ""
