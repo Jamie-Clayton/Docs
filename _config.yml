@@ -33,6 +33,8 @@ show_downloads: false
 # Exclude from Jekyll processing
 exclude:
   - docs/superpowers/
+  - docs/templates/
+  - scripts/
   - .gitignore
   - Gemfile
   - Gemfile.lock

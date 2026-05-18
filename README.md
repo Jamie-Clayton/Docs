@@ -1,100 +1,53 @@
-# Software Engineers Lean Documents
-
-[View as HTML](https://jamie-clayton.github.io/Docs/)
+# Continuous Improvement for Software Engineers
 
 > Practical documentation for software engineers — built from real-world experience, improved continuously.
 
-## How to Use This Documentation
+**Read it on the web:** **[jamie-clayton.github.io/Docs](https://jamie-clayton.github.io/Docs/)**
 
-This repository uses the [Diátaxis framework](https://diataxis.fr/) to organize content by *purpose*:
+The site is built with [Jekyll](https://jekyllrb.com/) and the [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy) theme, and deployed automatically to GitHub Pages on every push to `master`.
 
-| Type | Purpose | When to use |
-|------|---------|-------------|
-| **Tutorial** | Learning-oriented, step-by-step | You're new to a tool or concept |
-| **How-to Guide** | Task-oriented, problem-solution | You know what you want to achieve |
-| **Reference** | Information-oriented, command lookup | You need a specific command or flag |
-| **Explanation** | Understanding-oriented, conceptual | You want to understand *why* |
+## Browse the Content
 
+The site uses the [Diátaxis framework](https://diataxis.fr/) — content is organised by purpose, not topic:
+
+| Diátaxis Type | What it's for | Browse on the site |
+|---------------|---------------|---------------------|
+| **Tutorial** | Learning by doing — pick this if you're new to a tool | [Categories → Tutorial](https://jamie-clayton.github.io/Docs/categories/tutorial/) |
+| **How-to** | Task-oriented recipes — pick this when you know what you want to achieve | [Categories → How-to](https://jamie-clayton.github.io/Docs/categories/how-to/) |
+| **Reference** | Command and option lookup — pick this when you need a specific flag | [Categories → Reference](https://jamie-clayton.github.io/Docs/categories/reference/) |
+| **Explanation** | Conceptual reading — pick this when you want to understand *why* | [Categories → Explanation](https://jamie-clayton.github.io/Docs/categories/explanation/) |
+
+Or browse by topic: **[Tags](https://jamie-clayton.github.io/Docs/tags/)** · **[Archives](https://jamie-clayton.github.io/Docs/archives/)** · **[About](https://jamie-clayton.github.io/Docs/about/)**
+
+## Authoring
+
+Posts live under [`_posts/`](_posts/) and follow Chirpy's filename convention `YYYY-MM-DD-slug.md` with a small block of YAML frontmatter:
+
+```yaml
 ---
-
-## 🚀 Learning Paths
-
-Start here based on your role:
-
-| Role | Learning Path | Time |
-|------|--------------|------|
-| **Windows Developer (new)** | [Getting Started: Windows DevOps](devops/GettingStarted-WindowsDevOps.md) → [PowerShell Reference](devops/PowerShell.md) | 1 hour |
-| **Backend Engineer** | [Production Ready Software](code/ProductionReady.md) → [Microservices](devops/Microservices.md) → [CQRS](code/CQRS.md) | 3 hours |
-| **Solutions Architect** | [Continuous Architecture](devops/ContinuosArchitecture.md) → [CQRS](code/CQRS.md) → [Microservices](devops/Microservices.md) | 3 hours |
-| **DevOps Engineer** | [Getting Started: Windows DevOps](devops/GettingStarted-WindowsDevOps.md) → [Terraform](devops/terraform.md) → [Azure Pipelines](devops/AzurePipelines.md) | 3 hours |
-| **Cloud Engineer (AWS)** | [AWS Cloud DevOps](devops/Aws-Cloud-Devops-Instructions.md) → [Terraform](devops/terraform.md) | 2 hours |
-
+title: Your Post Title
+date: 2026-05-18 09:00:00 +1000
+categories: [Tutorial, DevOps]   # [Diátaxis type, topic group]
+tags: [powershell, windows]      # specific topics
+author: Jamie Clayton
 ---
+```
 
-## 📚 Tutorials (Learning-Oriented)
+Static sidebar pages (HOME, CATEGORIES, TAGS, ARCHIVES, ABOUT) live under [`_tabs/`](_tabs/).
 
-Step-by-step guides for building skills from scratch.
+For local preview:
 
-| Tutorial | Description | Time |
-|----------|-------------|------|
-| [Getting Started: Windows DevOps](devops/GettingStarted-WindowsDevOps.md) | Install Git, PowerShell, Docker, Azure CLI on Windows | 45 min |
-| [Setting Up AWS DevOps](devops/Aws-Cloud-Devops-Instructions.md) | Configure AWS CLI, SAM, CDK for cloud development | 60 min |
-| [Terraform on Windows](devops/terraform.md) | Install and configure Terraform for infrastructure as code | 30 min |
-| [SSH Configuration](devops/ssh.md) | Set up SSH keys and remote access on Windows | 20 min |
-| [Your First Redis on Docker](devops/Containers-Tutorial.md) | Run Redis in Docker and use RedisInsight GUI | 30 min |
-
-## 🔧 How-to Guides (Task-Oriented)
-
-Targeted solutions to specific problems.
-
-| Guide | Problem Solved | Time |
-|-------|---------------|------|
-| [GitHub CLI Automation](devops/GitHub-cli.md) | Automate GitHub tasks from the command line | 15 min |
-| [Azure Pipelines](devops/AzurePipelines.md) | Configure multi-stage CI/CD pipelines | 20 min |
-| [Desired State Configuration](devops/DesiredStateConfiguration.md) | Manage server configuration declaratively | 30 min |
-| [Retiring AngularJS](code/RetiringAngularJs.md) | Migrate from AngularJS 1.x to modern Angular | 60 min |
-| [Code Coverage](code/CodeCoverage.md) | Measure and improve test coverage | 20 min |
-
-## 📖 Reference (Lookup-Oriented)
-
-Command catalogs and quick-lookup tables.
-
-| Reference | Contents |
-|-----------|---------|
-| [PowerShell Commands](devops/PowerShell.md) | Remoting, filtering, network, services, certificates |
-| [Git Commands](devops/GitCommand.md) | Versioning, stats, config, tag management |
-| [npm Commands](devops/Npm.md) | Package management, config, scripts |
-| [NuGet Commands](devops/nuget.md) | Package management for .NET |
-
-## 🧭 Explanation (Understanding-Oriented)
-
-Conceptual guides that explain *why*.
-
-| Document | Concept | Audience |
-|----------|---------|---------|
-| [CQRS](code/CQRS.md) | Command/Query separation for scalable systems | Backend engineers, architects |
-| [Microservices Architecture](devops/Microservices.md) | Decomposing monoliths into independent services | Architects, senior engineers |
-| [Continuous Architecture](devops/ContinuosArchitecture.md) | Architecture as a continuous practice, not a phase | Architects, tech leads |
-| [Production Ready Software](code/ProductionReady.md) | What "production ready" means and how to achieve it | All engineers |
-| [Software Licensing](code/Licensing.md) | Open source license options and trade-offs | All engineers |
-| [Microservices with Containers](devops/Containers-ServiceFabric.md) | Container orchestration concepts | DevOps engineers |
-| [PowerShell Automation](devops/Automation.md) | When and why to use PowerShell workflows | DevOps engineers |
-| [Web Components](code/WebComponents.md) | Browser-native component model | Frontend engineers |
-| [Solution Architecture](devops/Architecture.md) | Assessing software system impact and risk | Architects |
-| [Sustainability](Sustainability.md) | Environmental considerations in software | All engineers |
-| [Resilience](SoftSkills/Resilience.md) | Building professional resilience as an engineer | All engineers |
-| [High-Performance Mindsets](SoftSkills/Mindsets.md) | Mindsets that enable high-performing engineers | All engineers |
-
----
+```pwsh
+bundle install
+bundle exec jekyll serve
+```
 
 ## Contributing
 
-Please read [Contributing.md](Contributing.md) for details on our code of conduct and pull request process.
+See [Contributing.md](Contributing.md) for the code of conduct and pull request process.
 
 ## License
 
-This project is licensed under the Creative Commons License — see the [LICENSE](./LICENSE) file for details.
-
-## Thanks to Contributors
+Content is licensed under the [Creative Commons License](./LICENSE).
 
 [![contributors](https://contributors-img.web.app/image?repo=Jamie-Clayton/Docs)](https://github.com/Jamie-Clayton/Docs/graphs/contributors)
