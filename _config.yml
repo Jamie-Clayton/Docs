@@ -6,9 +6,11 @@ theme: jekyll-theme-chirpy
 # This uses the official GitHub avatar CDN for reliable image delivery
 avatar: "https://avatars.githubusercontent.com/u/834354?v=4"
 
-# Theme mode: 'auto' follows system preference with light/dark toggle
-# Other options: 'light' (fixed light theme) or 'dark' (fixed dark theme)
-theme_mode: auto
+# Theme mode (Chirpy):
+#   leave empty  -> follow OS prefers-color-scheme AND show a user toggle button
+#   light        -> force light, no toggle
+#   dark         -> force dark, no toggle
+theme_mode:
 
 # Site title & metadata
 title: Continuous Improvement for Software Engineers
@@ -81,6 +83,18 @@ defaults:
     values:
       layout: page
       permalink: /:title/
+
+# HTML compression — required by Chirpy to preserve <pre>/<code> whitespace
+# while still trimming layout boilerplate. Without this block, the gem's
+# compress.html layout uses defaults that collapse newlines inside code blocks.
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
 
 # Archive configuration for categories and tags
 jekyll-archives:
