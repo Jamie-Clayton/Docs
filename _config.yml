@@ -14,7 +14,8 @@ theme_mode: auto
 title: Continuous Improvement for Software Engineers
 tagline: Instructions, notes and guides to help with continuous software improvement.
 description: A professional documentation site for software engineering best practices, DevOps, and continuous improvement methodologies.
-url: "https://jamie-clayton.github.io/Docs"
+url: "https://jamie-clayton.github.io"
+baseurl: "/Docs"
 
 # Site language and timezone
 lang: en
