@@ -30,7 +30,8 @@ YAML patterns and configuration snippets for Azure DevOps pipeline configuration
 
 You can use variables and logic within the template to drive how things are done with nested yaml templates.
 
-```Yaml
+{% raw %}
+```yaml
 #azure-pipeline.yml
 parameters:
 - name: experimentalTemplate
@@ -44,6 +45,7 @@ steps:
 - ${{ if not(eq(parameters.experimentalTemplate, true)) }}:
   - template: stable.yml
 ```
+{% endraw %}
 
 You can reference multiple repositories in a build process. The build process will prompt you for permission to access those external repository resources.
 
