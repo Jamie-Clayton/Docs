@@ -60,7 +60,8 @@ docker run `
 
 ## See Also
 
-- [Containers Tutorial](/posts/2026/05/16/containers-redis-tutorial/) — start here if you are new to Docker
-- [Containers Reference](/posts/2026/05/16/docker-cli-reference/) — full Docker CLI cheat sheet
-- [Containers Explanation](/posts/2026/05/16/understanding-containers/) — why containers matter and what they don't solve
+- [Containers Tutorial](/Docs/posts/2026/05/16/containers-redis-tutorial/) — start here if you are new to Docker
+- [Containers Reference](/Docs/posts/2026/05/16/docker-cli-reference/) — full Docker CLI cheat sheet
+- [Containers Explanation](/Docs/posts/2026/05/16/understanding-containers/) — why containers matter and what they don't solve
+
 

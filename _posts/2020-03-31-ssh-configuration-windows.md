@@ -11,7 +11,7 @@ redirect_from:
 ---
 ## Before You Start
 
-- [ ] PowerShell Core (pwsh) installed — [Getting Started Guide](/posts/2026/05/16/getting-started-windows-devops/)
+- [ ] PowerShell Core (pwsh) installed — [Getting Started Guide](/Docs/posts/2026/05/16/getting-started-windows-devops/)
 - [ ] A GitHub account
 
 ## What You'll Learn
@@ -181,7 +181,8 @@ Start-Service ssh-agent
 
 ## Next Steps
 
-- [GitHub CLI Automation](/posts/2024/05/12/github-cli-automation/) — automate GitHub tasks via CLI
-- [PowerShell Reference](/posts/2020/08/17/powershell-reference/) — PowerShell command reference
-- [Getting Started: Windows DevOps](/posts/2026/05/16/getting-started-windows-devops/) — full environment setup
+- [GitHub CLI Automation](/Docs/posts/2024/05/12/github-cli-automation/) — automate GitHub tasks via CLI
+- [PowerShell Reference](/Docs/posts/2020/08/17/powershell-reference/) — PowerShell command reference
+- [Getting Started: Windows DevOps](/Docs/posts/2026/05/16/getting-started-windows-devops/) — full environment setup
+
 

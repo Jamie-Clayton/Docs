@@ -355,17 +355,18 @@ gh auth login
 Now that you have a functional Windows DevOps environment:
 
 1. **Explore DevOps topics** in the repository (Microservices, Terraform, etc.)
-2. **Learn PowerShell** - See [Helpful PowerShell Commands](/posts/2020/08/17/powershell-reference/)
+2. **Learn PowerShell** - See [Helpful PowerShell Commands](/Docs/posts/2020/08/17/powershell-reference/)
 3. **Set up your first remote machine** - Use PowerShell Remoting
 4. **Deploy a .NET application** - Create an API and containerize it with Docker
-5. **SSH Configuration** — see [SSH Configuration](/posts/2020/03/31/ssh-configuration-windows/)
+5. **SSH Configuration** — see [SSH Configuration](/Docs/posts/2020/03/31/ssh-configuration-windows/)
 
 ## References
 
 - [Winget Documentation](https://learn.microsoft.com/en-us/windows/package-manager/winget/)
 - [PowerShell Core Installation](https://github.com/PowerShell/PowerShell/releases)
-- [GitHub CLI Setup](/posts/2024/05/12/github-cli-automation/)
+- [GitHub CLI Setup](/Docs/posts/2024/05/12/github-cli-automation/)
 - [Getting Started with .NET](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial)
 - [Docker for Windows](https://docs.docker.com/desktop/install/windows-install/)
 - [Azure CLI Documentation](https://learn.microsoft.com/en-us/cli/azure/)
+
 

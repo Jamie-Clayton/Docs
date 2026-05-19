@@ -125,6 +125,7 @@ Get-DscConfigurationStatus
 
 ## See Also
 
-- [Automation with PowerShell](/posts/2020/08/17/powershell-automation/) — long-running script patterns
-- [PowerShell Reference](/posts/2020/08/17/powershell-reference/) — PowerShell command reference
+- [Automation with PowerShell](/Docs/posts/2020/08/17/powershell-automation/) — long-running script patterns
+- [PowerShell Reference](/Docs/posts/2020/08/17/powershell-reference/) — PowerShell command reference
+
 

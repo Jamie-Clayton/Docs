@@ -54,10 +54,11 @@ On Windows, Docker Desktop runs a lightweight Linux VM (using WSL 2) that hosts 
 
 ## Further Reading
 
-- [Containers Tutorial](/posts/2026/05/16/containers-redis-tutorial/) — hands-on: run Redis in Docker
-- [Containers How-to](/posts/2026/05/16/containers-how-to/) — recipes for RabbitMQ, secrets, and proxies
-- [Containers Reference](/posts/2026/05/16/docker-cli-reference/) — Docker CLI cheat sheet
-- [Microservices with Containers](/posts/2020/07/05/containers-service-fabric/) — container orchestration concepts
+- [Containers Tutorial](/Docs/posts/2026/05/16/containers-redis-tutorial/) — hands-on: run Redis in Docker
+- [Containers How-to](/Docs/posts/2026/05/16/containers-how-to/) — recipes for RabbitMQ, secrets, and proxies
+- [Containers Reference](/Docs/posts/2026/05/16/docker-cli-reference/) — Docker CLI cheat sheet
+- [Microservices with Containers](/Docs/posts/2020/07/05/containers-service-fabric/) — container orchestration concepts
 - [Docker documentation](https://docs.docker.com/)
 - [WSL 2 and Docker Desktop](https://docs.docker.com/desktop/wsl/)
+
 

@@ -15,7 +15,7 @@ You need to automate repetitive GitHub tasks — creating PRs, managing issues, 
 
 ## Install and Authenticate
 
-If not already done (covered in [Getting Started: Windows DevOps](/posts/2026/05/16/getting-started-windows-devops/)):
+If not already done (covered in [Getting Started: Windows DevOps](/Docs/posts/2026/05/16/getting-started-windows-devops/)):
 
 ```powershell
 winget install github.cli
@@ -138,8 +138,9 @@ gh auth login
 
 ## See Also
 
-- [Git Commands Reference](/posts/2020/08/17/git-command-reference/) — git operations reference
-- [Getting Started: Windows DevOps](/posts/2026/05/16/getting-started-windows-devops/) — installation guide
+- [Git Commands Reference](/Docs/posts/2020/08/17/git-command-reference/) — git operations reference
+- [Getting Started: Windows DevOps](/Docs/posts/2026/05/16/getting-started-windows-devops/) — installation guide
 - [GitHub CLI Documentation](https://cli.github.com/manual/)
+
 
 

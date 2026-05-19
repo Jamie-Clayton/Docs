@@ -44,5 +44,6 @@ Approaching problems as if seeing them for the first time surfaces solutions tha
 
 - [Mindset by Carol Dweck](https://www.amazon.com/Mindset-Psychology-Carol-S-Dweck/dp/0345472322)
 - [The Fifth Discipline by Peter Senge](https://www.amazon.com/Fifth-Discipline-Practice-Learning-Organization/dp/0385517254) — systems thinking
-- [Resilience](/posts/2020/10/01/building-resilience/) — recovery from setbacks
+- [Resilience](/Docs/posts/2020/10/01/building-resilience/) — recovery from setbacks
+
 

@@ -90,7 +90,8 @@ choco upgrade awscli
 
 ## Next Steps
 
-- [Azure Pipelines](/posts/2021/01/12/azure-pipelines/) — automate Terraform in CI/CD
-- [AWS Cloud DevOps](/posts/2023/09/11/aws-cloud-devops/) — Terraform for AWS environments
-- [Desired State Configuration](/posts/2020/08/17/desired-state-configuration/) — Windows-native alternative to Terraform for server config
+- [Azure Pipelines](/Docs/posts/2021/01/12/azure-pipelines/) — automate Terraform in CI/CD
+- [AWS Cloud DevOps](/Docs/posts/2023/09/11/aws-cloud-devops/) — Terraform for AWS environments
+- [Desired State Configuration](/Docs/posts/2020/08/17/desired-state-configuration/) — Windows-native alternative to Terraform for server config
+
 

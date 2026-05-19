@@ -72,5 +72,6 @@ If you notice these patterns, resilience isn't the right tool — rest and recov
 
 - [Resilience of Olympic Champions](https://www.pioneera.com/content/blog/2020/7/8/how-you-can-build-the-resilience-of-olympic-champions)
 - [Deep Work by Cal Newport](https://www.calnewport.com/books/deep-work/) — focus and meaningful work
-- [High-Performance Mindsets](/posts/2026/05/16/high-performance-mindsets/)
+- [High-Performance Mindsets](/Docs/posts/2026/05/16/high-performance-mindsets/)
+
 

@@ -11,7 +11,7 @@ redirect_from:
 ---
 ## Before You Start
 
-- [ ] [Windows DevOps environment](/posts/2026/05/16/getting-started-windows-devops/) set up (PowerShell Core, Node.js installed)
+- [ ] [Windows DevOps environment](/Docs/posts/2026/05/16/getting-started-windows-devops/) set up (PowerShell Core, Node.js installed)
 - [ ] AWS account with IAM user credentials (Access Key ID + Secret Access Key)
 - [ ] Docker Desktop running
 
@@ -199,7 +199,8 @@ code ~/AppData/Local/Temp/lambda-response.json
 
 ## Next Steps
 
-- [Terraform on Windows](/posts/2020/03/31/terraform-on-windows/) — infrastructure as code for AWS and Azure
-- [GitHub CLI Automation](/posts/2024/05/12/github-cli-automation/) — automate repository workflows
-- [Azure Pipelines](/posts/2021/01/12/azure-pipelines/) — CI/CD for cloud deployments
+- [Terraform on Windows](/Docs/posts/2020/03/31/terraform-on-windows/) — infrastructure as code for AWS and Azure
+- [GitHub CLI Automation](/Docs/posts/2024/05/12/github-cli-automation/) — automate repository workflows
+- [Azure Pipelines](/Docs/posts/2021/01/12/azure-pipelines/) — CI/CD for cloud deployments
+
 

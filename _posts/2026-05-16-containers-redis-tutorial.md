@@ -138,9 +138,9 @@ The image is the recipe; the container is the meal. You can run dozens of contai
 
 ## Where to go next
 
-- **How-to page** — task-oriented recipes for RabbitMQ, secrets, and corporate-proxy network setups: [Containers-HowTo.md](/posts/2026/05/16/containers-how-to/)
-- **Reference page** — the full Docker CLI cheat sheet: [Containers-Reference.md](/posts/2026/05/16/docker-cli-reference/)
-- **Explanation page** — why containers matter for local development, and what they don't solve: [Containers-Explanation.md](/posts/2026/05/16/understanding-containers/)
+- **How-to page** — task-oriented recipes for RabbitMQ, secrets, and corporate-proxy network setups: [Containers-HowTo.md](/Docs/posts/2026/05/16/containers-how-to/)
+- **Reference page** — the full Docker CLI cheat sheet: [Containers-Reference.md](/Docs/posts/2026/05/16/docker-cli-reference/)
+- **Explanation page** — why containers matter for local development, and what they don't solve: [Containers-Explanation.md](/Docs/posts/2026/05/16/understanding-containers/)
 
 ## References
 
@@ -150,4 +150,5 @@ The image is the recipe; the container is the meal. You can run dozens of contai
 - [RedisInsight documentation](https://redis.io/docs/latest/operate/redisinsight/)
 - [Docker Scout quickstart](https://docs.docker.com/scout/)
 - [Diátaxis framework — Tutorials](https://diataxis.fr/tutorials/)
+
 

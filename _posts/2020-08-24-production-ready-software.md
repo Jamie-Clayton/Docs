@@ -195,7 +195,8 @@ Track production incidents and root-cause them. Did the incident appear in logs?
 
 ## See Also
 
-- [CQRS](/posts/2020/09/18/cqrs/) — read/write separation for scalable systems
-- [Microservices](/posts/2021/04/21/microservices-architecture/) — health checks and resilience patterns
-- [Code Coverage](/posts/2020/11/20/code-coverage/) — measuring test quality
+- [CQRS](/Docs/posts/2020/09/18/cqrs/) — read/write separation for scalable systems
+- [Microservices](/Docs/posts/2021/04/21/microservices-architecture/) — health checks and resilience patterns
+- [Code Coverage](/Docs/posts/2020/11/20/code-coverage/) — measuring test quality
+
 

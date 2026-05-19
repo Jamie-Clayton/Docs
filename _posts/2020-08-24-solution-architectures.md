@@ -75,9 +75,10 @@ After reading this document, you will understand:
 
 ## Further Reading
 
-- [Continuous Architecture](/posts/2023/10/08/continuous-architecture/) — architecture as an ongoing practice
-- [Microservices](/posts/2021/04/21/microservices-architecture/) — decomposing a monolith
-- [CQRS](/posts/2020/09/18/cqrs/) — read/write separation
+- [Continuous Architecture](/Docs/posts/2023/10/08/continuous-architecture/) — architecture as an ongoing practice
+- [Microservices](/Docs/posts/2021/04/21/microservices-architecture/) — decomposing a monolith
+- [CQRS](/Docs/posts/2020/09/18/cqrs/) — read/write separation
 - [Cloud Computing Diagrams](https://docs.rightscale.com/cm/designers_guide/cm-cloud-computing-system-architecture-diagrams.html)
 - [Contingency Planning](https://www.mindtools.com/media/Diagrams/Contingency_Planning_Example1.pdf)
+
 
