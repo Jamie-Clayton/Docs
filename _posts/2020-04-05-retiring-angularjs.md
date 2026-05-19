@@ -71,9 +71,8 @@ Now NPM is configured for you project, the associated Javascript packages and ve
 
 ### References - NPM and JavaScript Module options
 
-[1]: [Initializing NPM](https://docs.npmjs.com/cli/init)
-
-[2]: [Should you care about the license? (TL;DR: yes!)](https://medium.com/@vovabilonenko/licenses-of-npm-dependencies-bacaa00c8c65)
+1. [Initializing NPM](https://docs.npmjs.com/cli/init)
+2. [Should you care about the license? (TL;DR: yes!)](https://medium.com/@vovabilonenko/licenses-of-npm-dependencies-bacaa00c8c65)
 
 ## AngularJS with Typescript
 
@@ -120,7 +119,7 @@ The **tsconfig.json** file will include a range of settings and explanations of 
 >
 > -- <cite>[Igor Irianto][3]
 
-[3]: [What are CJS, AMD, UMD, and ESM in Javascript?](https://dev.to/iggredible/what-the-heck-are-cjs-amd-umd-and-esm-ikm)
+[3]: https://dev.to/iggredible/what-the-heck-are-cjs-amd-umd-and-esm-ikm "What are CJS, AMD, UMD, and ESM in Javascript?"
 
 Understanding the module configuration help progress through the 
 

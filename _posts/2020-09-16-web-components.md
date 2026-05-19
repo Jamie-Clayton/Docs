@@ -25,7 +25,7 @@ Web Components should definitely be on your technology radar as software enginee
 
 [Building Web Components](https://developers.google.com/web/fundamentals/web-components)
 
-[The Polymer Project - Web Component builder](www.polymer-project.org)
+[The Polymer Project - Web Component builder](https://www.polymer-project.org)
 
 [Web Components - Crash Course](https://www.youtube.com/watch?v=PCWaFLy3VUo)
 
