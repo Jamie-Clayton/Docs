@@ -24,7 +24,7 @@ Twelve modules that take a .NET team from "we keep hearing about agents" to actu
 
 One-time setup, about 20 minutes, and no, it doesn't count as a module.
 
-- An AWS account or sandbox with Bedrock model access enabled. Request access to at least one Anthropic Claude model and one Amazon Nova model (console → Bedrock → Model access). Approval is usually instant, occasionally not, so do this first rather than discovering it mid-lab.
+- An Amazon Web Services (AWS) account or sandbox with Bedrock model access enabled. Request access to at least one Anthropic Claude model and one Amazon Nova model (console → Bedrock → Model access). Approval is usually instant, occasionally not, so do this first rather than discovering it mid-lab.
 - The .NET 10 SDK, your usual IDE, and the AWS CLI configured with a profile.
 - Terraform 1.7 or newer.
 - A git repo called `ai-enablement-labs`. Every module commits its lab output here. By the end it's your team's shared reference codebase, rather than twelve abandoned folders in someone's Downloads.
