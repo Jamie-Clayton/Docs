@@ -17,7 +17,7 @@ Treat prompts as engineering artifacts: structured, versioned, and kept well cle
 ## Read (~10 min)
 
 - Anthropic's interactive tutorial, Chapters 4–6 — separating data from instructions, output formatting, and step-by-step reasoning ("precognition"). Same repo as [Module 1](/Docs/posts/2026/06/09/prompt-tool-design-01-talk-to-a-model/).
-- Bookmark the AWS prompt-engineering workshop; you'll dip back into it later: <https://catalog.workshops.aws/prompt-eng-claude3/en-US>
+- Bookmark the [AWS prompt-engineering workshop](https://catalog.workshops.aws/prompt-eng-claude3/en-US); you'll dip back into it later.
 
 ## Lab (~15 min)
 
@@ -27,7 +27,7 @@ Take the prompt you built in [Module 1](/Docs/posts/2026/06/09/prompt-tool-desig
 - a **user prompt** with `{{placeholders}}` for the bits that change;
 - the **input data** fenced off clearly — XML tags or code blocks — so the model never mistakes your data for your instructions.
 
-Test it with two genuinely different inputs. Commit as `module-02/incident-summary.prompt.md`.
+Test it with two genuinely different inputs. Commit as `module-02/summary.prompt.md`.
 
 ## Done when
 
