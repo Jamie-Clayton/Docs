@@ -23,12 +23,12 @@ Learn what makes a tool definition good. The model sees only your name, your des
 
 1. **Tool descriptions are prompts.** Write them like docs for a sharp but painfully literal junior dev who will never ask a follow-up question.
 2. **Fewer, well-scoped tools beat many overlapping ones.** Two tools that do almost the same thing are two tools the model can pick wrongly.
-3. **Return errors as text the model can recover from**, not stack traces. `City not found; try a major city name like "Sydney"` is worth more to the model than a 500 and a wall of red.
+3. **Return errors as text the model can recover from**, not stack traces. `No comic found for that topic; try a broader keyword like "deployment"` is worth more to the model than a 500 and a wall of red.
 4. **Schema constraints are cheaper than prose.** An `enum` or a `required` field _enforces_ what a paragraph of careful instructions only _suggests_.
 
 ## Lab (~18 min)
 
-No code yet. Design tool definitions for a small, self-contained example — a weather lookup, say — writing the name, description, JSON input schema, and example output for two or three operations (current conditions, a multi-day forecast), as if you were handing them to a model. Then peer-review in pairs with one question in mind: _could a literal-minded stranger misuse this?_ Commit as `module-03/tool-contracts.md`.
+No code yet. Design tool definitions for a small, self-contained example — a tech-comic finder, say, returning a relevant strip from [xkcd](https://xkcd.com), [CommitStrip](https://www.commitstrip.com), or [MonkeyUser](https://www.monkeyuser.com) — writing the name, description, JSON input schema, and example output for two or three operations (find a comic by topic, fetch a random one), as if you were handing them to a model. Then peer-review in pairs with one question in mind: _could a literal-minded stranger misuse this?_ Commit as `module-03/tool-contracts.md`.
 
 This is the peer review worth slowing down for. It's also where someone discovers your "obvious" parameter name meant something different to everyone in the room.
 
