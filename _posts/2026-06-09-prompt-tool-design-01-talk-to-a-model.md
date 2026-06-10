@@ -18,14 +18,14 @@ Understand why prompt _structure_ matters more than prompt _wording_, and learn 
 
 Interleaved — read a chapter, then immediately try it.
 
-- Anthropic's Interactive Prompt Engineering Tutorial, Chapters 1–3 only: <https://github.com/anthropics/prompt-eng-interactive-tutorial>. It's built around notebooks, but you don't need Python for any of this. Do every exercise in the Bedrock **Chat playground** (or Anthropic's web console) instead: read the chapter, type the prompt by hand, watch what changes.
-- Skim the technique index so you know what exists for later: <https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview>
+- Anthropic's [Interactive Prompt Engineering Tutorial](https://github.com/anthropics/prompt-eng-interactive-tutorial), Chapters 1–3 only. It's built around notebooks, but you don't need Python for any of this. Do every exercise in the Bedrock **Chat playground** (or Anthropic's web console) instead: read the chapter, type the prompt by hand, watch what changes.
+- Skim the [prompt-engineering technique index](https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview) so you know what exists for later.
 
 ## Lab
 
-In the Bedrock Chat playground, take one real prompt from your own domain — "summarise this incident ticket", for instance — and improve it three times:
+In the Bedrock Chat playground, take a simple prompt — "summarise this text in three bullet points", for instance — and improve it three times:
 
-1. Add a role ("You are an on-call SRE triaging a P2...").
+1. Add a role ("You are a precise technical editor...").
 2. Add output-format constraints (a fixed structure, a length limit).
 3. Add one worked example of a good summary.
 
