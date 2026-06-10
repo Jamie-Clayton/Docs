@@ -58,7 +58,7 @@ One-time setup, about 20 minutes, and no, it doesn't count as a module.
 ### Part 4 — AgentCore and Production
 
 - **Module 10** — [AgentCore concepts](/Docs/posts/2026/06/09/prompt-tool-design-10-agentcore-concepts/) — Runtime, Gateway, Memory, Identity, Observability, and which piece of hand-rolled plumbing each one replaces.
-- **Module 11** — [Gateway: your existing APIs as agent tools](/Docs/posts/2026/06/09/prompt-tool-design-11-gateway/) — expose a .NET Lambda as a tool. No Python, no MCP server.
+- **Module 11** — [Gateway: a .NET Lambda as an agent tool](/Docs/posts/2026/06/09/prompt-tool-design-11-gateway/) — expose your Module 8 Lambda as a tool. No Python, no MCP server.
 - **Module 12** — [Capstone: end to end](/Docs/posts/2026/06/09/prompt-tool-design-12-capstone/) — wire it all together and write down what "done" actually means for an AI feature.
 
 ---
@@ -66,15 +66,15 @@ One-time setup, about 20 minutes, and no, it doesn't count as a module.
 ## Suggested cadence & facilitation
 
 - **Weeks 1–4:** Modules 1–3, then 4–6, then 7–9, then 10–12. Hold one 30-minute team huddle a week to compare lab output. The peer reviews in M3 and M5 are where the real arguments — and the real learning — happen.
-- Keep everything in the shared `ai-enablement-labs` repo. The ADRs (M7, M9) and the checklist (M12) are meant to graduate into your actual solution's docs, not die in the lab.
+- Keep everything in the shared `ai-enablement-labs` repo. The ADRs (M7, M9) and the checklist (M12) are the artifacts worth keeping after the course — not throwaway lab files.
 - **Freshness warning:** AgentCore, the SK Amazon connector, and Terraform's provider coverage all move monthly, sometimes weekly. The links throughout were verified June 2026. Before you start Part 4, have one person spend fifteen minutes confirming current GA and region status (Sydney availability matters) and connector versions. This paragraph is, fittingly, the part most likely to be out of date by the time you read it.
 
 ## Reference shelf
 
 Not required reading, but worth a bookmark.
 
-- SK in-depth samples, every feature as runnable tests: <https://learn.microsoft.com/en-us/semantic-kernel/get-started/detailed-samples>
-- SK BedrockAgent agent type, for driving Bedrock managed agents through SK's agent abstraction: <https://learn.microsoft.com/en-us/semantic-kernel/frameworks/agent/agent-types/bedrock-agent>
-- AWS Skill Builder, _Foundations of Prompt Engineering_ (free eLearning; search the catalogue at <https://skillbuilder.aws>)
-- The official C# MCP SDK, for when you _do_ want to write MCP servers in-stack: <https://github.com/modelcontextprotocol/csharp-sdk>
-- Terraform and AgentCore deployment patterns with observability: <https://www.pierreange.ai/blog/deploy-your-own-deep-research-agent>
+- [Semantic Kernel in-depth samples](https://learn.microsoft.com/en-us/semantic-kernel/get-started/detailed-samples) — every feature as runnable tests.
+- [SK BedrockAgent agent type](https://learn.microsoft.com/en-us/semantic-kernel/frameworks/agent/agent-types/bedrock-agent) — drive Bedrock managed agents through SK's agent abstraction.
+- [AWS Skill Builder: Foundations of Prompt Engineering](https://skillbuilder.aws) — free eLearning; search the catalogue for the title.
+- [Official C# MCP SDK](https://github.com/modelcontextprotocol/csharp-sdk) — for when you _do_ want to write MCP servers in-stack.
+- [Terraform + AgentCore deployment patterns](https://www.pierreange.ai/blog/deploy-your-own-deep-research-agent) — with observability.
