@@ -10,7 +10,7 @@ author: Jamie Clayton
 
 Twelve modules that take a .NET team from "we keep hearing about agents" to actually shipping one — without anyone learning Python or pretending they enjoy Jupyter notebooks.
 
-New to the jargon? An **agent** is just a program that lets a language model decide which of your own functions to call, and when. Demystifying that one sentence is the whole course — so if you're a manager or a curious non-coder, you can read the openers and "Objective" of each module and follow the story without touching the labs.
+New to the jargon? An **agent** is just a program that lets a language model decide which of your own functions to call, and when. Demystifying that one sentence is the whole course — so if you're a manager or a curious non-coder, you can read the openers and "Objective" of each module and follow the story without touching the labs. There's a [plain-English glossary](#plain-english-glossary) at the foot of this page for everything else.
 
 **Audience:** Experienced .NET engineers with no prior AI/LLM, Python, or Model Context Protocol (MCP) experience. If you've spent a decade shipping line-of-business C# and have been nodding along in meetings about "agentic workflows," this is for you.
 
@@ -70,6 +70,24 @@ One-time setup, about 20 minutes, and no, it doesn't count as a module.
 - **Weeks 1–4:** Modules 1–3, then 4–6, then 7–9, then 10–12. Hold one 30-minute team huddle a week to compare lab output. The peer reviews in M3 and M5 are where the real arguments — and the real learning — happen.
 - Keep everything in the shared `ai-enablement-labs` repo. The Architecture Decision Records (ADRs) from Modules 7 and 9, and the checklist from Module 12, are the artifacts worth keeping after the course — not throwaway lab files.
 - **Freshness warning:** AgentCore, the Semantic Kernel (SK) Amazon connector, and Terraform's provider coverage all move monthly, sometimes weekly. The links throughout were verified June 2026. Before you start Part 4, have one person spend fifteen minutes confirming current general availability (GA) and region status (Sydney availability matters) and connector versions. This paragraph is, fittingly, the part most likely to be out of date by the time you read it.
+
+---
+
+## Plain-English glossary
+
+For anyone reading along without writing the code. The modules don't assume you've memorised these — they're here for when a term trips you up.
+
+- **Model** (or **large language model**, **LLM**) — the AI that reads text and writes text back. It predicts likely words; it doesn't "know" things the way a person does.
+- **Prompt** — the instructions and information you hand the model. Clearer, better-structured prompts get better answers.
+- **System prompt** — the standing instructions that set the model's role and rules, kept separate from each individual question.
+- **Agent** — a program that lets the model decide which of your functions to call, and when, to get a task done.
+- **Tool** (also called **function calling**) — one of those functions, described to the model so it can choose to use it — for example, "find a comic about merge conflicts."
+- **Plugin** — in Semantic Kernel, the .NET class that holds your tools.
+- **Guardrail** — a safety filter that checks what goes into and comes out of the model, such as blocking personal data.
+- **Semantic Kernel (SK)** — Microsoft's .NET toolkit for wiring models and tools together from C#.
+- **Amazon Bedrock** — the AWS service that hosts the models you call. **AgentCore** is its newer set of building blocks for running and connecting agents.
+- **Terraform** — a tool for describing cloud infrastructure in text files, so it can be reviewed and rebuilt reliably instead of clicked together by hand.
+- **Model Context Protocol (MCP)** — a shared standard for exposing tools to agents. This course gets you productive without writing one.
 
 ## Reference shelf
 
