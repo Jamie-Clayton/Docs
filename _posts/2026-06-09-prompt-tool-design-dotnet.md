@@ -10,6 +10,8 @@ author: Jamie Clayton
 
 Twelve modules that take a .NET team from "we keep hearing about agents" to actually shipping one — without anyone learning Python or pretending they enjoy Jupyter notebooks.
 
+New to the jargon? An **agent** is just a program that lets a language model decide which of your own functions to call, and when. Demystifying that one sentence is the whole course — so if you're a manager or a curious non-coder, you can read the openers and "Objective" of each module and follow the story without touching the labs.
+
 **Audience:** Experienced .NET engineers with no prior AI/LLM, Python, or Model Context Protocol (MCP) experience. If you've spent a decade shipping line-of-business C# and have been nodding along in meetings about "agentic workflows," this is for you.
 
 **Format:** 12 modules, each 30 minutes or less — read or watch, then write code. Run it as 2–3 modules a week over a month, or block out two days and power through. The modules build on each other, so resist the urge to start at Module 8 because Terraform feels like home.
