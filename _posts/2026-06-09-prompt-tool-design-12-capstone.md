@@ -16,7 +16,7 @@ Tie everything together, and write down what "done" means for an AI feature.
 
 ## Build (~25 min, in pairs)
 
-A minimal vertical slice:
+A minimal vertical slice — one thin feature wired through every layer, end to end:
 
 - a .NET console or API using Semantic Kernel, layered the way [Module 7](/Docs/posts/2026/06/09/prompt-tool-design-07-separation-of-concerns/) argued for;
 - calling a Bedrock agent or an AgentCore-hosted tool path from Modules [8](/Docs/posts/2026/06/09/prompt-tool-design-08-bedrock-terraform/)–[11](/Docs/posts/2026/06/09/prompt-tool-design-11-gateway/);
