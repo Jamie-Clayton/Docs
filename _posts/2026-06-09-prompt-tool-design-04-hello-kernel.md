@@ -12,13 +12,13 @@ Finally, some C#. The good news for a .NET team: the kernel is a dependency-inje
 
 ## Objective
 
-Stand up Semantic Kernel against Bedrock from a console app, and see the kernel for what it is — a DI container for AI services.
+Stand up Semantic Kernel against Bedrock from a console app, and see the kernel for what it is — a dependency injection (DI) container for AI services.
 
 ## Read (~10 min)
 
-- SK overview: <https://learn.microsoft.com/en-us/semantic-kernel/overview/>
-- Understanding the kernel — it really is a DI container, so this will feel familiar: <https://learn.microsoft.com/en-us/semantic-kernel/concepts/kernel>
-- The SK + Bedrock announcement, with a C# snippet halfway down: <https://devblogs.microsoft.com/semantic-kernel/introducing-aws-bedrock-with-semantic-kernel/>
+- [Semantic Kernel overview](https://learn.microsoft.com/en-us/semantic-kernel/overview/).
+- [Understanding the kernel](https://learn.microsoft.com/en-us/semantic-kernel/concepts/kernel) — it really is a DI container, so this will feel familiar.
+- The [SK + Bedrock announcement](https://devblogs.microsoft.com/semantic-kernel/introducing-aws-bedrock-with-semantic-kernel/), with a C# snippet halfway down.
 
 ## Lab (~20 min)
 
@@ -47,7 +47,7 @@ var kernel = Kernel.CreateBuilder()
 
 var chat = kernel.GetRequiredService<IChatCompletionService>();
 
-var history = new ChatHistory("You are a concise assistant for HR platform engineers.");
+var history = new ChatHistory("You are a concise, helpful assistant.");
 history.AddUserMessage("Explain idempotency keys in two sentences.");
 
 Console.WriteLine(await chat.GetChatMessageContentAsync(history));
@@ -55,7 +55,7 @@ Console.WriteLine(await chat.GetChatMessageContentAsync(history));
 
 Credentials come from your normal AWS profile — wire them through `AWSSDK.Extensions.NETCore.Setup` the same way you would for any other AWS SDK call. Commit the app as `module-04/`.
 
-> ⚠️ The Amazon connector is still prerelease/alpha — vendor-speak for "it works, until a Tuesday." Pin the version in the repo and note it in your ADR. [Module 7](/Docs/posts/2026/06/09/prompt-tool-design-07-separation-of-concerns/) is where we decide which layer that abstraction boundary belongs in.
+> ⚠️ The Amazon connector is still prerelease/alpha — vendor-speak for "it works, until a Tuesday." Pin the version in the repo and note it in your Architecture Decision Record (ADR). [Module 7](/Docs/posts/2026/06/09/prompt-tool-design-07-separation-of-concerns/) is where we decide which layer that abstraction boundary belongs in.
 
 ## Done when
 
