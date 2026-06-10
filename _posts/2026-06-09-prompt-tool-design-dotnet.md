@@ -10,7 +10,7 @@ author: Jamie Clayton
 
 Twelve modules that take a .NET team from "we keep hearing about agents" to actually shipping one — without anyone learning Python or pretending they enjoy Jupyter notebooks.
 
-**Audience:** Experienced .NET engineers with no prior AI/LLM, Python, or MCP experience. If you've spent a decade shipping line-of-business C# and have been nodding along in meetings about "agentic workflows," this is for you.
+**Audience:** Experienced .NET engineers with no prior AI/LLM, Python, or Model Context Protocol (MCP) experience. If you've spent a decade shipping line-of-business C# and have been nodding along in meetings about "agentic workflows," this is for you.
 
 **Format:** 12 modules, each 30 minutes or less — read or watch, then write code. Run it as 2–3 modules a week over a month, or block out two days and power through. The modules build on each other, so resist the urge to start at Module 8 because Terraform feels like home.
 
@@ -45,7 +45,7 @@ One-time setup, about 20 minutes, and no, it doesn't count as a module.
 
 ### Part 2 — Semantic Kernel in .NET
 
-- **Module 4** — [Hello, Kernel: SK + Bedrock from C#](/Docs/posts/2026/06/09/prompt-tool-design-04-hello-kernel/) — the kernel is a DI container. You already know DI containers.
+- **Module 4** — [Hello, Kernel: SK + Bedrock from C#](/Docs/posts/2026/06/09/prompt-tool-design-04-hello-kernel/) — the kernel is a dependency injection (DI) container. You already know DI containers.
 - **Module 5** — [Plugins: exposing .NET code to the model](/Docs/posts/2026/06/09/prompt-tool-design-05-plugins/) — turn the Module 3 contracts into real, callable C#.
 - **Module 6** — [Function calling: letting the model drive your tools](/Docs/posts/2026/06/09/prompt-tool-design-06-function-calling/) — the request → tool call → result → answer loop, and what to do when it loops badly.
 - **Module 7** — [Separation of concerns: where AI touches your architecture](/Docs/posts/2026/06/09/prompt-tool-design-07-separation-of-concerns/) — boundaries, so AI code doesn't quietly seep into every layer.
@@ -66,8 +66,8 @@ One-time setup, about 20 minutes, and no, it doesn't count as a module.
 ## Suggested cadence & facilitation
 
 - **Weeks 1–4:** Modules 1–3, then 4–6, then 7–9, then 10–12. Hold one 30-minute team huddle a week to compare lab output. The peer reviews in M3 and M5 are where the real arguments — and the real learning — happen.
-- Keep everything in the shared `ai-enablement-labs` repo. The ADRs (M7, M9) and the checklist (M12) are the artifacts worth keeping after the course — not throwaway lab files.
-- **Freshness warning:** AgentCore, the SK Amazon connector, and Terraform's provider coverage all move monthly, sometimes weekly. The links throughout were verified June 2026. Before you start Part 4, have one person spend fifteen minutes confirming current GA and region status (Sydney availability matters) and connector versions. This paragraph is, fittingly, the part most likely to be out of date by the time you read it.
+- Keep everything in the shared `ai-enablement-labs` repo. The Architecture Decision Records (ADRs) from Modules 7 and 9, and the checklist from Module 12, are the artifacts worth keeping after the course — not throwaway lab files.
+- **Freshness warning:** AgentCore, the Semantic Kernel (SK) Amazon connector, and Terraform's provider coverage all move monthly, sometimes weekly. The links throughout were verified June 2026. Before you start Part 4, have one person spend fifteen minutes confirming current general availability (GA) and region status (Sydney availability matters) and connector versions. This paragraph is, fittingly, the part most likely to be out of date by the time you read it.
 
 ## Reference shelf
 
