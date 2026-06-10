@@ -16,18 +16,16 @@ Define the architectural boundaries so AI code stays in its lane instead of seep
 
 ## Read (~12 min)
 
-- Microsoft.Extensions.AI — the `IChatClient` abstraction SK itself is converging on: <https://learn.microsoft.com/en-us/dotnet/ai/microsoft-extensions-ai>
-- SK filters, for cross-cutting concerns like logging, PII redaction, and approval gates: <https://learn.microsoft.com/en-us/semantic-kernel/concepts/enterprise-readiness/filters>
+- [Microsoft.Extensions.AI](https://learn.microsoft.com/en-us/dotnet/ai/microsoft-extensions-ai) — the `IChatClient` abstraction Semantic Kernel (SK) itself is converging on.
+- [Semantic Kernel filters](https://learn.microsoft.com/en-us/semantic-kernel/concepts/enterprise-readiness/filters), for cross-cutting concerns like logging, personally identifiable information (PII) redaction, and approval gates.
 
 ## The layering to adopt
 
 Discuss this as a team — the disagreements are the useful part.
 
-| Layer            | Owns                                                                                                        | Never contains               |
-| ---------------- | ----------------------------------------------------------------------------------------------------------- | ---------------------------- |
-| Domain           | Business logic; the inner services your plugins wrap                                                         | Prompts, model IDs, SK types |
-| AI orchestration | Kernel setup, plugins (thin adapters over domain services), prompt templates as embedded resources, filters | Business rules               |
-| Infrastructure   | Model IDs, region, credentials, guardrail ARNs — all configuration                                          | Hard-coded anything          |
+- **Domain** — owns business logic and the inner services your plugins wrap. Never holds prompts, model IDs, or SK types.
+- **AI orchestration** — owns kernel setup, plugins (thin adapters over domain services), prompt templates as embedded resources, and filters. Never holds business rules.
+- **Infrastructure** — owns model IDs, region, credentials, and guardrail Amazon Resource Names (ARNs); it is all configuration, and hard-codes nothing.
 
 ## Lab (~18 min)
 
@@ -61,13 +59,13 @@ public sealed class LoggingFilter(ILogger<LoggingFilter> logger)
 }
 ```
 
-Register it through DI on the kernel builder:
+Register it through dependency injection (DI) on the kernel builder:
 
 ```csharp
 kernelBuilder.Services.AddSingleton<IFunctionInvocationFilter, LoggingFilter>();
 ```
 
-Then write a one-page ADR — "How AI components integrate with our solution" — and commit it as `module-07/adr-001-ai-boundaries.md`. Future hires will read this instead of asking you.
+Then write a one-page Architecture Decision Record (ADR) — "How AI components integrate with our solution" — and commit it as `module-07/adr-001-ai-boundaries.md`. Future hires will read this instead of asking you.
 
 ## Done when
 
