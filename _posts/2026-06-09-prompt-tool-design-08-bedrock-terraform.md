@@ -16,8 +16,8 @@ Define a Bedrock managed agent, an action group, and a guardrail declaratively.
 
 ## Read (~10 min)
 
-- The Terraform AWS provider's `aws_bedrockagent_agent` resource: <https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/bedrockagent_agent>
-- A walkthrough with full HCL — agent, alias, and IAM, kept model-agnostic via variables: <https://dev.to/suhas_mallesh/deploy-your-first-bedrock-agent-with-terraform-model-agnostic-and-future-proof-25k>
+- The Terraform Amazon Web Services (AWS) provider's [`aws_bedrockagent_agent` resource](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/bedrockagent_agent).
+- A [walkthrough with full HashiCorp Configuration Language (HCL)](https://dev.to/suhas_mallesh/deploy-your-first-bedrock-agent-with-terraform-model-agnostic-and-future-proof-25k) — agent, alias, and Identity and Access Management (IAM), kept model-agnostic via variables.
 
 ## Lab (~20 min)
 
@@ -44,20 +44,20 @@ resource "aws_iam_role" "agent" {
   assume_role_policy = data.aws_iam_policy_document.agent_trust.json
 }
 
-resource "aws_bedrockagent_agent" "leave_assistant" {
-  agent_name                  = "leave-assistant"
+resource "aws_bedrockagent_agent" "comic_assistant" {
+  agent_name                  = "comic-assistant"
   agent_resource_role_arn     = aws_iam_role.agent.arn
   foundation_model            = var.model_id
   idle_session_ttl_in_seconds = 500
-  # The same system prompt you wrote in Module 2.
-  instruction                 = "You are a concise assistant for HR platform engineers."
+  # Your system prompt — keep it short and specific.
+  instruction                 = "You are a witty assistant that recommends programming comics."
 }
 ```
 
 Then add, following the walkthrough above:
 
-- an **action group** pointing at a stub Lambda — a C# Lambda that reuses your [`LeavePlugin`](/Docs/posts/2026/06/09/prompt-tool-design-05-plugins/) logic;
-- an **`aws_bedrock_guardrail`** with a basic PII filter;
+- an **action group** pointing at a stub Lambda — a C# Lambda that reuses your [`ComicPlugin`](/Docs/posts/2026/06/09/prompt-tool-design-05-plugins/) logic;
+- an **`aws_bedrock_guardrail`** with a basic personally identifiable information (PII) filter;
 - the IAM permissions the agent needs to invoke the model.
 
 Test it in the console's agent test pane, then `terraform destroy` when you're done. (Do the `destroy`. An idle agent costs nothing, but tidy is a habit.)
