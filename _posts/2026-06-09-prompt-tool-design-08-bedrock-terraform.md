@@ -12,7 +12,7 @@ A Bedrock agent you created by clicking around the console is an agent nobody ca
 
 ## Objective
 
-Define a Bedrock managed agent, an action group, and a guardrail declaratively.
+Define a Bedrock managed agent, an action group (the set of tools the agent is allowed to call), and a guardrail (a safety filter on what goes in and what comes out) — all declaratively.
 
 ## Read (~10 min)
 
