@@ -8,11 +8,11 @@ author: Jamie Clayton
 
 > **[Prompt & Tool Design for .NET Teams](/Docs/posts/2026/06/09/prompt-tool-design-dotnet/)** · Part 1 — Fundamentals · Module 3 of 12
 
-This is the one. If the course had a single takeaway, it would be this module. A tool definition is just an API — except the consumer is a model that read your description exactly once, took it completely literally, and will never raise a clarifying ticket.
+This is the one. If the course had a single takeaway, it would be this module. A tool definition is just an API — the agreed contract for how one piece of software asks another to do something — except here the consumer is a model that read your description exactly once, took it completely literally, and will never raise a clarifying ticket.
 
 ## Objective
 
-Learn what makes a tool definition good. The model sees only your name, your description, and your JSON schema. It cannot read the implementation, it cannot ask what you meant, and it will not give you the benefit of the doubt.
+Learn what makes a tool definition good. The model sees only your name, your description, and your JSON schema (a precise description of the data's shape). It cannot read the implementation, it cannot ask what you meant, and it will not give you the benefit of the doubt.
 
 ## Read (~12 min)
 
