@@ -53,7 +53,7 @@ history.AddUserMessage("Explain idempotency keys in two sentences.");
 Console.WriteLine(await chat.GetChatMessageContentAsync(history));
 ```
 
-Credentials come from your normal AWS profile — wire them through `AWSSDK.Extensions.NETCore.Setup` the same way you would for any other AWS SDK call. Commit the app as `module-04/`.
+Credentials come from your normal Amazon Web Services (AWS) profile — wire them through `AWSSDK.Extensions.NETCore.Setup` the same way you would for any other AWS SDK call. Commit the app as `module-04/`.
 
 > ⚠️ The Amazon connector is still prerelease/alpha — vendor-speak for "it works, until a Tuesday." Pin the version in the repo and note it in your Architecture Decision Record (ADR). [Module 7](/Docs/posts/2026/06/09/prompt-tool-design-07-separation-of-concerns/) is where we decide which layer that abstraction boundary belongs in.
 
