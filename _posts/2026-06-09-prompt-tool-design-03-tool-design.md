@@ -16,19 +16,19 @@ Learn what makes a tool definition good. The model sees only your name, your des
 
 ## Read (~12 min)
 
-- Anthropic's tool-use guide, especially the concepts and best-practices section: <https://docs.claude.com/en/docs/agents-and-tools/tool-use/overview>
-- AWS Converse API tool use: <https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html>
+- Anthropic's [tool-use guide](https://docs.claude.com/en/docs/agents-and-tools/tool-use/overview), especially the concepts and best-practices section.
+- [AWS Converse API tool use](https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html).
 
 ## Key principles
 
 1. **Tool descriptions are prompts.** Write them like docs for a sharp but painfully literal junior dev who will never ask a follow-up question.
 2. **Fewer, well-scoped tools beat many overlapping ones.** Two tools that do almost the same thing are two tools the model can pick wrongly.
-3. **Return errors as text the model can recover from**, not stack traces. `Employee not found; IDs look like EMP-NNNNN` is worth more to the model than a 500 and a wall of red.
+3. **Return errors as text the model can recover from**, not stack traces. `City not found; try a major city name like "Sydney"` is worth more to the model than a 500 and a wall of red.
 4. **Schema constraints are cheaper than prose.** An `enum` or a `required` field _enforces_ what a paragraph of careful instructions only _suggests_.
 
 ## Lab (~18 min)
 
-No code yet. Pick a real service from your own solution — `LeaveBalanceService`, say — and write tool definitions (name, description, JSON input schema, example output) for two or three of its operations, as if you were handing them to a model. Then peer-review in pairs with one question in mind: _could a literal-minded stranger misuse this?_ Commit as `module-03/tool-contracts.md`.
+No code yet. Design tool definitions for a small, self-contained example — a weather lookup, say — writing the name, description, JSON input schema, and example output for two or three operations (current conditions, a multi-day forecast), as if you were handing them to a model. Then peer-review in pairs with one question in mind: _could a literal-minded stranger misuse this?_ Commit as `module-03/tool-contracts.md`.
 
 This is the peer review worth slowing down for. It's also where someone discovers your "obvious" parameter name meant something different to everyone in the room.
 
