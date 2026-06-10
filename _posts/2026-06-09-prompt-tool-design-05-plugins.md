@@ -8,35 +8,35 @@ author: Jamie Clayton
 
 > **[Prompt & Tool Design for .NET Teams](/Docs/posts/2026/06/09/prompt-tool-design-dotnet/)** · Part 2 — Semantic Kernel in .NET · Module 5 of 12
 
-In SK, a "plugin" is a class with a couple of attributes on it. That's the entire trick. The tool contracts you argued over in [Module 3](/Docs/posts/2026/06/09/prompt-tool-design-03-tool-design/) become ordinary C# methods, and the descriptions you wrote become the thing the model actually reads.
+In Semantic Kernel (SK), a "plugin" is a class with a couple of attributes on it. That's the entire trick. The tool contract you argued over in [Module 3](/Docs/posts/2026/06/09/prompt-tool-design-03-tool-design/) becomes an ordinary C# method, and the description you wrote becomes the thing the model actually reads.
 
 ## Objective
 
-Turn a tool contract from Module 3 into a real, callable C# function the model can invoke.
+Turn the tool contract from Module 3 into a real, callable C# function the model can invoke.
 
 ## Read (~8 min)
 
-- SK plugins concept: <https://learn.microsoft.com/en-us/semantic-kernel/concepts/plugins/>
-- The MS Learn module "Create plugins for Semantic Kernel" from learning path APL-2005 — skim the C# units: <https://learn.microsoft.com/training/paths/develop-ai-agents-azure-open-ai-semantic-kernel-sdk>
+- The [Semantic Kernel plugins concept](https://learn.microsoft.com/en-us/semantic-kernel/concepts/plugins/).
+- The MS Learn module [Create plugins for Semantic Kernel](https://learn.microsoft.com/training/paths/develop-ai-agents-azure-open-ai-semantic-kernel-sdk) (learning path APL-2005) — skim the C# units.
 
 ## Lab (~22 min)
 
-Implement one Module 3 contract as a plugin:
+Implement your Module 3 contract as a plugin. Our running example is a comic finder — it returns a programming comic from sites like [xkcd](https://xkcd.com), [CommitStrip](https://www.commitstrip.com), [MonkeyUser](https://www.monkeyuser.com), [Geek & Poke](https://geek-and-poke.com), or [Work Chronicles](https://workchronicles.com/):
 
 ```csharp
 using System.ComponentModel;
 using Microsoft.SemanticKernel;
 
-public class LeavePlugin
+public class ComicPlugin
 {
-    [KernelFunction("get_leave_balance")]
-    [Description("Returns remaining annual leave hours for an employee. "
-        + "Use when the user asks about leave, holidays, or time off remaining.")]
-    public Task<string> GetLeaveBalanceAsync(
-        [Description("Employee ID in format EMP-NNNNN")] string employeeId)
+    [KernelFunction("find_comic")]
+    [Description("Finds a programming or tech comic for a given topic. "
+        + "Use when the user wants a comic, a laugh, or a cartoon about a software concept.")]
+    public Task<string> FindComicAsync(
+        [Description("Topic or keyword, e.g. \"git\" or \"deadlines\"")] string topic)
         => Task.FromResult(
             $$"""
-            {"employeeId":"{{employeeId}}","remainingHours":76.0}
+            {"topic":"{{topic}}","title":"Git","url":"https://xkcd.com/1597/","source":"xkcd"}
             """);
 }
 ```
@@ -44,10 +44,10 @@ public class LeavePlugin
 Register it with the kernel:
 
 ```csharp
-kernel.Plugins.AddFromType<LeavePlugin>();
+kernel.Plugins.AddFromType<ComicPlugin>();
 ```
 
-Stub the data — a hard-coded JSON string is fine. The integration is a solved problem; the contract is the point. (Note the `$$"""..."""` raw interpolated string: doubled braces escape the JSON, single `{{employeeId}}` is the value. It saves you a fight with backslashes.)
+Stub the data — a hard-coded comic link is fine. Wiring up a real comic search is a solved problem and, frankly, a productivity hazard; the contract is the point. (Note the `$$"""..."""` raw interpolated string: doubled braces escape the literal JSON, and the single `{{topic}}` is the value. It saves you a fight with backslashes.)
 
 ## Done when
 
