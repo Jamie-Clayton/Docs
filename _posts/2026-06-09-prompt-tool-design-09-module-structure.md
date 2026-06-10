@@ -16,7 +16,7 @@ Turn the Module 8 stack into a reusable module with per-environment instances, a
 
 ## Read (~8 min)
 
-- Skim this for structure, not detail — a monorepo deploying a full agent platform with a single `terraform apply`: <https://dev.to/aws-builders/terraform-your-aws-agentcore-11kl>
+- Skim [this AgentCore monorepo walkthrough](https://dev.to/aws-builders/terraform-your-aws-agentcore-11kl) for structure, not detail — a full agent platform deployed with a single `terraform apply`.
 
 ## Lab (~17 min)
 
@@ -26,16 +26,16 @@ Crucially, load the agent instruction from a file rather than a string literal:
 
 ```hcl
 resource "aws_bedrockagent_agent" "this" {
-  agent_name              = "leave-assistant-${var.environment}"
+  agent_name              = "comic-assistant-${var.environment}"
   agent_resource_role_arn = aws_iam_role.agent.arn
   foundation_model        = var.model_id
   instruction             = file("${path.module}/prompts/agent-instruction.md")
 }
 ```
 
-Now a prompt change is a diff in `agent-instruction.md`, reviewable in a PR like any other change — not an edit someone made in a console text box at 4pm and forgot to tell anyone about.
+Now a prompt change is a diff in `agent-instruction.md`, reviewable in a pull request (PR) like any other change — not an edit someone made in a console text box at 4pm and forgot to tell anyone about.
 
-**Team discussion (10 min, fine to do async in the PR):** should prompt changes ride the same pipeline as your infrastructure changes, or get a faster lane — say, Bedrock Prompt Management? There's no universal right answer; there's a right answer for your team's risk appetite. Write it down as ADR-002.
+**Team discussion (10 min, fine to do async in the PR):** should prompt changes ride the same pipeline as your infrastructure changes, or get a faster lane — say, Bedrock Prompt Management? There's no universal right answer; there's a right answer for your team's risk appetite. Record it as an Architecture Decision Record (ADR) — call it ADR-002.
 
 ## Done when
 
