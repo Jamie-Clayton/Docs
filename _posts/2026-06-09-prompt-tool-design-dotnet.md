@@ -22,6 +22,15 @@ New to the jargon? An **agent** is just a program that lets a language model dec
 
 ---
 
+## The big picture
+
+Before the modules zoom in one piece at a time, here's the whole thing on a single page. If the boxes look unfamiliar now, that's fine — by the capstone you'll have built every one of them.
+
+![Component diagram, ".NET Agentic Solution on AWS". A .NET application (a Semantic Kernel host) invokes an agent on Bedrock AgentCore, which reasons over Amazon Bedrock foundation models through the Converse API and calls a .NET Lambda tool via an action group. IAM grants access, SSM Parameter Store supplies prompts and config, and OpenTelemetry collects telemetry. Solid lines are the runtime call path; dashed lines are config, permissions, and telemetry.](/assets/dotnet-agent-on-aws-bedrock.svg)
+_The whole system on one page. Solid arrows are the runtime call path — your .NET app drives an agent that reasons over Bedrock models and calls a .NET Lambda tool. Dashed arrows are the supporting cast: IAM permissions, prompts and config in SSM Parameter Store, and OpenTelemetry traces. Each module builds one of these boxes; the capstone wires them together._
+
+---
+
 ## Before you start
 
 One-time setup, about 20 minutes, and no, it doesn't count as a module.
