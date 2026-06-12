@@ -9,13 +9,13 @@ redirect_from:
   - /SoftSkills/Mindsets
   - /SoftSkills/Mindsets.html
 ---
-## Overview
+## What separates the engineers who keep getting better
 
-The mindsets that enable high-performing engineers to produce great work consistently, collaborate effectively, and sustain their energy over long careers.
+I've worked with plenty of smart engineers who plateaued, and a few less-obviously-brilliant ones who kept compounding year after year. The difference was almost never raw talent. It was how they thought about their own work. Three mental habits show up again and again in the people who stay good over a long career, and they're learnable — which is the whole point.
 
 ## Growth Mindset
 
-Engineers with a growth mindset believe their abilities can be developed through dedication and hard work. They treat failure as data, not identity.
+Engineers with a growth mindset believe their abilities can be developed through dedication and hard work. The tell is how they treat a failure: as data about the problem, not a verdict on themselves. That one reframe is what lets someone keep walking toward hard things instead of away from them.
 
 **In practice:**
 - Seek feedback specifically to improve, not to confirm what you already know
@@ -24,7 +24,7 @@ Engineers with a growth mindset believe their abilities can be developed through
 
 ## Systems Thinking
 
-Understanding that every change has ripple effects prevents the "fix one thing, break another" cycle.
+Every change has ripple effects, and engineers who see them avoid the "fix one thing, break another" cycle that eats so much of a team's time. Once you start seeing the system instead of the file in front of you, a lot of mysterious bugs stop being mysterious.
 
 **In practice:**
 - Before changing shared code, map the downstream consumers
@@ -33,7 +33,7 @@ Understanding that every change has ripple effects prevents the "fix one thing, 
 
 ## Beginner's Mind
 
-Approaching problems as if seeing them for the first time surfaces solutions that expertise-driven assumptions would block.
+Experience is mostly an asset, but it quietly hands you a stack of assumptions you stop questioning. Approaching a problem as if you're seeing it for the first time surfaces answers that your own expertise would have ruled out. The hard part is that beginner's mind gets harder to hold the better you get, so you have to practise it on purpose.
 
 **In practice:**
 - When a system is broken, question your assumptions before trusting the docs
