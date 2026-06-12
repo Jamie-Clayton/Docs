@@ -51,6 +51,22 @@ paginate: 10
 # Permalinks: route posts under /posts/ to match Chirpy conventions
 permalink: /posts/:year/:month/:day/:title/
 
+# Markdown / syntax highlighting (Chirpy requirement)
+# Jekyll does NOT inherit a theme gem's _config.yml, so Chirpy's Rouge settings
+# must live here. block.line_numbers must be true: it makes Rouge emit the
+# line-number <table> whose inner <pre> carries `white-space: pre`. Without it,
+# Chirpy's refactor-content.html strips the <pre> from highlighted blocks and
+# nothing preserves newlines, so code renders as one collapsed paragraph.
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
 # Plugins (managed by github-pages gem)
 plugins:
   - jekyll-paginate
