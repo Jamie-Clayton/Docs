@@ -26,7 +26,7 @@ A DSC configuration declares:
 
 Because it's declarative, you skip the imperative guard-rails you'd otherwise write by hand. This:
 
-```PowerShell
+```powershell
 # Install IIS role
 WindowsFeature IIS
 {
@@ -47,7 +47,7 @@ replaces a check like `If (-Not (Get-WindowsFeature "Web Server").Installed){Add
 
 Before authoring a configuration, check which features and DSC resources the machine already has:
 
-```PowerShell
+```powershell
 # On windows OS - Display the enabled features.
 Get-WindowsOptionalFeature -Online | Where-Object {$_.State -eq 'Enabled'}
 
@@ -88,7 +88,7 @@ DSC ships with resources covering the common configuration surfaces:
 
 ## Apply a configuration
 
-```PowerShell
+```powershell
 Set-ExecutionPolicy unrestricted -Force
 Enable-PSRemoting -Force
 Install-Module -Name xWebAdministration
@@ -107,7 +107,7 @@ For a fuller on-premise walkthrough, see [Github - JohnTheBrit](https://github.c
 
 ## File resource example
 
-```PowerShell
+```powershell
 File CriticalFileExample
 {
     Ensure = "Present"

@@ -31,7 +31,7 @@ If you just want a number in Visual Studio, Fine Code Coverage is the path of le
 > The annual-interest is the estimated man-time consumed per year if the issue is left unfixed. This provides an > estimate of the business impact of the issue.
 > For example:
 
-```C#
+```csharp
 warnif count > 0
 from m in Methods
 where m.CyclomaticComplexity > 10

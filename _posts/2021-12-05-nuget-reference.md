@@ -27,7 +27,7 @@ NuKeeper covers the following package-maintenance tasks:
 - Report on all the versions of a specific library. E.g. Newtonsoft.
 - Identify missing analyzers in solutions. E.g. SonarQube.
 
-```Powershell
+```powershell
 Start-Process https://dev.azure.com/<your-org>/_usersSettings/tokens 
 
 $PersonalAccessToken = 'DO-NOT-SAVE-THIS-TO-CODE-REPOSITORY'
@@ -54,7 +54,7 @@ nukeeper inspect --useprerelease Always --logfile c:\Temp\nukeeper.log --include
 
 Register a NuGet feed source with a personal access token (PAT), then iterate repositories to raise consolidated upgrade pull requests.
 
-```Powershell
+```powershell
 # Create a PAT with the appropriate read artifacts permissions
 #Start-Process https://dev.azure.com/<your-org>/_usersSettings/tokens
 

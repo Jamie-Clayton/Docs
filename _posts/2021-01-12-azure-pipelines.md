@@ -51,7 +51,7 @@ steps:
 
 A pipeline can pull templates and code from more than one repository. The first run prompts you to grant permission to each external repository resource before it'll check them out — expect that gate the first time, it's not an error.
 
-```Yaml
+```yaml
 resources:
   repositories:
     - repository: DeploymentTemplates #alias name

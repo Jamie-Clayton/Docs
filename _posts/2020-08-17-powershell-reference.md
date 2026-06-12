@@ -36,7 +36,7 @@ String interpolation options - see [Strings in PowerShell scripts](https://devbl
 
 ## Display current Edition
 
-```PowerShell
+```powershell
 $PSVersionTable
 
 # Review the current register powershell module registries.
@@ -69,7 +69,7 @@ Pop-Location
 
 Open Explorer at the PSReadLine folder to browse the command history files for the authenticated user.
 
-```PowerShell
+```powershell
 c:\
 Explorer %APPDATA%\Microsoft\Windows\PowerShell\PSReadLine\
 ```
@@ -78,7 +78,7 @@ Explorer %APPDATA%\Microsoft\Windows\PowerShell\PSReadLine\
 
 There are many communities outside of Microsoft that also provide powershell modules.
 
-```PowerShell
+```powershell
 # Use wildcards to find modules
 Find-Module *DSC* | Sort-Object Name  
 ```
@@ -87,7 +87,7 @@ Find-Module *DSC* | Sort-Object Name
 
 Web services often return JSON. Convert that data structure back into an object PowerShell can use.
 
-```PowerShell
+```powershell
 # List all the ConvertFrom Modules
 Get-Command -Verb ConvertFrom
 
@@ -101,7 +101,7 @@ $j.Count
 
 Display the powershell output in an appropropriate format.
 
-```PowerShell
+```powershell
 # List all the formating options
 Get-Command -Verb Format -Module Microsoft.PowerShell.Utility
 
@@ -116,7 +116,7 @@ Get-Command -Module hyper-v | Out-GridView
 
 ## Finding all the properties and methods in an object
 
-```PowerShell
+```powershell
 # Retrieve all the objects properties and methods for a Module. This enables you to use filtering of values.
 Get-Service | Get-Member
 Get-Service | gm
@@ -126,7 +126,7 @@ Get-Service | gm
 
 The default terminal view often hides available data. Use these cmdlets to filter, sort, and surface the fields you need.
 
-```PowerShell
+```powershell
 Get-TimeZone | Get-Member
 Get-ChildItem -Path ~/Downloads/ -File | Where-Object {$_.Length -GE 1000000} | Sort-Object -Property Length -Desc
 Get-ChildItem -Path ~/Downloads/ -File | Sort-Object -Property Length
@@ -136,7 +136,7 @@ Get-ChildItem -Path ~/Downloads/ -File | Sort-Object -Property Length
 
 Monitoring the performance of your powershell commandlets and modules.
 
-```PowerShell
+```powershell
 Measure-Command {
     # Do something here.
 }
@@ -160,7 +160,7 @@ Measure-Command {
 
 [Install Windows Remote Management on a Server, including SSL]({{ "/devops/Powershell/" | relative_url }}Install-Server-1-WinRm.ps1)
 
-```PowerShell
+```powershell
 # Hyper V networking will have a public network adaptor that causes warnings with PS Remoting
 Enable-PsRemoting -SkipNetworkProfileCheck
 Get-PSSessionConfiguration
@@ -180,7 +180,7 @@ Invoke-Command -ComputerName $name -ScriptBlock {Get-EventLog -logname security 
 
 ### Session Example
 
-```PowerShell
+```powershell
 [string]$name = "icecreamerydc01"
 $s = New-PSSession -ComputerName $name -Crediential (Get-Credential)
 Get-PSSession
@@ -199,7 +199,7 @@ Invoke-Command -Session $s -ScriptBlock {$env:computername}
 
 ### Import Remote Module example
 
-```PowerShell
+```powershell
 $s = New-PSSession -ComputerName "icecreamerysrv01"
 Import-Module -Name ActiveDirectory -PSSession $s
 Get-Module
@@ -210,14 +210,14 @@ Get-Command -Module ActiveDirectory
 
 Path to the specific history file written by the PSReadLine console host.
 
-```PowerShell
+```powershell
 # Open Windows Explorer to view files
 %APPDATA%\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
 ```
 
 ## Network Testing
 
-```PowerShell
+```powershell
 Test-NetConnection -ComputerName strokefoundation.org.au -DiagnoseRouting -InformationLevel Detailed
 
 # Resolve net bios name
@@ -243,7 +243,7 @@ Test-Connection jenasysdesign.com.au
 
 ## Windows Services
 
-```PowerShell
+```powershell
 # List all services
 Get-Service
 

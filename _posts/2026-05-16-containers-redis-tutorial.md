@@ -36,7 +36,7 @@ You will set a key from the command line and then watch the same key appear in t
 
 Docker Hub allows a generous anonymous pull rate, but signing in removes the risk of rate-limit errors mid-tutorial.
 
-```PowerShell
+```powershell
 # Open an interactive sign-in. Use your Docker Hub credentials.
 docker login
 ```
@@ -47,14 +47,14 @@ If you don't have a Docker Hub account, skip this step — the pull below will s
 
 Pulling the image first (rather than letting `docker run` pull it on demand) means the next step starts the container instantly.
 
-```PowerShell
+```powershell
 # A specific, pinned tag — never use `latest` for tutorials you may revisit.
 docker pull redis/redis-stack:7.2.0-v11
 ```
 
 When the command finishes, confirm the image is present locally:
 
-```PowerShell
+```powershell
 docker image ls redis/redis-stack
 ```
 
@@ -62,7 +62,7 @@ docker image ls redis/redis-stack
 
 This single command starts the container in the background, names it `dev-redis`, and forwards both ports to your host.
 
-```PowerShell
+```powershell
 docker run `
     --detach `
     --hostname cache `
@@ -74,7 +74,7 @@ docker run `
 
 Confirm the container is running:
 
-```PowerShell
+```powershell
 docker ps --filter name=dev-redis
 ```
 
@@ -84,7 +84,7 @@ You should see a single row with status `Up <a few seconds>`.
 
 Open an interactive terminal inside the running container:
 
-```PowerShell
+```powershell
 docker exec -it dev-redis redis-cli
 ```
 
@@ -116,7 +116,7 @@ Once connected, expand the database and you will see `greeting` and `visits` —
 
 `docker scout` ships with Docker Desktop and surfaces known vulnerabilities in an image. Useful even for a throwaway dev container.
 
-```PowerShell
+```powershell
 docker scout quickview redis/redis-stack:7.2.0-v11
 ```
 
@@ -124,7 +124,7 @@ The output groups CVEs by severity. For local development this is informational 
 
 ## Step 7 — Clean up
 
-```PowerShell
+```powershell
 # Stop the container (state is preserved in the Docker engine until removed).
 docker stop dev-redis
 

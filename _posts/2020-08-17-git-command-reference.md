@@ -28,7 +28,7 @@ Quick reference for git commands used during software releases, history inspecti
 
 Install GitVersion for more complex branch versioning.
 
-```PowerShell
+```powershell
 # Install GitVersion
 choco install GitVersion.Portable -y
 
@@ -37,7 +37,7 @@ gitversion
 
 ## Git Stats
 
-```PowerShell
+```powershell
 cd C:\Users\Jamie\Repos\VIPRepo
 
 # Determine the changes between two commits (Git Version tags help find the SHA references)
@@ -48,7 +48,7 @@ git diff --stat 846044a18dd27dd4af0bc63c8360398e8403d4d4 116da05ecc711dc1612a5b5
 
 TeamCity build server has a build number that is often a date in reverse yyyy.mm.dd which ends up polluting a Git repository with too many tags. This style is prior to GitVersion, which uses semantic versioning and branching to provide more complex build/versioning lineage.
 
-```PowerShell
+```powershell
 # List all the remotes
 git remote -v
 
@@ -67,7 +67,7 @@ git tag -l build-* | foreach-object -process { git tag --delete $_ }
 
 Set up personal user credentials for all repositories. You can override these in each individual repository.
 
-```PowerShell
+```powershell
 git config --global -i
 
 # Setup for all repositories (These are defaults unless you have a setting in a local repository)
@@ -91,7 +91,7 @@ git rerere status
 
 Display the last 10 changes for a folder. This can be helpful when cleaning up repositories.
 
-```Powershell
+```powershell
 git log -n 10 --pretty=medium -- code/*
 ```
 
@@ -99,7 +99,7 @@ git log -n 10 --pretty=medium -- code/*
 
 Edit the author name and email address across a series of git commits.
 
-```Powershell
+```powershell
 git rebase -i <SHA-to-begin-from>
 git commit --amend --author "Your Name <your-email@example.com>" --no-edit && \
 git rebase --continue
@@ -109,7 +109,7 @@ git rebase --continue
 
 Install the Scoop package manager for Windows so Python plugins are registered correctly in the Windows environment.
 
-```Powershell
+```powershell
 Set-ExecutionPolicy RemoteSigned -scope CurrentUser
 iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
 Scoop install git-filter-repo 
@@ -125,7 +125,7 @@ code git-filter-repo
 
 Install and use the python based [git filter repository](https://github.com/newren/git-filter-repo) script.
 
-```Powershell
+```powershell
 git-filter-repo --email-callback "return email.replace(b'old-email@example.wrong', b'new-email@example.right')" --force
 ```
 
@@ -133,7 +133,7 @@ git-filter-repo --email-callback "return email.replace(b'old-email@example.wrong
 
 Migrate a git repository to a new location.
 
-```Powershell
+```powershell
 git clone --mirror <url to ORI repo> temp-dir
 
 # Confirm tags and branches have been copied

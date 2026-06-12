@@ -40,7 +40,7 @@ A couple of choices you'll make along the way. For packaging TypeScript cloud ob
 
 ### Windows 11 Prerequisite installation
 
-```Powershell
+```powershell
 
 winget install -e --id Microsoft.PowerShell
 winget install -e --id Microsoft.VisualStudioCode
@@ -70,7 +70,7 @@ npm config set init-license "RPL-1.5" -g
 
 ### Yarn instructions
 
-```Powershell
+```powershell
 # Yarn Configuration
 yarn --version
 yarn global add aws-cdk cypress esbuild gitignore jest lerna readme-md-generator typescript webpack webpack-cli
@@ -91,7 +91,7 @@ This script lays down a standard folder structure so every repository looks the 
 - It adds a README, a licence, and an `init.ps1` script that engineers run to configure everything before working in the repo.
 - The `build` and `pipeline` folders represent your DevOps CI/CD configuration as code. I'd merge them; they overlap more than they don't.
 
-```Powershell
+```powershell
 # TODO: Change your default code repository location
 cd ~\source\repos\
 ls
@@ -115,7 +115,7 @@ npx readme-md-generator
 
 TODO: Add instructions for Artifact repositories and cloud vendors here.
 
-```Powershell
+```powershell
  git init
  git commit
  #git remote add origin https://github.com/{Org}/{repo}.git
@@ -137,7 +137,7 @@ The generated project uses Jest TypeScript tests to confirm the infrastructure-a
 
 ### AWS CDK Yarn instructions
 
-```Powershell
+```powershell
 cd infrastructure\cdk
 cdk init app --language typescript
 yarn init -p
@@ -152,7 +152,7 @@ This creates a Lambda function with [TypeScript and Node.js](https://docs.aws.am
 
 Heads up: the block below builds the SAM app, then runs it locally. Docker Desktop has to be running before `sam local` will work, and `sam local start-api` / `start-lambda` stay in the foreground until you stop them with `Ctrl+C`.
 
-```Powershell
+```powershell
 # Add Aws Lambda typescript
 cd .\src\functions\
 md get-hello-world-text
