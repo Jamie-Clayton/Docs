@@ -10,8 +10,18 @@ redirect_from:
   - /devops/Containers-Tutorial.html
 ---
 > **Tutorial** — learning-oriented. By the end you will have a Redis server running in Docker, set and read a value from the CLI, and view it in a browser GUI.
+{: .prompt-info }
 
-This tutorial assumes Docker Desktop is installed and running on Windows, and that you have PowerShell 7 (`pwsh`) available. You don't need any prior Redis or Docker experience.
+This is a hands-on lesson that walks you, step by step, from nothing to a working Redis container you can poke at from both the command line and a browser. It's written for someone who has never touched Redis or Docker before — if that's you, you're in the right place.
+
+## Prerequisites
+
+You'll need two things in place before you start:
+
+- Docker Desktop installed and running on Windows.
+- PowerShell 7 (`pwsh`) available.
+
+No prior Redis or Docker experience is assumed. We'll explain each command as we go.
 
 ## What you will build
 
@@ -90,7 +100,7 @@ KEYS *
 QUIT
 ```
 
-`SET` stores a string. `INCR` atomically increments an integer-valued key (and creates it as `1` on first call). `KEYS *` lists every key — handy in development, but never run it against a production Redis with millions of keys.
+`SET` stores a string. `INCR` atomically increments an integer-valued key (and creates it as `1` on first call). `KEYS *` lists every key. That last one is handy in development, but a word of warning: never run it against a production Redis with millions of keys — it scans the whole keyspace and can stall the server.
 
 ## Step 5 — View the same key in the GUI
 
@@ -134,7 +144,7 @@ You used four primitives that recur in every container workflow:
 3. **`docker exec`** opens a shell or runs a command inside an already-running container.
 4. **`docker stop` / `docker rm`** end the container's lifecycle without affecting the image.
 
-The image is the recipe; the container is the meal. You can run dozens of containers from the same image, each with its own name, ports, and data.
+The image is the recipe; the container is the meal. Once you've got the image, you can run as many containers from it as you like, each with its own name, ports, and data. That's the mental model that carries you into everything else.
 
 ## Where to go next
 
