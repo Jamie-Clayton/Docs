@@ -9,26 +9,26 @@ redirect_from:
   - /devops/AzurePipelines
   - /devops/AzurePipelines.html
 ---
-YAML patterns and configuration snippets for Azure DevOps pipeline configuration.
+A reference of YAML patterns and snippets for Azure DevOps pipeline configuration. Copy what you need; each snippet stands on its own.
 
-## Quick Navigation
+## Quick navigation
 
 | Pattern | Section |
 |---------|---------|
-| Conditional template selection | [Advanced Techniques](#advanced-techniques) |
-| Multi-repository builds | [Advanced Techniques](#advanced-techniques) |
-| Pipeline design principles | [Principles](#principles) |
+| Conditional template selection | [Conditional templates](#conditional-templates) |
+| Multi-repository builds | [Multi-repository builds](#multi-repository-builds) |
+| Pipeline design principles | [Design principles](#design-principles) |
 
-## Principles
+## Design principles
 
 * Keep it simple
 * Use variables and parameters
-* Define repositories (for mixed dev.azure.com tenant subscriptions)
-* Minimize nested template yaml as it requires context switching
+* Define repositories explicitly (needed for mixed `dev.azure.com` tenant subscriptions)
+* Minimise nested template YAML — every level of nesting is another context switch when you're debugging
 
-## Advanced Techniques
+## Conditional templates
 
-You can use variables and logic within the template to drive how things are done with nested yaml templates.
+Use parameters and `${{ if }}` expressions to pick a template at compile time. Here the pipeline swaps between an experimental and a stable build based on a boolean parameter.
 
 {% raw %}
 ```yaml
@@ -47,7 +47,9 @@ steps:
 ```
 {% endraw %}
 
-You can reference multiple repositories in a build process. The build process will prompt you for permission to access those external repository resources.
+## Multi-repository builds
+
+A pipeline can pull templates and code from more than one repository. The first run prompts you to grant permission to each external repository resource before it'll check them out — expect that gate the first time, it's not an error.
 
 ```Yaml
 resources:
@@ -88,8 +90,8 @@ stages:
 
 ## References
 
-[Multiple Repositories](https://prcode.co.uk/2020/10/14/azure-devops-pipeline-templates-and-external-repositories/)
-[Azure Pipeline Docs - Resources](https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&tabs=schema%2Cparameter-schema#resources)
-[Azure Pipeline Docs - Repository checkout](https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/multi-repo-checkout?view=azure-devops#repository-details)
-[Documentation Style Guides](https://www.writethedocs.org/guide/writing/style-guides/)
+- [Multiple Repositories](https://prcode.co.uk/2020/10/14/azure-devops-pipeline-templates-and-external-repositories/)
+- [Azure Pipeline Docs - Resources](https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&tabs=schema%2Cparameter-schema#resources)
+- [Azure Pipeline Docs - Repository checkout](https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/multi-repo-checkout?view=azure-devops#repository-details)
+- [Documentation Style Guides](https://www.writethedocs.org/guide/writing/style-guides/)
 

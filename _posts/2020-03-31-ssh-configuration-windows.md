@@ -9,17 +9,18 @@ redirect_from:
   - /devops/ssh
   - /devops/ssh.html
 ---
+This tutorial walks you through setting up SSH key authentication for GitHub on Windows, from generating a key to cloning a repo without typing a password. By the end you'll have a working key in the SSH agent and a tested connection.
+
+I've done this setup enough times to know where it bites: the `ssh-agent` service ships disabled on a fresh Windows install, and private-key file permissions trip people up. Both are called out below before you hit them.
+
 ## Before You Start
 
 - [ ] PowerShell Core (pwsh) installed — [Getting Started Guide](/Docs/posts/2026/05/16/getting-started-windows-devops/)
 - [ ] A GitHub account
 
-## What You'll Learn
+## What you'll build
 
-- Generate an SSH key pair on Windows
-- Add your key to the SSH agent
-- Configure SSH for GitHub
-- Test your SSH connection
+A working SSH key pair on Windows, loaded into the agent, registered with GitHub, and verified by an authenticated connection.
 
 ## Step 1: Check if SSH Is Already Installed
 
@@ -32,11 +33,7 @@ Expected output:
 OpenSSH_9.x (or similar), OpenSSL 3.x
 ```
 
-The exact version will vary — any version shown means SSH is installed.
-
-If you see a version, SSH is installed. Skip to Step 2.
-
-If not, install OpenSSH via Windows Settings:
+Any version shown means SSH is installed, so skip to Step 2. If the command isn't recognised, install OpenSSH via Windows Settings:
 1. Open **Settings** → **Apps** → **Optional Features**
 2. Click **Add a feature**
 3. Search for **OpenSSH Client**
@@ -59,7 +56,10 @@ This creates two files:
 
 ## Step 3: Start the SSH Agent and Add Your Key
 
-> **Note:** The following commands require an **Administrator** PowerShell window. Right-click the PowerShell icon and select "Run as Administrator".
+> These commands need an **Administrator** PowerShell window. Right-click the PowerShell icon and select "Run as Administrator". Without elevation, `Set-Service` fails silently on the startup-type change and you'll be back here wondering why the agent won't start.
+{: .prompt-warning }
+
+The `ssh-agent` service is set to Disabled on a fresh Windows install, so you have to flip the startup type before you can start it. Skip the first line and `Start-Service` throws "service cannot be started".
 
 ```powershell
 # Set the service startup type first (required on fresh Windows — default is Disabled)

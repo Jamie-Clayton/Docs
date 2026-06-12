@@ -9,13 +9,20 @@ redirect_from:
   - /devops/GitHub-cli
   - /devops/GitHub-cli.html
 ---
+This guide shows you how to drive common GitHub tasks from the terminal with the `gh` CLI: opening and reviewing PRs, managing issues, configuring autolinks, and cutting releases. Each section is a self-contained recipe — jump to the one you need.
+
+## Prerequisites
+
+- GitHub CLI installed and authenticated (steps below)
+- A GitHub account with access to the repos you're targeting
+
 ## Problem
 
 You need to automate repetitive GitHub tasks — creating PRs, managing issues, setting up repository automation — without leaving the terminal.
 
-## Install and Authenticate
+## Install and authenticate
 
-If not already done (covered in [Getting Started: Windows DevOps](/Docs/posts/2026/05/16/getting-started-windows-devops/)):
+If you haven't already done this (it's covered in [Getting Started: Windows DevOps](/Docs/posts/2026/05/16/getting-started-windows-devops/)):
 
 ```powershell
 winget install github.cli
@@ -33,7 +40,10 @@ Verify:
 gh auth status
 ```
 
-## How to Create a Pull Request
+> The browser flow defaults the credential to HTTPS. If you cloned a repo over SSH, run `gh auth login` again and pick SSH, or `gh` and `git` will end up authenticating as different identities on the same repo.
+{: .prompt-tip }
+
+## Create a pull request
 
 ```powershell
 # Create PR from current branch
@@ -46,7 +56,7 @@ gh pr create --base main --title "fix: bug fix"
 gh pr create --draft --title "WIP: feature in progress"
 ```
 
-## How to Review Pull Requests
+## Review pull requests
 
 ```powershell
 # List open PRs
@@ -65,7 +75,7 @@ gh pr review 42 --approve
 gh pr merge 42 --squash
 ```
 
-## How to Manage Issues
+## Manage issues
 
 ```powershell
 # Create an issue
@@ -78,9 +88,9 @@ gh issue list
 gh issue close 15 --reason "completed"
 ```
 
-## How to Automate Repository Setup (Autolinks)
+## Automate repository setup (autolinks)
 
-Autolinks connect GitHub issue references to external systems (Jira, Linear).
+Autolinks connect GitHub issue references to external systems (Jira, Linear). The two scripts below live in this repo's `Powershell/` folder, so run them from the repo root — relative paths won't resolve from elsewhere.
 
 ```powershell
 # Audit existing autolinks for all repos in an organization
@@ -95,7 +105,7 @@ Available scripts:
 - [Create Autolinks]({{ "/devops/Powershell/" | relative_url }}GitHub-cli-Create-Autolinks.ps1) — configure Jira/Linear integration
 - [Audit Team]({{ "/devops/Powershell/" | relative_url }}GitHub-cli-Audit-Team.ps1) — list team members and permissions
 
-## How to Work with Releases
+## Work with releases
 
 ```powershell
 # Create a release

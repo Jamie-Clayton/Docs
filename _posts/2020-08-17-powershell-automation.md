@@ -9,32 +9,36 @@ redirect_from:
   - /devops/Automation
   - /devops/Automation.html
 ---
-## Overview
+## What this is about
 
-PowerShell Workflows enable long-running automation tasks that can be suspended, checkpointed, and resumed — even across machine restarts. This is useful for DevOps operations that span hours or days.
+A PowerShell Workflow is a long-running automation task you can suspend, checkpoint, and resume — even after the machine reboots. That makes it a fit for DevOps work that spans hours or days, where a plain script would lose everything the moment it's interrupted.
 
-## Why PowerShell Workflows?
+This page explains what Workflows buy you and where they fall down, so you can decide whether one belongs in your toolbox before you start writing the `Workflow {}` syntax.
 
-Standard PowerShell scripts lose state when interrupted. Workflows solve this by:
+## Why Workflows exist
 
-- **Checkpointing** — saving progress to disk so the workflow resumes from where it stopped
-- **Parallelism** — running multiple operations simultaneously with `parallel {}` blocks
-- **Persistence** — surviving network interruptions and server restarts
-- **Job-based execution** — running as a background job with `AsJob`
+A standard script holds its state in memory. Kill the session, lose a network link, or reboot the host, and that state is gone — you start again from the top. Workflows close that gap. They checkpoint progress to disk with `CheckPoint-Workflow`, so a resumed run picks up from the last checkpoint rather than line one. They run as background jobs via `AsJob`, survive restarts, and can fan work out across machines with `parallel {}` blocks.
 
-## When to Use Workflows
+That persistence is the whole point. Everything else — the job model, the parallel syntax — exists to support resuming a half-finished run.
 
-**Good fit:**
+## When a Workflow earns its keep
+
+Reach for one when the job is long, distributed, or likely to be interrupted:
+
 - Patching hundreds of servers overnight
-- Multi-step deployments that might be interrupted
-- Tasks spanning multiple machines simultaneously
+- Multi-step deployments that might get cut off partway
+- Tasks that hit many machines at once
 
-**Not a good fit:**
-- Simple one-off scripts (use regular functions)
-- Interactive scripts requiring user input
-- PowerShell Core environments (Workflows require Windows PowerShell)
+Skip it when the job is short or interactive:
 
-> **Important:** PowerShell Workflows require **Windows PowerShell** (not PowerShell Core). Use `powershell.exe`, not `pwsh.exe`.
+- One-off scripts — a regular function is simpler
+- Anything that needs to prompt the user mid-run
+- PowerShell Core environments, where Workflows aren't available at all
+
+Here's the gotcha that catches people: Workflows are a **Windows PowerShell** feature. They don't exist in PowerShell Core. If your shell is `pwsh.exe`, none of this works — you need `powershell.exe`.
+
+> PowerShell Workflows require **Windows PowerShell** (not PowerShell Core). Use `powershell.exe`, not `pwsh.exe`.
+{: .prompt-warning }
 
 ## Trade-offs
 
@@ -45,13 +49,9 @@ Standard PowerShell scripts lose state when interrupted. Workflows solve this by
 | Runtime requirement | Windows PowerShell only | Cross-platform |
 | Execution overhead | Higher (job overhead) | Lightweight |
 
-## Workflow
+## A worked example
 
-Enable long running tasks to execute and pause and restart so you don't have to start again.
-
-* Tasks for running on multiple devices
-* Asynchronous, restartable, parallelize or interruptive.
-* Tasks on a large scale, in high availability environments requiring throttling and connection pooling.
+The block below defines a Workflow, runs it as a persisted job, then suspends, inspects, resumes, and cleans it up. The `CheckPoint-Workflow` calls are what let `Resume-Job` pick up mid-run after a suspend or a reboot. This is the kind of shape you'd use for large-scale work across many devices in high-availability environments that need throttling and connection pooling.
 
 ```powershell
 # Requires PowerShell (Framework not Core) Ctrl + Shift + F8
@@ -78,15 +78,17 @@ Receive-Job SmartFlow -Keep
 Remove-Job SmartFlow
 ```
 
-### WorkFlow Guide
+### Things to know before you write one
 
-* No Interactive calls can be used
-* "CheckPoint-Workflow" to save progress
-* "parallel {}" syntax for running code blocks in parallel.
-* "sequence {}" can be used within parallel to force blocks to run sequentially.
-* "param([string[]] $computers)" enables parameter injection.
-* Regular methods require "$result = InlineScript { }" syntax.
-* No $global scope
+A few constraints will trip you up if you come in expecting normal script behaviour:
+
+* No interactive calls — a Workflow can't prompt for input mid-run
+* `CheckPoint-Workflow` saves progress; place it after each unit of work you don't want to repeat on resume
+* `parallel {}` runs blocks concurrently
+* `sequence {}` inside a `parallel {}` block forces those statements back into order
+* `param([string[]] $computers)` injects parameters
+* Calling regular cmdlets/methods needs `$result = InlineScript { }` — you can't call them directly
+* There's no `$global` scope inside a Workflow
 
 ## References
 

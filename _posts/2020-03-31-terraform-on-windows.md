@@ -9,6 +9,10 @@ redirect_from:
   - /devops/terraform
   - /devops/terraform.html
 ---
+This tutorial gets a Terraform toolchain installed on Windows using Chocolatey: Terraform itself, Packer, the Azure CLI, and the AWS CLI, plus VS Code as an editor. By the end you'll have the binaries on PATH and a working directory ready for `terraform init`.
+
+The install block below also bootstraps Chocolatey, so you don't strictly need it preinstalled — but if you already have it, that first line is a no-op.
+
 ## Before You Start
 
 - [ ] PowerShell running as Administrator
@@ -25,9 +29,9 @@ You've completed this tutorial when:
 - [ ] `az -v` returns a version string
 - [ ] `terraform init` succeeds in a new directory
 
-## Installing Terraform software on Windows
+## Step 1: Install the toolchain
 
-Install chocolatey powershell package installer. [Chocolatey Package Management](https://chocolatey.org/)
+Run this from an **elevated** PowerShell window. It installs Chocolatey (if it isn't already there), then pulls down VS Code and the IaC tooling. [Chocolatey Package Management](https://chocolatey.org/)
 
 ```powershell
 # Open powershell as administrator
@@ -67,7 +71,12 @@ Write-Output("Review Extensions - Terraform")
 
 Source: [Install Terraform Download]({{ "/devops/Powershell/" | relative_url }}Install%20Terraform.ps1)
 
-## Upgrading Terraform software on Windows
+> The confirmation commands in the block above are `choco -v`, `Terraform -v`, `az -v` and `aws --v`. The casing on `Terraform` and the `--v` flag on `aws` are reproduced exactly as scripted; if `aws --v` doesn't return a version on your machine, try `aws --version`.
+{: .prompt-info }
+
+## Step 2: Upgrade later
+
+Re-run these periodically to keep the toolchain current. VS Code self-updates, but the line is here as a backstop.
 
 ```powershell
 # ** Open powershell as administrator
@@ -87,6 +96,7 @@ choco upgrade awscli
 [Chocolatey](https://chocolatey.org)
 
 [Terraform](https://chocolatey.org)
+<!-- ⚠️ FACT-CHECK: the "Terraform" reference link target is https://chocolatey.org (likely intended terraform.io). Left verbatim — verify before publishing. -->
 
 ## Next Steps
 

@@ -9,18 +9,22 @@ redirect_from:
   - /devops/DesiredStateConfiguration
   - /devops/DesiredStateConfiguration.html
 ---
+This guide shows you how to use PowerShell Desired State Configuration (DSC) to keep Windows servers in a known-good state: the same roles, applications, files, and services, declared once and enforced on every machine. The aim is servers you treat as "Cattle", not "Pets" — rebuildable from a definition rather than hand-tuned.
+
 ## Problem
 
-You need to ensure Windows servers consistently have the same software, services, and configuration without writing fragile imperative scripts that must be run in order.
+You need every Windows server to land on the same software, services, and configuration without hand-written imperative scripts that have to run in the right order and break when someone makes a manual change.
 
-Apply settings to an operating system without defining how those values are actually configured.  Enables the creation of Servers as "Cattle", not "Pets" and ensures that manual changes to the server do not cause "drift". It provides a compliance and automated repair back to a known good state.
+DSC lets you declare *what* the end state should be and leaves the *how* to the engine. Manual changes drift away from that state; DSC detects the drift and repairs it back to the declaration.
 
-* What roles and features to install.
-* How to configure each role and feature.
-* What applications to install.
-* Any files required for the server.
-* Enables a vanilla Server with configuration after creation.
-* Its declarative you don't need imperative calls like 'If (-Not (Get-WindowsFeature "Web Server").Installed){Add-WindowsFeature Web-Server}
+A DSC configuration declares:
+
+* What roles and features to install
+* How to configure each role and feature
+* What applications to install
+* Any files the server needs
+
+Because it's declarative, you skip the imperative guard-rails you'd otherwise write by hand. This:
 
 ```PowerShell
 # Install IIS role
@@ -30,6 +34,18 @@ WindowsFeature IIS
     Name = "Web-Server"
 }
 ```
+
+replaces a check like `If (-Not (Get-WindowsFeature "Web Server").Installed){Add-WindowsFeature Web-Server}` — you state the target, not the conditional.
+
+## Prerequisites
+
+- Windows PowerShell on the target server (DSC resource availability varies on PowerShell Core)
+- Administrator rights to enable PS remoting and apply configurations
+- Network access to the [PowerShell Gallery](https://www.powershellgallery.com/) to pull DSC resource modules
+
+## Discover what's available
+
+Before authoring a configuration, check which features and DSC resources the machine already has:
 
 ```PowerShell
 # On windows OS - Display the enabled features.
@@ -45,13 +61,17 @@ Get-DSCResource
 Find-Module -tag dscresourcekit | Install-Module
 ```
 
-## Desire State Process
+## The DSC process
 
-1. *Author* the desired state and generate a \*.mof file which is the DMTF standard. See [Standards Documents](https://www.dmtf.org/standards/published_documents)
-2. *Stage* the desired state configuration for pull or push publishing.
-3. *Apply* the configuration to the infrastructure/server. Idempotent, so anyone manually changing settings will have those reverted.
+DSC runs in three stages:
 
-## Configuration Options
+1. **Author** the desired state and compile it to a `*.mof` file (the DMTF standard format). See [Standards Documents](https://www.dmtf.org/standards/published_documents).
+2. **Stage** the configuration for pull or push publishing.
+3. **Apply** the configuration to the server. It's idempotent, so any manual change gets reverted on the next run.
+
+## Built-in resources
+
+DSC ships with resources covering the common configuration surfaces:
 
 * Archiving
 * Environment
@@ -66,7 +86,7 @@ Find-Module -tag dscresourcekit | Install-Module
 * OS Feature
 * OS Process
 
-## Basic Commandlets
+## Apply a configuration
 
 ```PowerShell
 Set-ExecutionPolicy unrestricted -Force
@@ -80,11 +100,12 @@ Get-DSCConfiguration
 Test-DSCConfiguration -Detailed
 ```
 
-More Detailed walk through for onpremise example - [Github - JohnTheBrit](https://github.com/johnthebrit/PowerShellMC/blob/master/Assets/SavillTechWebOnPrem.ps1)
+For a fuller on-premise walkthrough, see [Github - JohnTheBrit](https://github.com/johnthebrit/PowerShellMC/blob/master/Assets/SavillTechWebOnPrem.ps1).
 
-> Using LocalHost in configuration may not behave as you expect
+> Using `LocalHost` as the target node in a configuration may not behave the way you expect. Watch this one — it's a common first stumble.
+{: .prompt-warning }
 
-## File Example
+## File resource example
 
 ```PowerShell
 File CriticalFileExample
@@ -98,12 +119,12 @@ File CriticalFileExample
 }
 ```
 
-## DSC and Cloud
+## DSC and cloud
 
-* Azure VM's can use DSC
-* OnPremise VM's can be configured during provisioning
+* Azure VMs can use DSC
+* On-premise VMs can be configured during provisioning
 * VM Extensions trigger PowerShell
-* Azure Automation includes a Pull server feature.
+* Azure Automation includes a Pull server feature
 
 ## References
 
