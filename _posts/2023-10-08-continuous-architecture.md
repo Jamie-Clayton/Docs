@@ -9,14 +9,9 @@ redirect_from:
   - /devops/ContinuosArchitecture
   - /devops/ContinuosArchitecture.html
 ---
-## Learning Objectives
+Continuous Architecture treats architecture as something you keep doing, not a phase you finish before coding starts. This is a short orientation for engineers and architects who recognise the waterfall pattern — design up front, implement later, validate a document instead of the system — and want a different operating model.
 
-After reading this document, you will understand:
-- Why architecture must be continuous rather than a one-time phase
-- How to use data-driven decisions in architecture
-- How to apply lean canvas concepts to architectural decisions
-
-An operating model for architecture that moves away from design and implement approach (waterfall) to a continuous evolution via modern DevOps CICD using data driven architectural decisions and lean canvas concepts.
+The idea is to replace that big-design-up-front approach with continuous evolution: architectural decisions made from data, validated by running code through modern DevOps CI/CD, and shaped by lean canvas thinking. You prove the architecture by building it, and you keep proving it as the product changes.
 
 ## Manifesto
 

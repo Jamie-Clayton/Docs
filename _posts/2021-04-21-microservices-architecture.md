@@ -9,22 +9,16 @@ redirect_from:
   - /devops/Microservices
   - /devops/Microservices.html
 ---
-## Learning Objectives
+Microservices get adopted for the wrong reasons more often than any other architecture I've worked with. This post is for .NET engineers and leads deciding whether to split an application apart — and, just as importantly, whether to leave it whole. My bias, stated up front: start with a monolith and decompose only when a concrete pain forces your hand. The rest of this covers what microservices actually are, the trade-offs you take on, and the .NET resilience patterns you'll need once you're committed.
 
-After reading this document, you will understand:
-- What microservices are and when to use them
-- The key characteristics and trade-offs of microservices
-- How to build a microservice in .NET with health checks
-- Resilience patterns: health checks, circuit breakers, retries
-
-## What are Microservices?
+## What are microservices?
 
 Microservices is an architectural style where a large application is decomposed into small, independent services that communicate over the network. Each service owns its data, deploys independently, and focuses on a specific business capability.
 
 **Traditional Monolith:** One application, one database, one deployment  
 **Microservices:** Many small applications, many databases, independent deployments
 
-## When to Use Microservices
+## When to use them
 
 **Good fit:**
 - Large teams working on different features (each team owns a service)
@@ -39,7 +33,7 @@ Microservices is an architectural style where a large application is decomposed 
 
 **Rule of thumb:** Start with a monolith. Decompose to microservices only when a specific pain point demands it (scaling, team coordination, deployment frequency).
 
-## Key Characteristics
+## Key characteristics
 
 - **Independently deployable:** Service A can deploy without affecting Service B
 - **Loosely coupled:** Services communicate via APIs or message queues, not shared databases
@@ -224,6 +218,10 @@ Collect these metrics per service:
 - **Error rate:** % of requests that fail
 - **Saturation:** CPU, memory, disk, database connections
 - **Business metrics:** Orders/hour, signups/day, revenue/month
+
+## The takeaway
+
+Microservices trade operational simplicity for independent scaling and team autonomy. That trade only pays off past a certain size — large teams, divergent scaling needs, deployment cadences that genuinely conflict. Below that line you inherit the network failures, the eventual consistency, and the monitoring burden without the benefits that justify them. So unless you already have the observability to run them, stay a monolith until something specific breaks. When you do split, the resilience patterns above (timeouts, retries, circuit breakers, health checks) aren't optional extras; they're the price of admission.
 
 ## References
 

@@ -9,17 +9,15 @@ redirect_from:
   - /devops/Architecture
   - /devops/Architecture.html
 ---
-## Overview
+Software architecture is the set of high-level decisions that shape how a system is built, deployed, and evolved. This post is for engineers and technical leads who have to choose a pattern, defend that choice to stakeholders, and live with the consequences. It walks through the patterns I reach for most, how I size a system's importance before spending money on it, and how to write the decision down so the next person understands it.
 
-Software architecture is the set of high-level decisions that shape how a system is built, deployed, and evolved. This document covers common architecture patterns, how to evaluate them, and how to communicate architectural risk to stakeholders.
+## Why the decision matters
 
-## Why Architecture Decisions Matter
+Every architectural choice is a trade-off. Picking a monolith over microservices buys you simpler operations and costs you independent scaling and team autonomy; picking microservices reverses that bargain. There is no free option. The job is to make the trade visible so the people funding the work can agree to it with their eyes open.
 
-Every architectural choice creates trade-offs. A decision to use a monolith vs. microservices affects team autonomy, deployment complexity, and operational costs. Getting stakeholder buy-in requires making these trade-offs visible.
+## Sizing the system: the outage questions
 
-## Assessing System Impact: The Outage Questions
-
-When stakeholders undervalue a system's importance, these three questions make the risk concrete:
+Stakeholders routinely undervalue a system until it stops. When that happens in a workshop, three questions make the risk concrete:
 
 1. **What if your system was offline for 1 hour?**
    - Immediate customer impact?
@@ -36,9 +34,9 @@ When stakeholders undervalue a system's importance, these three questions make t
    - Competitor advantage?
    - Recovery cost vs. prevention cost?
 
-Use these questions in workshops with executive teams to size the importance of a system before any architectural investment.
+Run these with the executive team before any architectural investment. The answers tell you how much resilience the system actually warrants, which keeps you from gold-plating a back-office tool or under-building something the business can't trade without.
 
-## Common Architecture Patterns
+## Common patterns
 
 | Pattern | Description | When to Use |
 |---------|-------------|-------------|
@@ -48,11 +46,9 @@ Use these questions in workshops with executive teams to size the importance of 
 | Event Sourcing | Store events, not state | Audit requirements, time-travel queries |
 | Serverless | Cloud-managed functions | Infrequent, bursty workloads |
 
-## Architecture Decision Records (ADRs)
+## Write the decision down (ADRs)
 
-Document significant architectural decisions so future engineers understand *why* a choice was made.
-
-Format:
+Patterns age, teams turn over, and the reasoning behind a choice evaporates fast. An Architecture Decision Record captures *why* a choice was made, not just what was chosen, so the engineer who inherits it in two years doesn't relitigate a settled question. Keep them short. One decision per record.
 
 ```markdown
 # ADR-001: [Decision Title]
@@ -66,12 +62,9 @@ Format:
 **Consequences:** What are the trade-offs?
 ```
 
-## Learning Objectives
+## The takeaway
 
-After reading this document, you will understand:
-- How to quantify the impact of a system outage
-- Common architecture patterns and when to apply them
-- How to document architectural decisions with ADRs
+Architecture is a series of trade-offs you make on purpose and record so others can see your reasoning. Size the system before you invest in it, pick the pattern whose costs you can afford, and write down why. If you do nothing else from this post, do that last part — undocumented decisions are the ones that get reversed by accident.
 
 ## Further Reading
 

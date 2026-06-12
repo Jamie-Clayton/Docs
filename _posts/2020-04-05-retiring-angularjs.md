@@ -9,17 +9,17 @@ redirect_from:
   - /code/RetiringAngularJs
   - /code/RetiringAngularJs.html
 ---
-The following documentation provides the basic steps as well a estimated effort required to migrate an angular JS 1.5.x to a more resent edition of Angular 9+.
+This guide walks through the groundwork for migrating an AngularJS 1.5.x application to a more recent edition of Angular 9+, along with the rough effort each step takes. It's written for the engineer doing the actual migration, so it leads with the commands and warns about the traps I hit along the way.
 
 ## Managing reference JavaScript libraries
 
-Node Package Manager is the pragmatic choice for referencing JavaScript libraries. Older AngularJS projects often use folder copies of JavaScript libraries which make it harder to manage security risks associated with those libraries over time.
+Use the Node Package Manager for referencing JavaScript libraries. Older AngularJS projects tend to keep folder copies of their libraries checked into source control, and those copies get harder to patch as the security advisories pile up over the years.
 
-Prior to configuring NPM, you need to be aware of various decisions NPM will prompt you to answer.
+Heads up before you run anything: `npm init` asks you a series of questions, and a couple of them need a real decision, not a default. Read this whole section first.
 
 ### Configuring libraries with NPM
 
-The process will prompt you to provide a series of answers to questions. Many are just meta data descriptions, but other will require some decision making prior to starting. Please read this entire section prior to executing the command
+Most of the prompts are just metadata — name, description, author. Two of them (the test command and the licence) need an answer you've thought about, which is why this section exists. Run the init:
 
 ```powershell
 cd solution\project\app\
@@ -28,7 +28,7 @@ npm init
 
 > -- <cite>[Npm Documentation][1]
 
-You will then configure some basic package version and naming details followed by technical options.
+You'll fill in the basic package version and naming details first, then the technical options below.
 
 ### Q: Test Command
 
@@ -65,7 +65,7 @@ GPLv3
 MIT
 ```
 
-Now NPM is configured for you project, the associated Javascript packages and version need to be found and included.
+With NPM configured for your project, the next job is to find the JavaScript packages and versions you depend on and add them in.
 
 
 
@@ -74,10 +74,9 @@ Now NPM is configured for you project, the associated Javascript packages and ve
 1. [Initializing NPM](https://docs.npmjs.com/cli/init)
 2. [Should you care about the license? (TL;DR: yes!)](https://medium.com/@vovabilonenko/licenses-of-npm-dependencies-bacaa00c8c65)
 
-## AngularJS with Typescript
+## AngularJS with TypeScript
 
-Angular 2+ leverages typescript so it's practical to consider implementing that technology into your build pipelines and development process.
-The JavaScript files renamed from '*.js' to '*.ts' is rarely going to compile back to JavaScript without some build errors.
+Angular 2+ is built on TypeScript, so it pays to fold TypeScript into your build pipeline and day-to-day work now rather than later. Don't expect a clean run, though: rename a `*.js` file to `*.ts` and it almost never compiles straight back to JavaScript without throwing build errors at you. That's normal — the errors are TypeScript telling you what the old code was getting away with.
 
 ```powershell
 # install typescript globally
@@ -96,7 +95,7 @@ code tsconfig.json
 tsc
 ```
 
-The **tsconfig.json** file will include a range of settings and explanations of each setting. A couple of the key settings that may need to be adjusted at this point are provided bellow.
+The generated **tsconfig.json** ships with a long list of settings, each with an inline explanation. Two are worth adjusting straight away:
 
 ```json
 //    Enable the generation of source maps
@@ -121,7 +120,7 @@ The **tsconfig.json** file will include a range of settings and explanations of 
 
 [3]: https://dev.to/iggredible/what-the-heck-are-cjs-amd-umd-and-esm-ikm "What are CJS, AMD, UMD, and ESM in Javascript?"
 
-Understanding the module configuration help progress through the 
+Getting the `module` and `target` settings right is what lets the rest of the migration proceed cleanly, so it's worth understanding which format your tooling expects before you move on.
 
 ## References
 

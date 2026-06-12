@@ -9,15 +9,17 @@ redirect_from:
   - /code/WebComponents
   - /code/WebComponents.html
 ---
-Web Components should definitely be on your technology radar as software engineers and businesses battle with the quickly evolving Javascript browser landscape and the productivity of software engineers in the web centric world.
+Web Components belong on your technology radar. The JavaScript browser ecosystem churns constantly, frameworks come and go, and Web Components are one of the few component models that outlive whichever SPA framework is fashionable this year — they ship as a browser standard, not a library you have to keep upgrading.
 
-* Create components in a framework agnostic way.
-* Work with large Content Management Systems (CMS) and within Markdown.
-* Leverage the Component architecture style of popular SPA frameworks and modern Javascript transpilers like TypeScript.
-* Do not provide data binding natively (that's where your framework shines)
-* Is cross browser compatible (Was created in 2011, but is now supported by all modern browsers)
-* Provides quick component development, independent of a larger application.
-* Can be created from [Angular](https://angular.io/guide/elements), [React](https://reactjs.org/) ([Preact](https://preactjs.com/) could be substituted) or [Vue](https://vuejs.org/) frameworks, but the output size and performance should be considered.
+Here is what they buy you, and where they stop:
+
+* Components built in a framework-agnostic way, so they survive a framework migration.
+* They work inside large Content Management Systems (CMS) and within Markdown.
+* They borrow the component architecture style of popular SPA frameworks and pair with modern JavaScript transpilers like TypeScript.
+* They are cross-browser compatible. The standard dates to 2011 and is now supported by all modern browsers.
+* Component development is quick and independent of any larger application.
+
+The honest catch: Web Components do **not** provide data binding natively — that is where your framework still earns its keep. You can generate them from [Angular](https://angular.io/guide/elements), [React](https://reactjs.org/) ([Preact](https://preactjs.com/) could be substituted) or [Vue](https://vuejs.org/), but weigh the output size and runtime performance before you do; wrapping a full framework to emit one component is often a poor trade.
 
 ## References
 
