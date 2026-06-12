@@ -44,7 +44,7 @@ Console.WriteLine(answer);
 
 Log every step. Then deliberately break it: ask for a comic about something nonsensical, pass an empty topic, return an error string from the plugin. Watch how the model recovers — or doesn't, which is the more instructive outcome — and tighten the descriptions and error messages until it copes on its own.
 
-> ⚠️ Tool/function-call support in the Amazon connector has historically lagged the OpenAI connector — it was a known gap through 2025. If auto-invocation misbehaves on your pinned version, fall back to calling Converse tool-use directly via `AWSSDK.BedrockRuntime` for this lab; the loop is conceptually identical. Check the [current connector status on NuGet](https://www.nuget.org/packages/Microsoft.SemanticKernel.Connectors.Amazon) before you assume it's your bug.
+> ⚠️ Tool/function-call support in the Amazon connector has historically lagged the OpenAI connector. It was a known gap through 2025. If auto-invocation misbehaves on your pinned version, fall back to calling Converse tool-use directly via `AWSSDK.BedrockRuntime` for this lab; the loop is conceptually identical. Check the [current connector status on NuGet](https://www.nuget.org/packages/Microsoft.SemanticKernel.Connectors.Amazon) before you assume it's your bug.
 
 ## Done when
 

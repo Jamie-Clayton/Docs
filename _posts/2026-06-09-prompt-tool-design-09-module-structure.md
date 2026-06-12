@@ -8,7 +8,7 @@ author: Jamie Clayton
 
 > **[Prompt & Tool Design for .NET Teams](/Docs/posts/2026/06/09/prompt-tool-design-dotnet/)** · Part 3 — Infrastructure as Code · Module 9 of 12
 
-[Module 8](/Docs/posts/2026/06/09/prompt-tool-design-08-bedrock-terraform/) got an agent stood up. This module makes it production-shaped: one reusable module, instances per environment, and a deliberate answer to the question everyone eventually asks — _where do the prompts actually live?_
+[Module 8](/Docs/posts/2026/06/09/prompt-tool-design-08-bedrock-terraform/) got an agent stood up. This module makes it production-shaped: one reusable module, instances per environment, and a deliberate answer to the question everyone eventually asks: _where do the prompts actually live?_
 
 ## Objective
 
@@ -33,9 +33,9 @@ resource "aws_bedrockagent_agent" "this" {
 }
 ```
 
-Now a prompt change is a diff in `agent-instruction.md`, reviewable in a pull request (PR) like any other change — not an edit someone made in a console text box at 4pm and forgot to tell anyone about.
+Now a prompt change is a diff in `agent-instruction.md`, reviewable in a pull request (PR) like any other change, not an edit someone made in a console text box at 4pm and forgot to tell anyone about.
 
-**Team discussion (10 min, fine to do async in the PR):** should prompt changes ride the same pipeline as your infrastructure changes, or get a faster lane — say, Bedrock Prompt Management? There's no universal right answer; there's a right answer for your team's risk appetite. Record it as an Architecture Decision Record (ADR) — call it ADR-002.
+**Team discussion (10 min, fine to do async in the PR):** should prompt changes ride the same pipeline as your infrastructure changes, or get a faster lane — say, Bedrock Prompt Management? There's no universal right answer; there's a right answer for your team's risk appetite. Record it as an Architecture Decision Record (ADR). Call it ADR-002.
 
 ## Done when
 

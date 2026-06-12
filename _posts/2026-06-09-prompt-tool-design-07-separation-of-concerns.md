@@ -8,7 +8,7 @@ author: Jamie Clayton
 
 > **[Prompt & Tool Design for .NET Teams](/Docs/posts/2026/06/09/prompt-tool-design-dotnet/)** · Part 2 — Semantic Kernel in .NET · Module 7 of 12
 
-This is the module that decides whether you enjoy this codebase in a year. Left unchecked, AI code spreads: a model ID hard-coded in a controller here, a prompt concatenated into a service there, and suddenly "swap the model" is a three-day refactor. The fix is boring and effective — put the boundaries in on purpose, now, while the codebase is still small enough to argue about.
+This is the module that decides whether you enjoy this codebase in a year. Left unchecked, AI code spreads: a model ID hard-coded in a controller here, a prompt concatenated into a service there, and suddenly "swap the model" is a three-day refactor. The fix is boring and effective: put the boundaries in on purpose, now, while the codebase is still small enough to argue about.
 
 ## Objective
 
@@ -21,7 +21,7 @@ Define the architectural boundaries so AI code stays in its lane instead of seep
 
 ## The layering to adopt
 
-Discuss this as a team — the disagreements are the useful part.
+Discuss this as a team. The disagreements are the useful part.
 
 - **Domain** — owns business logic and the inner services your plugins wrap. Never holds prompts, model IDs, or SK types.
 - **AI orchestration** — owns kernel setup, plugins (thin adapters over domain services), prompt templates as embedded resources, and filters. Never holds business rules.

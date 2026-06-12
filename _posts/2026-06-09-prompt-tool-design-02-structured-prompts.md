@@ -31,7 +31,7 @@ Test it with two genuinely different inputs. Commit as `module-02/summary.prompt
 
 ## Done when
 
-Swapping the input data needs zero edits to the instructions. If you find yourself tweaking the rules to cope with a new document, your data and your instructions aren't actually separated yet — go back and move the line.
+Swapping the input data needs zero edits to the instructions. If you find yourself tweaking the rules to cope with a new document, your data and your instructions aren't actually separated yet. Go back and move the line.
 
 ---
 

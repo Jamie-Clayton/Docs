@@ -8,13 +8,13 @@ author: Jamie Clayton
 
 ## A self-paced course: Semantic Kernel · Amazon Bedrock · AgentCore · Terraform
 
-Twelve modules that take a .NET team from "we keep hearing about agents" to actually shipping one — without anyone learning Python or pretending they enjoy Jupyter notebooks.
+Twelve modules that take a .NET team still saying "we keep hearing about agents" and get it actually shipping one — without anyone learning Python or pretending they enjoy Jupyter notebooks.
 
-New to the jargon? An **agent** is just a program that lets a language model decide which of your own functions to call, and when. Demystifying that one sentence is the whole course — so if you're a manager or a curious non-coder, you can read the openers and "Objective" of each module and follow the story without touching the labs. There's a [plain-English glossary](#plain-english-glossary) at the foot of this page for everything else.
+New to the jargon? An **agent** is just a program that lets a language model decide which of your own functions to call, and when. Demystifying that one sentence is the whole course. So if you're a manager or a curious non-coder, you can read the openers and "Objective" of each module and follow the story without touching the labs. There's a [plain-English glossary](#plain-english-glossary) at the foot of this page for everything else.
 
 **Audience:** Experienced .NET engineers with no prior AI/LLM, Python, or Model Context Protocol (MCP) experience. If you've spent a decade shipping line-of-business C# and have been nodding along in meetings about "agentic workflows," this is for you.
 
-**Format:** 12 modules, each 30 minutes or less — read or watch, then write code. Run it as 2–3 modules a week over a month, or block out two days and power through. The modules build on each other, so resist the urge to start at Module 8 because Terraform feels like home.
+**Format:** 12 modules, each 30 minutes or less: read or watch, then write code. Run it as 2–3 modules a week over a month, or block out two days and power through. The modules build on each other, so resist the urge to start at Module 8 because Terraform feels like home.
 
 **Stack:** C# / .NET 10, Semantic Kernel, Amazon Bedrock (Converse API), Bedrock AgentCore, Terraform.
 
@@ -24,7 +24,7 @@ New to the jargon? An **agent** is just a program that lets a language model dec
 
 ## The big picture
 
-Before the modules zoom in one piece at a time, here's the whole thing on a single page. If the boxes look unfamiliar now, that's fine — by the capstone you'll have built every one of them.
+Before the modules zoom in one piece at a time, here's the whole thing on a single page. If the boxes look unfamiliar now, that's fine. By the capstone you'll have built every one of them.
 
 ![Component diagram, ".NET Agentic Solution on AWS". A .NET application (a Semantic Kernel host) invokes an agent on Bedrock AgentCore, which reasons over Amazon Bedrock foundation models through the Converse API and calls a .NET Lambda tool via an action group. IAM grants access, SSM Parameter Store supplies prompts and config, and OpenTelemetry collects telemetry. Solid lines are the runtime call path; dashed lines are config, permissions, and telemetry.](/assets/dotnet-agent-on-aws-bedrock.svg)
 _The whole system on one page. Solid arrows are the runtime call path — your .NET app drives an agent that reasons over Bedrock models and calls a .NET Lambda tool. Dashed arrows are the supporting cast: IAM permissions, prompts and config in SSM Parameter Store, and OpenTelemetry traces. Each module builds one of these boxes; the capstone wires them together._
@@ -48,7 +48,7 @@ One-time setup, about 20 minutes, and no, it doesn't count as a module.
 
 ### Part 1 — Prompt & Tool Design Fundamentals
 
-> No .NET yet. Three modules to build the mental model everything else rests on. If you only truly absorb one module in the whole course, make it Module 3.
+> No .NET yet. Three modules to build the mental model everything else rests on. If you only absorb one module in the whole course, make it Module 3.
 
 - **Module 1** — [How to talk to a model](/Docs/posts/2026/06/09/prompt-tool-design-01-talk-to-a-model/) — why structure beats wording; role, structure, examples.
 - **Module 2** — [Structured prompts, system prompts & templates](/Docs/posts/2026/06/09/prompt-tool-design-02-structured-prompts/) — prompts as versioned artifacts, not string literals you're quietly ashamed of.

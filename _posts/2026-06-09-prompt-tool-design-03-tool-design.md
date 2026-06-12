@@ -34,7 +34,7 @@ This is the peer review worth slowing down for. It's also where someone discover
 
 ## Done when
 
-Your reviewer can predict exactly when the model would call each tool, and with what arguments, from the definition alone. If they have to ask "what does this one do?", so would the model — and the model would guess rather than ask.
+Your reviewer can predict exactly when the model would call each tool, and with what arguments, from the definition alone. If they have to ask "what does this one do?", so would the model, and the model would guess rather than ask.
 
 ---
 

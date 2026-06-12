@@ -27,7 +27,7 @@ Keep using the comic finder from the earlier labs, or swap in any small example 
 
 ## The artifact that outlives the course (~5 min each, merge as a team)
 
-Write `AI-FEATURE-CHECKLIST.md` — your definition of done for any AI interaction you'd ship to production. Seed it with:
+Write `AI-FEATURE-CHECKLIST.md`, your definition of done for any AI interaction you'd ship to production. Seed it with:
 
 - [ ] Prompt is versioned, templated, and separated from code (Modules 2, 7)
 - [ ] Every tool has a reviewed contract: description, schema, error behaviour (Module 3)
@@ -39,7 +39,7 @@ Write `AI-FEATURE-CHECKLIST.md` — your definition of done for any AI interacti
 
 ## Stretch (optional, ~30 min)
 
-Take three "golden prompts" and script a crude evaluation harness in C# — a loop that invokes each and asserts on structure or keywords. It's primitive, and it's the seed of real regression testing for prompts. The first time a model update quietly breaks one, you'll be glad it exists.
+Take three "golden prompts" and script a crude evaluation harness in C#: a loop that invokes each and asserts on structure or keywords. It's primitive, and it's the seed of real regression testing for prompts. The first time a model update quietly breaks one, you'll be glad it exists.
 
 ## Done when
 

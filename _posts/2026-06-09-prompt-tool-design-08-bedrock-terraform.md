@@ -8,7 +8,7 @@ author: Jamie Clayton
 
 > **[Prompt & Tool Design for .NET Teams](/Docs/posts/2026/06/09/prompt-tool-design-dotnet/)** · Part 3 — Infrastructure as Code · Module 8 of 12
 
-A Bedrock agent you created by clicking around the console is an agent nobody can reproduce and everybody is slightly afraid of. This module declares the same thing in Terraform, where it can be reviewed, diffed, and destroyed on purpose. If you've written Terraform for anything else, none of this is new — it's just new resource names.
+A Bedrock agent you created by clicking around the console is an agent nobody can reproduce and everybody is slightly afraid of. This module declares the same thing in Terraform, where it can be reviewed, diffed, and destroyed on purpose. If you've written Terraform for anything else, none of this is new. It's just new resource names.
 
 ## Objective
 
@@ -64,7 +64,7 @@ Test it in the console's agent test pane, then `terraform destroy` when you're d
 
 ## Done when
 
-`terraform apply` gives you a working agent, and the foundation model is a `var.model_id` — so a model upgrade is a one-line change to your tfvars, not a hunt through the codebase.
+`terraform apply` gives you a working agent, and the foundation model is a `var.model_id`. So a model upgrade is a one-line change to your tfvars, not a hunt through the codebase.
 
 ---
 
