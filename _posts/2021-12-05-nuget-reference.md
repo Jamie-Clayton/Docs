@@ -9,20 +9,23 @@ redirect_from:
   - /devops/nuget
   - /devops/nuget.html
 ---
-Quick-lookup for NuGet package management commands in .NET projects.
+Quick-lookup for automating NuGet package upgrades in .NET projects with NuKeeper, plus authenticating against an Azure DevOps feed. For engineers maintaining package versions across many repositories.
 
 ## Quick Navigation
 
 | Task | Section |
 |------|---------|
-| Automate package upgrades, inspect versions | [Commands](#commands) |
+| Inspect versions and automate upgrade pull requests | [NuKeeper Inspection and Upgrades](#nukeeper-inspection-and-upgrades) |
+| Authenticate against an Azure DevOps feed | [Azure DevOps Feed Authentication](#azure-devops-feed-authentication) |
 
-## Commands
+## NuKeeper Inspection and Upgrades
 
-- Automate the generation of pull requests for nuget package upgrades using nukeeper software.
-- Report the volume of projects that will be impacted by a library repository change (AKA roll out impact)
-- Provide a mechanism to report on all the versions of a specific library. E.g. Newtonsoft
-- Identify missing analyzers in solutions. E.g. SonarQube
+NuKeeper covers the following package-maintenance tasks:
+
+- Automate the generation of pull requests for nuget package upgrades.
+- Report the volume of projects that will be impacted by a library repository change (AKA roll out impact).
+- Report on all the versions of a specific library. E.g. Newtonsoft.
+- Identify missing analyzers in solutions. E.g. SonarQube.
 
 ```Powershell
 Start-Process https://dev.azure.com/<your-org>/_usersSettings/tokens 
@@ -46,6 +49,10 @@ nukeeper inspect --useprerelease Always --logfile c:\Temp\nukeeper.log --include
 ```
 
 [Azure Devops Settings](https://dev.azure.com/<your-org>/_usersSettings/tokens)
+
+## Azure DevOps Feed Authentication
+
+Register a NuGet feed source with a personal access token (PAT), then iterate repositories to raise consolidated upgrade pull requests.
 
 ```Powershell
 # Create a PAT with the appropriate read artifacts permissions

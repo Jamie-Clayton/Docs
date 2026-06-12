@@ -9,9 +9,16 @@ redirect_from:
   - /devops/Npm
   - /devops/Npm.html
 ---
-Quick-lookup for Angular CLI setup via npm.
+Quick-lookup for installing the Angular CLI toolchain via npm. For .NET front-end developers setting up a local Angular environment.
 
-## Angular CLI implementation
+## Angular CLI setup
+
+Install the global packages required to scaffold and build Angular projects.
+
+| Command | Description |
+| --- | --- |
+| `npm install -g typescript` | Install the TypeScript compiler globally |
+| `npm install -g @angular/cli` | Install the Angular CLI globally |
 
 ```powershell
 npm install -g typescript

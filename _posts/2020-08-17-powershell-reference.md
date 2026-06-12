@@ -9,7 +9,7 @@ redirect_from:
   - /devops/PowerShell
   - /devops/PowerShell.html
 ---
-Quick-lookup for PowerShell commands organized by task category.
+Quick-lookup for PowerShell commands organized by task category. For Windows engineers managing modules, output formatting, remote sessions, services, and networking.
 
 ## Quick Navigation
 
@@ -20,17 +20,19 @@ Quick-lookup for PowerShell commands organized by task category.
 | Find and install modules | [Finding and Using Modules](#finding-and-using-powershell-modules) |
 | Convert JSON responses | [Converting Output](#converting-output) |
 | Format pipeline output | [Module Output Options](#module-output-options) |
+| Inspect object members | [Finding Properties and Methods](#finding-all-the-properties-and-methods-in-an-object) |
 | Filter, sort, display | [Filtering, Sorting or Showing Output](#filtering-sorting-or-showing-output) |
 | Measure performance | [Performance Tuning](#performance-tuning-cmdlets) |
 | Remote management | [Remote Management](#remote-management-with-powershell) |
+| Locate history files | [View Command History Files](#view-powershell-command-history-files) |
 | Network testing | [Network Testing](#network-testing) |
 | Windows services | [Windows Services](#windows-services) |
 | Certificates | [Certificates](#certificates) |
 | Json Web Tokens | [Json Web Tokens](#json-web-tokens) |
 
-Visual Code is the preferred script authoring environment, replacing PowerShell ISE as a cross platform editor. See [Setting up Visual Code](https://code.visualstudio.com/docs/languages/powershell)
+Visual Studio Code is the preferred script authoring environment, replacing PowerShell ISE as a cross-platform editor. See [Setting up Visual Studio Code](https://code.visualstudio.com/docs/languages/powershell).
 
-String Interpolation options - See [Strings in PowerShell scripts](https://devblogs.microsoft.com/powershell/variable-expansion-in-strings-and-here-strings/)
+String interpolation options - see [Strings in PowerShell scripts](https://devblogs.microsoft.com/powershell/variable-expansion-in-strings-and-here-strings/).
 
 ## Display current Edition
 
@@ -65,7 +67,7 @@ Pop-Location
 
 ## Reviewing Command History
 
-The following command with open explorer and show any powershell command history files on your system (for the authenticated user)
+Open Explorer at the PSReadLine folder to browse the command history files for the authenticated user.
 
 ```PowerShell
 c:\
@@ -81,9 +83,9 @@ There are many communities outside of Microsoft that also provide powershell mod
 Find-Module *DSC* | Sort-Object Name  
 ```
 
-## Converting output
+## Converting Output
 
-Requesting data from Web services will often be returned as JSON, so being able to convert that data structure back into a object for powershell to use is a common scenario.
+Web services often return JSON. Convert that data structure back into an object PowerShell can use.
 
 ```PowerShell
 # List all the ConvertFrom Modules
@@ -122,7 +124,7 @@ Get-Service | gm
 
 ## Filtering, Sorting or Showing Output
 
-Often the default information shown in the powershell terminal does not show all information that is available, so you may need to work
+The default terminal view often hides available data. Use these cmdlets to filter, sort, and surface the fields you need.
 
 ```PowerShell
 Get-TimeZone | Get-Member
@@ -204,7 +206,9 @@ Get-Module
 Get-Command -Module ActiveDirectory
 ```
 
-## View PowerShell command history files
+## View PowerShell Command History Files
+
+Path to the specific history file written by the PSReadLine console host.
 
 ```PowerShell
 # Open Windows Explorer to view files

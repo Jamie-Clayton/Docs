@@ -9,7 +9,7 @@ redirect_from:
   - /devops/GitCommand
   - /devops/GitCommand.html
 ---
-Quick reference for git commands used during software releases, history inspection, and repository maintenance.
+Quick reference for git commands used during software releases, history inspection, and repository maintenance. For software engineers running releases or repository cleanups.
 
 ## Quick Navigation
 
@@ -17,14 +17,16 @@ Quick reference for git commands used during software releases, history inspecti
 |----------|---------|
 | Check or install semantic versioning | [Git Version](#git-version) |
 | Inspect changes between commits | [Git Stats](#git-stats) |
-| Remove TeamCity build tags | [Remove TeamCity Tags](#remove-team-city-build-tags) |
+| Remove TeamCity build tags | [Remove TeamCity Build Tags](#remove-teamcity-build-tags) |
 | Set global user credentials | [Global Configuration](#global-configuration) |
-
-Various commands that software engineers may need during software releases or during repository cleanups.
+| List change history for a folder | [Display Change History for a Folder](#display-change-history-for-a-folder) |
+| Rewrite commit authors | [Changing Git Commit Authors](#changing-git-commit-authors) |
+| Bulk-rewrite history with a script | [Git History Re-writing Python Script](#git-history-re-writing-python-script) |
+| Migrate a repository to a new URL | [Move a Git Repository](#move-a-git-repository) |
 
 ## Git Version
 
-Instal Git version for more complex branch versioning.
+Install GitVersion for more complex branch versioning.
 
 ```PowerShell
 # Install GitVersion
@@ -42,9 +44,9 @@ cd C:\Users\Jamie\Repos\VIPRepo
 git diff --stat 846044a18dd27dd4af0bc63c8360398e8403d4d4 116da05ecc711dc1612a5b57a4d453d4161d0e77
 ```
 
-## Remove Team City Build tags
+## Remove TeamCity Build Tags
 
-Team City build server has a build number that is often a date in reverse yyyy.mm.dd which ends up polluting a Git repository with too many tags. This style is prior to GitVersion which uses sematic versioning and branching to provide more complex build/versioning lineage.
+TeamCity build server has a build number that is often a date in reverse yyyy.mm.dd which ends up polluting a Git repository with too many tags. This style is prior to GitVersion, which uses semantic versioning and branching to provide more complex build/versioning lineage.
 
 ```PowerShell
 # List all the remotes
@@ -61,9 +63,9 @@ git tag -l build-* | foreach-object -process { git push github --delete $_ }
 git tag -l build-* | foreach-object -process { git tag --delete $_ }
 ```
 
-## Global configuration
+## Global Configuration
 
-Setup personal user credentials for all repositories. You can override these in each individual repository.
+Set up personal user credentials for all repositories. You can override these in each individual repository.
 
 ```PowerShell
 git config --global -i
@@ -85,7 +87,7 @@ git rerere status
 
 ```
 
-## Display change history for a folder
+## Display Change History for a Folder
 
 Display the last 10 changes for a folder. This can be helpful when cleaning up repositories.
 
@@ -93,9 +95,9 @@ Display the last 10 changes for a folder. This can be helpful when cleaning up r
 git log -n 10 --pretty=medium -- code/*
 ```
 
-## Changing Git Commit authors
+## Changing Git Commit Authors
 
-Allows you to quickly edit all the authors name and email addresses for a series of git commits.
+Edit the author name and email address across a series of git commits.
 
 ```Powershell
 git rebase -i <SHA-to-begin-from>
@@ -103,9 +105,9 @@ git commit --amend --author "Your Name <your-email@example.com>" --no-edit && \
 git rebase --continue
 ```
 
-## Git history Re-writing python script
+## Git History Re-writing Python Script
 
-Install the Scoop package manager for windows so python plugins are registered correctly in the windows environment.
+Install the Scoop package manager for Windows so Python plugins are registered correctly in the Windows environment.
 
 ```Powershell
 Set-ExecutionPolicy RemoteSigned -scope CurrentUser
@@ -127,9 +129,9 @@ Install and use the python based [git filter repository](https://github.com/newr
 git-filter-repo --email-callback "return email.replace(b'old-email@example.wrong', b'new-email@example.right')" --force
 ```
 
-## Move a git repository
+## Move a Git Repository
 
-Fast Track the migration of git repositories to new locations.
+Migrate a git repository to a new location.
 
 ```Powershell
 git clone --mirror <url to ORI repo> temp-dir
