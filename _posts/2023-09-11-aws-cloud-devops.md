@@ -24,11 +24,9 @@ You've completed this tutorial when:
 - [ ] `sam --version` returns a version string
 - [ ] `cdk --version` returns a version string
 
-The following scripts create a code repository folder that followed devops principles to create the cloud infrastructure need to deploy a software application.
+This is a hands-on setup guide for engineers building AWS serverless infrastructure on Windows. It walks through the CLI tooling, a consistent repository layout, and a first CDK stack plus a TypeScript Lambda you can run locally with SAM. The scripts below set up a code repository that follows DevOps principles for deploying a software application to the cloud.
 
-You can choose between [webpack](https://webpack.js.org/guides/getting-started/) (popular and complicated) or [esbuild](https://esbuild.github.io/getting-started/#install-esbuild) (new and very faster) for packaging typescript cloud objects.
-
-Software testing should use [Gherkin syntax](https://cucumber.io/docs/gherkin/reference/) to encourage **Behaviour-Driven Development** (BDD) and enable reporting of test results in a human readable format.
+A couple of choices you'll make along the way. For packaging TypeScript cloud objects you can use [webpack](https://webpack.js.org/guides/getting-started/) (popular, more configuration) or [esbuild](https://esbuild.github.io/getting-started/#install-esbuild) (newer, much faster) — I default to esbuild here. For testing, write your specs in [Gherkin syntax](https://cucumber.io/docs/gherkin/reference/) to support **Behaviour-Driven Development** (BDD) and keep test results readable by non-engineers.
 
 ## Prerequisite Software
 
@@ -54,7 +52,7 @@ winget install -e --id Docker.DockerDesktop
 
 ## Create a Code Repository
 
-The following script enables you setup many code repositories and installs tools that will be required to repeat this many times.
+These steps install the global tooling you'll reuse every time you spin up a new repository, then configure npm or Yarn defaults so you don't re-type author and licence details on every `init`. Pick npm or Yarn — you don't need both.
 
 ### Npm instructions
 
@@ -86,13 +84,12 @@ yarn config set init-license "RPL-1.5" -g
 
 ## Create Software Code Repository
 
-The following script creates a standard code repository folder structure that should help make all code repositories consistently structured.
+This script lays down a standard folder structure so every repository looks the same. A few things to know before you run it:
 
-- Assumes Git repository and use Microsf Visual Studio/Code IDE
-- Configures lerna to enable multiple build, tests and deployments to occur in parallel.
-- Add readme, license and a script for software engineers to configure all required components before working with the repository.
-- Ideally the build and pipeline folders should merge as they represent the DevOps CICD configuration processes as code.
-- Configures lerna to enable multiple components to be buit, tested or deployed. Assumes you may have multiple deployable components, like a mono repo.
+- It assumes a Git repository and the Visual Studio / VS Code IDE.
+- It configures Lerna for a monorepo, so multiple components can be built, tested, or deployed in parallel.
+- It adds a README, a licence, and an `init.ps1` script that engineers run to configure everything before working in the repo.
+- The `build` and `pipeline` folders represent your DevOps CI/CD configuration as code. I'd merge them; they overlap more than they don't.
 
 ```Powershell
 # TODO: Change your default code repository location
@@ -129,11 +126,14 @@ TODO: Add instructions for Artifact repositories and cloud vendors here.
 
 ## Create an AWS CDK deployment stack
 
-Creates a simple AWS CDK infrastructure stack that creates a cloud formation stack that can be deployed to your AWS Account directly or indirectly.
+This creates a simple AWS CDK stack, which synthesises to a CloudFormation stack you can deploy to your AWS account directly or through a pipeline.
 
-For local development & debugging you can choose [AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-getting-started-hello-world.html) or the [Serverless framework CLI](https://www.serverless.com/console/docs)
+For local development and debugging, pick either the [AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-getting-started-hello-world.html) or the [Serverless framework CLI](https://www.serverless.com/console/docs). The commands below use SAM.
 
-Uses Jest type script tests to confirm your infrastructure as code works as expected. Ideally we would be testing with BDD style in cypress.io
+The generated project uses Jest TypeScript tests to confirm the infrastructure-as-code behaves as expected. In an ideal world I'd test this BDD-style with cypress.io, but Jest is what the CDK template ships with.
+
+> ⚠️ FACT-CHECK: This guide targets the `nodejs18.x` Lambda runtime and Node.js 18. AWS has since deprecated the Node.js 18 Lambda runtime — verify the current supported runtime before deploying.
+{: .prompt-warning }
 
 ### AWS CDK Yarn instructions
 
@@ -148,7 +148,9 @@ sam init --app-template hello-world-typescript --name sam-app --package-type Zip
 
 ## Create a Typescript AWS Lambda function
 
-Creates a lambda function function with [typescript and nodejs](https://docs.aws.amazon.com/lambda/latest/dg/lambda-nodejs.html#designate-es-module), and sets up cypress BDD tests. It uses [powertools for AWS Lambda typescript](https://docs.powertools.aws.dev/lambda/typescript/latest/). Uses ESBuild rather than Webpack. Parts of this can be done in Visual Code via the [AWS Toolkit plugin](https://marketplace.visualstudio.com/items?itemName=AmazonWebServices.aws-toolkit-vscode)
+This creates a Lambda function with [TypeScript and Node.js](https://docs.aws.amazon.com/lambda/latest/dg/lambda-nodejs.html#designate-es-module) and sets up Cypress BDD tests. It pulls in [Powertools for AWS Lambda (TypeScript)](https://docs.powertools.aws.dev/lambda/typescript/latest/) and bundles with esbuild rather than webpack. You can do parts of this from VS Code with the [AWS Toolkit plugin](https://marketplace.visualstudio.com/items?itemName=AmazonWebServices.aws-toolkit-vscode) instead of the command line.
+
+Heads up: the block below builds the SAM app, then runs it locally. Docker Desktop has to be running before `sam local` will work, and `sam local start-api` / `start-lambda` stay in the foreground until you stop them with `Ctrl+C`.
 
 ```Powershell
 # Add Aws Lambda typescript

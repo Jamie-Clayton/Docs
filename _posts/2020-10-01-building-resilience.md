@@ -11,13 +11,15 @@ redirect_from:
 ---
 ## Overview
 
-Resilience is the capacity to recover from setbacks, adapt to change, and keep going under pressure. In software engineering, resilience enables you to maintain effectiveness through production incidents, project failures, and career setbacks.
+This is a short explanation piece for engineers who want to last in this job without burning out. Resilience is the capacity to recover from setbacks and keep working under pressure — through production incidents, projects that get cancelled, and the career knocks everyone eventually takes.
+
+I've watched talented engineers leave the field not because they couldn't do the work, but because the work wore them down. Resilience is what separates the people who recover from a bad quarter from the people who don't. It's a skill, not a personality trait, which means you can build it. The five pillars below are where I'd start.
 
 ## The Five Pillars of Resilience
 
 ### 1. Positive Personality
 
-A positive outlook doesn't mean ignoring problems — it means approaching them with a belief that solutions exist.
+A positive outlook isn't about ignoring problems. It's about approaching them with the belief that a solution exists, even when you can't see it yet.
 
 **In practice:**
 - After an incident, focus the retrospective on systemic fixes, not blame

@@ -20,19 +20,19 @@ You've completed this tutorial when:
 - [ ] `az --version` returns a version string
 - [ ] `dotnet run` in a new project prints "Hello, World!"
 
-This guide walks you through setting up a professional Windows development environment from scratch. By the end, you'll have Git, PowerShell Core, Azure CLI, and Docker running.
+This is a getting-started guide for developers setting up a Windows machine for DevOps work from scratch. Follow it top to bottom and you'll finish with Git, PowerShell Core, the .NET SDK, Docker, and the Azure CLI installed and verified. It assumes Windows 10 or 11 and an account that can install software (some steps need an elevated PowerShell).
 
 ## What You'll Learn
 
-- Install essential developer tools using package managers
-- Configure Git and GitHub CLI for seamless authentication
-- Enable PowerShell Remoting for remote machine administration
+- Install developer tools with the Winget package manager
+- Configure Git and GitHub CLI so authentication just works
+- Enable PowerShell Remoting for administering remote machines
 - Run Docker containers on Windows
-- Validate your setup
+- Validate the whole setup with one script
 
 ## Step 1: Install Winget (Package Manager)
 
-Winget is Windows' built-in package manager. It simplifies tool installation without navigating vendor websites.
+Winget is Windows' built-in package manager. It installs tools from the command line so you're not hunting through vendor websites for installers.
 
 ### Check if Winget is Installed
 
@@ -153,7 +153,7 @@ docker --version
 
 ## Step 5: Configure PowerShell Remoting
 
-PowerShell Remoting allows you to execute commands on remote machines. It's essential for DevOps.
+PowerShell Remoting lets you run commands on remote machines. You'll want it the moment you start managing servers rather than your own laptop. If you're only working locally for now, you can do the local enable step and skip the remote test.
 
 ### Enable PowerShell Remoting Locally
 
@@ -352,7 +352,7 @@ gh auth login
 
 ## Next Steps
 
-Now that you have a functional Windows DevOps environment:
+With the environment working, here's where I'd go next:
 
 1. **Explore DevOps topics** in the repository (Microservices, Terraform, etc.)
 2. **Learn PowerShell** - See [Helpful PowerShell Commands](/Docs/posts/2020/08/17/powershell-reference/)

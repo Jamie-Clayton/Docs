@@ -9,17 +9,11 @@ redirect_from:
   - /code/ProductionReady
   - /code/ProductionReady.html
 ---
-## Learning Objectives
+This is an explanation piece for software engineers and tech leads who need a shared definition of "production ready" before they sign off on a release. It lays out what the term means, how to check your system against it, and the failure modes that catch teams out.
 
-After reading this document, you will understand:
+So what does "production ready" actually mean? Most teams use the phrase loosely, which is how experimental code ends up in front of paying customers. Here's the working definition I use: a system is **production ready** when it can serve customers 24/7 with minimal manual intervention, recover from failures without losing data, and show you what it's doing when something goes wrong.
 
-- What "production ready" means across 8 dimensions
-- How to evaluate whether your system meets production standards
-- Common failure modes for each dimension and how to prevent them
-
-What does 'Production Ready' really mean for a software engineer? This document defines the critical requirements that separate experimental code from software safe to deploy to customers.
-
-A system is **production ready** when it can reliably serve customers 24/7 with minimal manual intervention, recover gracefully from failures, and provide visibility into its health and performance.
+The rest of this document breaks that into eight dimensions, gives you a checklist to run before you deploy, and ends with the pitfalls I see most often.
 
 ## Core Tenants
 
@@ -53,7 +47,7 @@ Your system must support growth—more users, more data, more transactions—wit
 
 ### 3. Fault Tolerance & Disaster Recovery
 
-Failures will happen. Production-ready systems expect and survive them.
+Failures will happen. A production-ready system expects them and survives them.
 
 **What this means:**
 
@@ -67,7 +61,7 @@ Failures will happen. Production-ready systems expect and survive them.
 
 ### 4. Monitoring and Observability
 
-You cannot fix what you cannot see. Production systems must be instrumented to reveal their internal state.
+You can't fix what you can't see. Instrument the system to reveal its internal state, or you'll be debugging blind at 2am.
 
 **What this means:**
 
@@ -159,9 +153,11 @@ Use this checklist before deploying to production:
 
 ## Implementation Strategy
 
+You don't get all of this on day one. Roll it out over a few weeks, and treat the checklist as a living document rather than a one-time audit.
+
 ### Step 1: Create Guidelines (Week 1)
 
-Define what "production ready" means for your organization. Adapt this checklist to your context (startup vs. enterprise, web app vs. background job).
+Define what "production ready" means for your organization. Adapt this checklist to your context — a startup shipping a web app has different needs from an enterprise running batch jobs.
 
 ### Step 2: Automate Checks (Week 2-3)
 
@@ -174,7 +170,7 @@ Implement CI/CD gates that block deployment if requirements aren't met:
 
 ### Step 3: Measure and Iterate (Week 4+)
 
-Track production incidents and root-cause them. Did the incident appear in logs? Could monitoring have caught it? Update guidelines based on real-world failures.
+Track production incidents and root-cause them. Did the incident show up in logs? Could monitoring have caught it earlier? Feed what you learn back into the guidelines. The failures you actually hit are worth more than any generic checklist, including this one.
 
 ## Common Pitfalls
 

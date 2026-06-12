@@ -9,16 +9,20 @@ redirect_from:
   - /code/CodeCoverage
   - /code/CodeCoverage.html
 ---
-## Reviews
+This is a working reference for measuring code coverage on .NET projects: which tools are worth a look, how NDepend turns coverage into a technical-debt figure, and the exact OpenCover command line I use because the official examples never quite work first time. It assumes you're on Windows with the .NET CLI installed.
 
-https://blog.ndepend.com/guide-code-coverage-tools/
+## Tool comparison
 
-## Options
+A good overview of the landscape: [NDepend's guide to code coverage tools](https://blog.ndepend.com/guide-code-coverage-tools/).
 
-1. https://marketplace.visualstudio.com/items?itemName=FortuneNgwenya.FineCodeCoverage
-2. https://www.jetbrains.com/dotcover/ $399.00 USD/Annum (dotUltimate Bundle)
-3. https://www.ncover.com/ $658  USD/annum
-4. https://github.com/OpenCover/opencover
+The options I've actually weighed up, cheapest to most expensive:
+
+1. [Fine Code Coverage](https://marketplace.visualstudio.com/items?itemName=FortuneNgwenya.FineCodeCoverage) — free Visual Studio extension
+2. [dotCover](https://www.jetbrains.com/dotcover/) — $399.00 USD/Annum (dotUltimate Bundle)
+3. [NCover](https://www.ncover.com/) — $658 USD/annum
+4. [OpenCover](https://github.com/OpenCover/opencover) — free, open source
+
+If you just want a number in Visual Studio, Fine Code Coverage is the path of least resistance. For CI pipelines I reach for OpenCover (see the CLI section below). The paid tools earn their keep mainly when you want the debt analysis NDepend does, which is the next section.
 
 ## Technical Debt Calculations
 
@@ -48,6 +52,8 @@ select new {
 
 ## Reporting Options
 
+Raw coverage XML isn't much use on its own. To turn it into something readable — HTML reports, Azure DevOps dashboards — these are the references I keep coming back to:
+
 - https://github.com/danielpalme/ReportGenerator
 - https://dejanstojanovic.net/aspnet/2020/may/setting-up-code-coverage-reports-in-azure-devops-pipeline/
 - https://docs.microsoft.com/en-us/azure/devops/pipelines/test/review-code-coverage-results?view=azure-devops
@@ -57,7 +63,7 @@ select new {
 
 ## Code Coverage CLI
 
-The documentation and examples for executing and saving code coverage can be very frustrating.
+The official docs and examples for running and saving coverage from the command line are frustrating to get right — the `-target` path in particular trips people up. Here's the OpenCover invocation that works for me against a `dotnet test` run:
 
 ```powershell
 # Install Open Cover command line.
@@ -66,6 +72,8 @@ choco install opencover.portable
 # Run Code Coverage tool
 OpenCover.Console.exe "-target:C:\Program Files\dotnet\dotnet.exe" "-targetdir:C:\Users\$ENV:USERNAME\source\repos\" "-targetargs: test" "-output:c:\temp\results.xml" "-filter:+[*]*" "-register:user"
 ```
+
+The `-target` above assumes `dotnet.exe` lives in the default install location. If yours is somewhere else, find the real path first and substitute it:
 
 ```powershell
 # Find the path to dotnet.exe on the machine executing code coverage.
