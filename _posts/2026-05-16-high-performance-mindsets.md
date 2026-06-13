@@ -2,7 +2,7 @@
 title: High-Performance Mindsets
 date: 2026-05-16 09:00:00 +1000
 categories: [Explanation, 'Soft Skills']
-tags: [mindsets, performance, career]
+tags: [performance, career]
 author: Jamie Clayton
 redirect_from:
   - /SoftSkills/Mindsets.md

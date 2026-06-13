@@ -2,7 +2,7 @@
 title: Git Command Reference
 date: 2020-08-17 09:00:00 +1000
 categories: [Reference, DevOps]
-tags: [git, versioning]
+tags: [git]
 author: Jamie Clayton
 redirect_from:
   - /devops/GitCommand.md

@@ -2,7 +2,7 @@
 title: Software Sustainability
 date: 2021-01-10 09:00:00 +1000
 categories: [Explanation, Engineering]
-tags: [sustainability, 'green-software']
+tags: [sustainability]
 author: Jamie Clayton
 redirect_from:
   - /Sustainability.md

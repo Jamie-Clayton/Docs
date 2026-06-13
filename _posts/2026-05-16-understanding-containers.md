@@ -2,7 +2,7 @@
 title: Understanding Containers for Local Development
 date: 2026-05-16 09:00:00 +1000
 categories: [Explanation, DevOps]
-tags: [docker, containers]
+tags: [containers]
 author: Jamie Clayton
 redirect_from:
   - /devops/Containers-Explanation.md

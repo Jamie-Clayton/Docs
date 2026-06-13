@@ -2,7 +2,7 @@
 title: Building Resilience as a Software Engineer
 date: 2020-10-01 09:00:00 +1000
 categories: [Explanation, 'Soft Skills']
-tags: [resilience, career]
+tags: [reliability, career]
 author: Jamie Clayton
 redirect_from:
   - /SoftSkills/Resilience.md

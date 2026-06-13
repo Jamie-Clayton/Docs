@@ -2,7 +2,7 @@
 title: 'Getting Started: Windows DevOps Development'
 date: 2026-05-16 09:00:00 +1000
 categories: [Tutorial, DevOps]
-tags: [windows, devops, 'getting-started']
+tags: [windows, devops, getting-started]
 author: Jamie Clayton
 redirect_from:
   - /devops/GettingStarted-WindowsDevOps.md

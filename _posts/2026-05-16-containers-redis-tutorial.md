@@ -2,7 +2,7 @@
 title: Your First Redis on Docker
 date: 2026-05-16 09:00:00 +1000
 categories: [Tutorial, DevOps]
-tags: [docker, redis, tutorial]
+tags: [containers, redis, tutorial]
 author: Jamie Clayton
 redirect_from:
   - /devops/Containers-Tutorial.md

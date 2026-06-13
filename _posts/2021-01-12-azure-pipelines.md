@@ -2,7 +2,7 @@
 title: Azure Pipelines
 date: 2021-01-12 09:00:00 +1000
 categories: [Reference, DevOps]
-tags: [azure, 'ci-cd', pipelines]
+tags: [azure, ci-cd, pipelines]
 author: Jamie Clayton
 redirect_from:
   - /devops/AzurePipelines.md

@@ -2,7 +2,7 @@
 title: Containerization with Microsoft Service Fabric
 date: 2020-07-05 09:00:00 +1000
 categories: [Explanation, DevOps]
-tags: [containers, 'service-fabric', azure]
+tags: [containers, azure]
 author: Jamie Clayton
 redirect_from:
   - /devops/Containers-ServiceFabric.md
