@@ -2,7 +2,7 @@
 title: npm Cheat Sheet
 date: 2020-07-06 09:00:00 +1000
 categories: [Reference, DevOps]
-tags: [npm, nodejs, javascript]
+tags: [user-interface, reference]
 author: Jamie Clayton
 redirect_from:
   - /devops/Npm.md

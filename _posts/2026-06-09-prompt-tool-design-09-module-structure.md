@@ -2,7 +2,7 @@
 title: "Module 9 — Module structure, environments & prompt-as-config"
 date: 2026-06-09 16:00:00 +1000
 categories: [Tutorial, AI]
-tags: [prompt-tool-design, terraform, iac, bedrock]
+tags: [artificial-intelligence, infrastructure-as-code]
 author: Jamie Clayton
 ---
 

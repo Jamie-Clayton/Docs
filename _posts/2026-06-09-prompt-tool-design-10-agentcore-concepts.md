@@ -2,7 +2,7 @@
 title: "Module 10 — AgentCore concepts"
 date: 2026-06-09 17:00:00 +1000
 categories: [Tutorial, AI]
-tags: [prompt-tool-design, agentcore, aws, ai]
+tags: [artificial-intelligence, cloud]
 author: Jamie Clayton
 ---
 

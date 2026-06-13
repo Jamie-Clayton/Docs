@@ -2,7 +2,7 @@
 title: "Module 8 — Bedrock resources in Terraform"
 date: 2026-06-09 15:00:00 +1000
 categories: [Tutorial, AI]
-tags: [prompt-tool-design, terraform, bedrock, iac]
+tags: [artificial-intelligence, infrastructure-as-code]
 author: Jamie Clayton
 ---
 

@@ -2,7 +2,7 @@
 title: "Module 1 — How to talk to a model"
 date: 2026-06-09 08:00:00 +1000
 categories: [Tutorial, AI]
-tags: [prompt-tool-design, ai, llm, prompt-engineering]
+tags: [artificial-intelligence]
 author: Jamie Clayton
 ---
 

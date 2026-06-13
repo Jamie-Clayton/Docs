@@ -2,7 +2,7 @@
 title: "Module 5 — Plugins: exposing .NET code to the model"
 date: 2026-06-09 12:00:00 +1000
 categories: [Tutorial, AI]
-tags: [prompt-tool-design, dotnet, semantic-kernel, tool-use]
+tags: [artificial-intelligence, dotnet]
 author: Jamie Clayton
 ---
 

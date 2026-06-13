@@ -2,7 +2,7 @@
 title: Continuous Architecture
 date: 2023-10-08 09:00:00 +1000
 categories: [Explanation, Architecture]
-tags: [architecture]
+tags: [design-patterns]
 author: Jamie Clayton
 redirect_from:
   - /devops/ContinuosArchitecture.md

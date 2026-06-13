@@ -2,7 +2,7 @@
 title: "Module 11 — Gateway: a .NET Lambda as an agent tool"
 date: 2026-06-09 18:00:00 +1000
 categories: [Tutorial, AI]
-tags: [prompt-tool-design, agentcore, dotnet, aws]
+tags: [artificial-intelligence, dotnet, cloud]
 author: Jamie Clayton
 ---
 

@@ -2,7 +2,7 @@
 title: "Module 2 — Structured prompts, system prompts & templates"
 date: 2026-06-09 09:00:00 +1000
 categories: [Tutorial, AI]
-tags: [prompt-tool-design, prompt-engineering, llm]
+tags: [artificial-intelligence]
 author: Jamie Clayton
 ---
 

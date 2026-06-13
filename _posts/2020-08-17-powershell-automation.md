@@ -2,7 +2,7 @@
 title: Automation with PowerShell
 date: 2020-08-17 09:00:00 +1000
 categories: [Explanation, DevOps]
-tags: [powershell, automation, windows]
+tags: [windows]
 author: Jamie Clayton
 redirect_from:
   - /devops/Automation.md

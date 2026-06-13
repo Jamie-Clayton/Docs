@@ -2,7 +2,7 @@
 title: "Module 6 — Function calling: letting the model drive your tools"
 date: 2026-06-09 13:00:00 +1000
 categories: [Tutorial, AI]
-tags: [prompt-tool-design, dotnet, semantic-kernel, tool-use, bedrock]
+tags: [artificial-intelligence, dotnet]
 author: Jamie Clayton
 ---
 

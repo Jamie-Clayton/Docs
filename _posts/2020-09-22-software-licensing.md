@@ -2,7 +2,7 @@
 title: Software Licensing
 date: 2020-09-22 09:00:00 +1000
 categories: [Explanation, Engineering]
-tags: [licensing, opensource]
+tags: [compliance]
 author: Jamie Clayton
 redirect_from:
   - /code/Licensing.md

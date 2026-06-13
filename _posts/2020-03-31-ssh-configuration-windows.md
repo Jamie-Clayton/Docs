@@ -2,7 +2,7 @@
 title: SSH Configuration on Windows
 date: 2020-03-31 09:00:00 +1000
 categories: [Tutorial, DevOps]
-tags: [ssh, windows, security]
+tags: [windows, infrastructure-as-code, compliance]
 author: Jamie Clayton
 redirect_from:
   - /devops/ssh.md

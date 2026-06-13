@@ -2,7 +2,7 @@
 title: 'Microservices Architecture (.NET/C#)'
 date: 2021-04-21 09:00:00 +1000
 categories: [Explanation, Architecture]
-tags: [microservices, dotnet, architecture]
+tags: [dotnet, design-patterns]
 author: Jamie Clayton
 redirect_from:
   - /devops/Microservices.md

@@ -2,7 +2,7 @@
 title: Solution Architectures
 date: 2020-08-24 09:00:00 +1000
 categories: [Explanation, Architecture]
-tags: [architecture]
+tags: [design-patterns]
 author: Jamie Clayton
 redirect_from:
   - /devops/Architecture.md

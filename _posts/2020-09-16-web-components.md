@@ -2,7 +2,7 @@
 title: Web Components
 date: 2020-09-16 09:00:00 +1000
 categories: [Explanation, Frontend]
-tags: [webcomponents, browser, frontend]
+tags: [user-interface]
 author: Jamie Clayton
 redirect_from:
   - /code/WebComponents.md

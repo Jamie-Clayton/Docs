@@ -2,7 +2,7 @@
 title: Code Coverage
 date: 2020-11-20 09:00:00 +1000
 categories: ['How-to', Testing]
-tags: [testing, code-coverage, dotnet]
+tags: [dotnet, devops]
 author: Jamie Clayton
 redirect_from:
   - /code/CodeCoverage.md

@@ -2,7 +2,7 @@
 title: Prompt & Tool Design for .NET Teams
 date: 2026-06-09 20:00:00 +1000
 categories: [Tutorial, AI]
-tags: [prompt-tool-design, dotnet, ai, llm, semantic-kernel, bedrock, agentcore, terraform, prompt-engineering]
+tags: [artificial-intelligence, dotnet, infrastructure-as-code, cloud]
 author: Jamie Clayton
 ---
 

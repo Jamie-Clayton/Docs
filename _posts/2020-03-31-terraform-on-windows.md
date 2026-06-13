@@ -2,7 +2,7 @@
 title: Terraform on Windows
 date: 2020-03-31 09:00:00 +1000
 categories: [Tutorial, DevOps]
-tags: [terraform, iac, windows]
+tags: [windows, infrastructure-as-code]
 author: Jamie Clayton
 redirect_from:
   - /devops/terraform.md

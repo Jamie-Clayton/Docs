@@ -2,7 +2,7 @@
 title: "Module 3 — Tool design: the API contract for models"
 date: 2026-06-09 10:00:00 +1000
 categories: [Tutorial, AI]
-tags: [prompt-tool-design, tool-use, prompt-engineering, ai]
+tags: [artificial-intelligence]
 author: Jamie Clayton
 ---
 

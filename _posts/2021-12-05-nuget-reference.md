@@ -2,7 +2,7 @@
 title: NuGet Package Automation
 date: 2021-12-05 09:00:00 +1000
 categories: [Reference, DevOps]
-tags: [nuget, dotnet, packages]
+tags: [dotnet, reference]
 author: Jamie Clayton
 redirect_from:
   - /devops/nuget.md

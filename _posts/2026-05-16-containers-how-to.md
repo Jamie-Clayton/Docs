@@ -2,7 +2,7 @@
 title: Containers How-to Guides
 date: 2026-05-16 09:00:00 +1000
 categories: ['How-to', DevOps]
-tags: [containers]
+tags: [devops, reference]
 author: Jamie Clayton
 redirect_from:
   - /devops/Containers-HowTo.md

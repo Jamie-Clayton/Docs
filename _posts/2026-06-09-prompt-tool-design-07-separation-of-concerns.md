@@ -2,7 +2,7 @@
 title: "Module 7 — Separation of concerns: where AI touches your architecture"
 date: 2026-06-09 14:00:00 +1000
 categories: [Tutorial, AI]
-tags: [prompt-tool-design, dotnet, semantic-kernel, architecture]
+tags: [artificial-intelligence, dotnet, design-patterns]
 author: Jamie Clayton
 ---
 

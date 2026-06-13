@@ -2,7 +2,7 @@
 title: 'Retiring AngularJS: Migration Guide'
 date: 2020-04-05 09:00:00 +1000
 categories: ['How-to', Frontend]
-tags: [angularjs, angular, migration]
+tags: [user-interface]
 author: Jamie Clayton
 redirect_from:
   - /code/RetiringAngularJs.md

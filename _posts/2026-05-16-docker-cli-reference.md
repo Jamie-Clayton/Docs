@@ -2,7 +2,7 @@
 title: Docker CLI Reference
 date: 2026-05-16 09:00:00 +1000
 categories: [Reference, DevOps]
-tags: [containers, cli]
+tags: [devops, reference]
 author: Jamie Clayton
 redirect_from:
   - /devops/Containers-Reference.md

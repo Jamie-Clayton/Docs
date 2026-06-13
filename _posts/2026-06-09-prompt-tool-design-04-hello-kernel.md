@@ -2,7 +2,7 @@
 title: "Module 4 — Hello, Kernel: SK + Bedrock from C#"
 date: 2026-06-09 11:00:00 +1000
 categories: [Tutorial, AI]
-tags: [prompt-tool-design, dotnet, semantic-kernel, bedrock]
+tags: [artificial-intelligence, dotnet]
 author: Jamie Clayton
 ---
 

@@ -2,7 +2,7 @@
 title: "Module 12 — Capstone: end to end"
 date: 2026-06-09 19:00:00 +1000
 categories: [Tutorial, AI]
-tags: [prompt-tool-design, dotnet, semantic-kernel, agentcore, terraform]
+tags: [artificial-intelligence, dotnet]
 author: Jamie Clayton
 ---
 

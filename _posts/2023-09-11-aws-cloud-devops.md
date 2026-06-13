@@ -2,7 +2,7 @@
 title: AWS Cloud DevOps Setup
 date: 2023-09-11 09:00:00 +1000
 categories: [Tutorial, DevOps]
-tags: [aws, cli, cdk, sam, cloud]
+tags: [devops, cloud]
 author: Jamie Clayton
 redirect_from:
   - /devops/Aws-Cloud-Devops-Instructions.md
