@@ -2,7 +2,7 @@
 title: Automating GitHub Tasks with the GitHub CLI
 date: 2024-05-12 09:00:00 +1000
 categories: ['How-to', DevOps]
-tags: [windows]
+tags: [windows, developer-experience]
 author: Jamie Clayton
 redirect_from:
   - /devops/GitHub-cli.md

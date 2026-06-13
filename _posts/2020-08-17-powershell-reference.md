@@ -2,7 +2,7 @@
 title: PowerShell Command Reference
 date: 2020-08-17 09:00:00 +1000
 categories: [Reference, DevOps]
-tags: [windows, reference]
+tags: [windows, reference, developer-experience]
 author: Jamie Clayton
 redirect_from:
   - /devops/PowerShell.md
